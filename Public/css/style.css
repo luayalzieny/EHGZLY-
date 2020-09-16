@@ -14,8 +14,14 @@ height: 4000px!important;
     width: 100%;
     height: 780px!important;
     background-size: contain;
-    position: relative;
-    }
+    position: absolute;
+   ;z-index: -1;    
+}
+
+.motto{
+    text-align: center;
+    padding-top: 25%;
+}
 
 .vegas-timer {
     top: auto;
