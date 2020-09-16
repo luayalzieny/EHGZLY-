@@ -11,13 +11,13 @@
         }
     /* ////////////////////////////////////////////////////////////////////////////// */
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 750px) {
 
         .motto h1{
             font-size: 50px;
         }
         .motto h1 {
-            margin-top:50%
+            margin-top:25%
         }
         .motto h2{
             font-size: 30px;
