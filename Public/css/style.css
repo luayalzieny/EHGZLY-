@@ -18,9 +18,21 @@ height: 4000px!important;
    ;z-index: -1;    
 }
 
+.nav-item{
+    color: #e0ece4;
+}
+.login{
+    background-color:#1e5f74;
+    border-radius: 10px
+    ;padding: 10px;
+}
 .motto{
     text-align: center;
     padding-top: 25%;
+    color: #e0ece4;
+}
+.motto h2{
+    color: #1e5f74;
 }
 
 .vegas-timer {
