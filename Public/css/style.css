@@ -19,6 +19,17 @@ height: 4000px!important;
     position: relative;
 }
 
+<<<<<<< HEAD
+=======
+.navbar ul{
+margin: 2%;
+
+}
+.navbar h2{
+    margin: 2%
+    }
+    
+>>>>>>> bc38be4668c92b68d3b559eabbd4ff93367abcb2
 .nav-item{
     color: #e0ece4;
 }
