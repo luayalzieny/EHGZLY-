@@ -1,0 +1,43 @@
+@media screen and (max-width: 1199px) {
+
+    .motto h1{
+        font-size: 70px;
+    }
+    
+    .motto h2{
+        font-size: 35px;
+    }
+    
+        }
+    /* ////////////////////////////////////////////////////////////////////////////// */
+
+    @media screen and (max-width: 700px) {
+
+        .motto h1{
+            font-size: 50px;
+        }
+        
+        .motto h2{
+            font-size: 30px;
+        }
+        
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
