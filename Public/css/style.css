@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -30,6 +32,10 @@ height: 4000px!important;
     text-align: center;
     padding-top: 25%;
     color: #e0ece4;
+}
+.motto h1{
+    font-size: 85px;
+    font-family: 'Ranchers', cursive;
 }
 .motto h2{
     color: #1e5f74;
