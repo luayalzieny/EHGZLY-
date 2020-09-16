@@ -10,4 +10,27 @@ body
 height: 4000px!important;
 }
 
+#Home{
+    width: 100%;
+    height: 780px!important;
+    /* background: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7))!important  ; */
+    background-size: contain;
+    position: relative;
+    }
+
+    .vegas-timer {
+        top: auto;
+        bottom: 0;
+        height: 0px;
+    }
+
+
+
+
+
+
+
+
+
+
 
