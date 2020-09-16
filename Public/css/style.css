@@ -35,6 +35,12 @@ height: 4000px!important;
     color: #1e5f74;
 }
 
+.motto button{
+    margin:1%;
+    background-color: #1e5f74;
+   color:#e0ece4 ;
+}
+
 .vegas-timer {
     top: auto;
     bottom: 0;
