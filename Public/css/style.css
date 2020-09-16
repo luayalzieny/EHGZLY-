@@ -19,7 +19,13 @@ height: 4000px!important;
     position: absolute;
    ;z-index: -1;    
 }
-
+.navbar ul{
+margin: 2%
+}
+.navbar h2{
+    margin: 2%
+    }
+    
 .nav-item{
     color: #e0ece4;
 }
