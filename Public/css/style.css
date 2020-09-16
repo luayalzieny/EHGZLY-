@@ -27,6 +27,7 @@ margin:  2%;
     margin:  2%
     }
     
+
 .nav-item{
     color: #e0ece4;
 }
@@ -37,7 +38,7 @@ margin:  2%;
 }
 .motto{
     text-align: center;
-    padding-top: 25%;
+    padding-top: 27%;
     color: #e0ece4;
     z-index: 1;
 }
@@ -46,7 +47,7 @@ margin:  2%;
     font-family: 'Ranchers', cursive;
 }
 .motto h2{
-    color: #1e5f74;
+    color: #132743;
 }
 
 .motto button{
