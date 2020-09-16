@@ -19,8 +19,8 @@ height: 4000px!important;
     position: relative;
 }
 
-<<<<<<< HEAD
-=======
+
+
 .navbar ul{
 margin: 2%;
 
@@ -29,7 +29,7 @@ margin: 2%;
     margin: 2%
     }
     
->>>>>>> bc38be4668c92b68d3b559eabbd4ff93367abcb2
+
 .nav-item{
     color: #e0ece4;
 }
@@ -40,7 +40,7 @@ margin: 2%;
 }
 .motto{
     text-align: center;
-    padding-top: 25%;
+    padding-top: 27%;
     color: #e0ece4;
     z-index: 1;
 }
