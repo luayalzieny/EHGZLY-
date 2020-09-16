@@ -43,11 +43,14 @@ margin:  2%;
     z-index: 1;
 }
 .motto h1{
-    font-size: 85px;
+    font-size: 95px;
     font-family: 'Ranchers', cursive;
+    font-weight: 700;
 }
 .motto h2{
     color: #132743;
+    font-size: 40px;
+    font-weight: 700;
 }
 
 .motto button{
