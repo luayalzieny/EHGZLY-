@@ -189,8 +189,9 @@ color: #888;
     height: 600px;
 
 width: 100%;
-background: url("../Images/Testomonials/testimonial\ cover.jpg") no-repeat center,linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3))!important ;
-background-size: contain ; 
+background: linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3)) ,
+url("../Images/Testomonials/testimonial\ cover.jpg") no-repeat center;
+background-size: cover ; 
 }
 
 .testimonial-text{
@@ -219,4 +220,3 @@ background-size: contain ;
 	margin: 20px 20px 50px }
 
 .carousel-item{padding: 7% 15%}
->>>>>>> 9c20454562c94df3d49c5e960b428f0885c2ac5b
