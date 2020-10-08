@@ -180,10 +180,13 @@ color: #888;
 }
 
 
+.testimonial{
+    height: 600px;
 
-#testimonials{
-	background-color:#393e46 ;
-	color: #fff }
+width: 100%;
+background: url("../Images/Testomonials/testimonial\ cover.jpg") no-repeat center,linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3))!important ;
+background-size: contain ; 
+}
 
 .testimonial-text{
 	font-size: 3rem;
