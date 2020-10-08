@@ -179,3 +179,35 @@ color: #888;
     background-size: cover;
 }
 
+
+
+#testimonials{
+	background-color:#393e46 ;
+	color: #fff }
+
+.testimonial-text{
+	font-size: 3rem;
+	line-height: 1.5
+}
+
+.testimg{
+	width:10%;
+	border-radius:100%;
+	margin: 20px }
+
+.testimonial-image{
+	width:10%;
+	border-radius:100%;
+	margin: 20px
+}
+
+#press{
+	background-color:#393e46;
+	padding-bottom: 3% 
+}
+
+.press-logo{
+	width:15%;
+	margin: 20px 20px 50px }
+
+.carousel-item{padding: 7% 15%}
