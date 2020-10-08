@@ -85,8 +85,13 @@ margin:  2%;
     
 }
 
-.about-us-img img{
-    width: 600px;height: 600px;
+.about-us-img {
+    /* width: 600px;height: 600px; */
+    width: 100%!important;
+    height: 500px!important;
+background: url(../Images/) no-repeat center ;
+background-size: cover; 
+
 }
 
 
