@@ -81,7 +81,12 @@ margin:  2%;
 
 
 .icon{
-    color:#1e5f74
+    color:#1e5f74;
+    
+}
+
+.about-us-img img{
+    width: 600px;height: 600px;
 }
 
 
