@@ -189,8 +189,9 @@ color: #888;
     height: 600px;
 
 width: 100%;
-background: url("../Images/Testomonials/testimonial\ cover.jpg") no-repeat center,linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3))!important ;
-background-size: contain ; 
+background: linear-gradient(rgba(0,0,0,0.3) , rgba(0,0,0,0.3)) ,
+url("../Images/Testomonials/testimonial\ cover.jpg") no-repeat center;
+background-size: cover ; 
 }
 
 .testimonial-text{
