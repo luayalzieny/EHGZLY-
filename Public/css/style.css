@@ -9,6 +9,8 @@
 body
 {
 height: 4000px!important;
+    background-color: #f5f8ff;
+
 }
 
 #Home{
@@ -52,7 +54,7 @@ margin:  2%;
     font-weight: 700;
 }
 
-.motto button{
+.btun1{
     margin:1%;
     background-color: transparent;
     border: 3px solid #1e5f74 ;
@@ -84,17 +86,96 @@ margin:  2%;
     color:#1e5f74;
     
 }
-
+.about-us {
+    width: 100%;
+    background-color: whitesmoke;
+}
+.about-text{
+margin-top: 150px;
+}
+.about-text h2,
+.about-us .title-text h1{
+    color: #1e5f74;
+}
+.about-text p,
+.about-us .title-text p{
+color: #888;
+}
 .about-us-img {
     /* width: 600px;height: 600px; */
     width: 100%!important;
     height: 500px!important;
-background: url(../Images/Background/) no-repeat center ;
-background-size: cover; 
+    background: url(../Images/about/Pngtree_psychiatry_psychology_professional_consultation_vector_5141799__1_-removebg-preview.png) no-repeat center ;
+    background-size: contain; 
 
 }
+.about-btn{
+    margin:1%;
+    background-color: transparent;
+    border: 3px solid #1e5f74 ;
+    padding: 5px 15px ;
+    color: black;
+    border-radius: 40px;
+    font-weight: 700;
+    transition: all 0.6s ease;
+}
+.about-btn:hover{
+    background-color:#1e5f74;
+    color: white;
+}
 
+#services{
+    width: 100%;
+    height: auto;
+    background:url(../images/gallery/department.png) no-repeat ;
+    background-size: cover; 
+}
+.title-text h5{
+    text-transform:uppercase;
+    color: #042d41;
+}
 
+.title-text h1{
+    font-size: 50px;
+    font-weight: 700;
+    color: #35befd;
 
+}
+.nav-tabs{
+    border: none;
+    display: flex;
+    overflow: hidden;
+}
+.nav-tabs .nav-item {
+    border: none;
+    padding: 15px;
+    height: 150px;
 
+}
+.nav-tabs .nav-item a {
+
+    background-color: white;
+    color: #35befd;
+    border: none;
+    font-size: 14px;
+    
+}
+ .flaticon {
+ text-align: center!important;
+ font-size: 25px!important;   
+}
+.nav-tabs .nav-item a.active{
+    background-color: #35befd;
+    color: #fff;
+}
+.nav-tabs .nav-item a:focus{
+    background-color: #35befd;
+    color: #fff;
+}
+.bacimg{
+    width: 100%;
+    height: 500px;
+    background: no-repeat ;
+    background-size: cover;
+}
 
