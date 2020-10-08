@@ -138,7 +138,7 @@ color: #888;
 .title-text h1{
     font-size: 50px;
     font-weight: 700;
-    color: #35befd;
+    color: #1e5f74;
 
 }
 .nav-tabs{
@@ -155,7 +155,7 @@ color: #888;
 .nav-tabs .nav-item a {
 
     background-color: white;
-    color: #35befd;
+    color: #1e5f74;
     border: none;
     font-size: 14px;
     
@@ -165,11 +165,11 @@ color: #888;
  font-size: 25px!important;   
 }
 .nav-tabs .nav-item a.active{
-    background-color: #35befd;
+    background-color: #1e5f74;
     color: #fff;
 }
 .nav-tabs .nav-item a:focus{
-    background-color: #35befd;
+    background-color: #1e5f74;
     color: #fff;
 }
 .bacimg{
@@ -178,6 +178,11 @@ color: #888;
     background: no-repeat ;
     background-size: cover;
 }
+
+.backgrounddep{
+    background-color: #1e5f74;
+}
+
 
 
 .testimonial{
@@ -214,3 +219,4 @@ background-size: contain ;
 	margin: 20px 20px 50px }
 
 .carousel-item{padding: 7% 15%}
+>>>>>>> 9c20454562c94df3d49c5e960b428f0885c2ac5b
