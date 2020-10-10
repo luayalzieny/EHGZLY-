@@ -6,6 +6,9 @@
     text-decoration: none;
     text-transform: capitalize;
 }
+html{
+    height: 100%!important;
+}
 body
 {
 height: 4000px!important;
@@ -183,8 +186,12 @@ color: #888;
     background-color: #1e5f74;
 }
 
-
-
+.active-li{
+    margin-left: 80px;
+}
+.full-height p{
+    margin-top: 35px;
+}
 /* .testimonial */
 h2 {
     color: #333;
@@ -206,10 +213,11 @@ h2::after {
     position: absolute;
     margin: 0 auto;
     height: 3px;
-    background: #ffdc12;
+    background: #132743;
     left: 0;
     right: 0;
-    bottom: -10px
+    bottom: -10px;
+    border-radius: 5px;
 }
 
 .carousel {
@@ -314,4 +322,66 @@ h2::after {
 .carousel-indicators li.active {
     border: none;
     background: #888
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#back-top{
+    background:#132743;
+    height:50px;width:50px;
+    right:31px;bottom:18px;
+    position:fixed;color:#fff;
+    font-size:20px;text-align:center;
+    border-radius:50%;
+    line-height:48px;
+    border:2px solid transparent;
+    box-shadow:0 0 10px 3px rgba(75, 66, 66, 0.2)
+}
+
+#back-top a .fa-level-up-alt{
+    color:white;
 }
