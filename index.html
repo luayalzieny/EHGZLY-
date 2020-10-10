@@ -14,11 +14,28 @@
 <!-- min style -->
     <link rel="stylesheet" href="Public/css/style.css">
     <link rel="stylesheet" href="Public/css/responsive.css">
-
-<link rel="stylesheet" href="Public/font/flaticon.css">
+    <link rel="stylesheet" href="Public/font/flaticon.css">
+    <link rel="stylesheet" href="Public/css/preloader.css">
     <title>Galsa</title>
 </head>
 <body>
+
+
+<!-- ? Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text ">
+              <img src="images/loader.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader end -->
+
+<!--//////////////////////Home Section/////////////////////////// */
+/* //////////////////////Home Section/////////////////////////// */ -->
 
 <section  class="Home" id="Home">
     <div  class="overlay">
@@ -332,12 +349,13 @@
 <script src="Public/js/brands.min.js"></script>
 <script src="Public/js/solid.min.js"></script>
 <!-- plugins -->
-<script src="Public/js/Plugins/jquery.nicescroll.iframehelper.min.js"></script>
-<script src="Public/js/Plugins/jquery.nicescroll.min.js"></script>    
+<!-- <script src="Public/js/Plugins/jquery.nicescroll.iframehelper.min.js"></script>
+<script src="Public/js/Plugins/jquery.nicescroll.min.js"></script>     -->
 <script src="Public/js/Plugins/vegas.js"></script>
 <!-- min script -->
+<script src="Public/js/main.js"></script>
 <script>
-$("body").niceScroll();
+// $("body").niceScroll();
 // //////////////////////////////////
 $('#Home').vegas({
   overlay: true,
@@ -355,6 +373,46 @@ $('#Home').vegas({
     { src: 'Public/Images/Background/Background 4.jpg' }
   ]
 });
+// ////////////////////////////////////////////////////
+
+
+(function ($)
+    { "use strict"
+    
+    /* 1. Proloder */
+        $(window).on('load', function () {
+          $('#preloader-active').delay(450).fadeOut('slow');
+          $('body').delay(850).css({
+            'overflow': 'visible'
+          });
+        });
+    
+    /* 2. sticky And Scroll UP */
+        $(window).on('scroll', function () {
+          var scroll = $(window).scrollTop();
+          if (scroll < 100) {
+            $("#ftco-navbar").removeClass("sticky-bar");
+            $('#back-top').fadeOut(500);
+          } else {
+            $("#ftco-navbar").addClass("sticky-bar");
+            $('#back-top').fadeIn(500);
+          }
+        });
+    
+      // Scroll Up
+        $('#back-top a').on("click", function () {
+          $('body,html').animate({
+            scrollTop: 0
+          }, 800);
+          return false;
+        });
+    
+
+    })(jQuery);
+    
+  
+
+
 
 </script>
 
