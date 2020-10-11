@@ -1,0 +1,9 @@
+
+html{
+    scroll-behavior: smooth;
+}
+.img{
+    height: 150px;
+    width: 150px;
+}
+
