@@ -333,53 +333,6 @@ h2::after {
     background: #888
 }
 
-<<<<<<< Updated upstream
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #back-top{
     background:#132743;
     height:50px;width:50px;
@@ -394,7 +347,7 @@ h2::after {
 
 #back-top a .fa-level-up-alt{
     color:white;
-=======
+}
 /* footer */
 
 .context-dark, .bg-gray-dark, .bg-primary {
@@ -445,5 +398,4 @@ ul, ol {
     opacity: 0;
     visibility: hidden;
     transition: .22s ease;
->>>>>>> Stashed changes
 }
