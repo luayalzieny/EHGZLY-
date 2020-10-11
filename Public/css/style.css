@@ -351,6 +351,10 @@ h2::after {
 }
 /* footer */
 
+footer h2{
+    text-align: left; text-decoration: none;
+}
+
 .context-dark, .bg-gray-dark, .bg-primary {
     color: rgba(255, 255, 255, 0.8);
 }
