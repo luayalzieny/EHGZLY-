@@ -86,8 +86,7 @@ margin:  2%;
 
 
 .icon{
-    color:#1e5f74;
-    font-size: 90px!important;
+    color:#000;
     
 }
 .about-us {
@@ -409,4 +408,6 @@ ul, ol {
     text-align: left;
 } */
 
-
+.social{
+    font-size: 25px;
+}
