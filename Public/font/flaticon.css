@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 08/10/2020 15:39
+  	Creation date: 11/10/2020 11:17
   	*/
 
 @font-face {
@@ -25,11 +25,15 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size: 90px;
+        font-size: 20px;
 font-style: normal;
-margin-left: 0px;
+margin-left: 20px;
 }
 
 .flaticon-brain-upper-view-outline:before { content: "\f100"; }
 .flaticon-medical-file:before { content: "\f101"; }
 .flaticon-heart-shape-outline-with-lifeline:before { content: "\f102"; }
+.flaticon-instagram:before { content: "\f103"; }
+.flaticon-facebook-logo:before { content: "\f104"; }
+.flaticon-twitter:before { content: "\f105"; }
+.flaticon-google-plus-logo-symbol:before { content: "\f106"; }
