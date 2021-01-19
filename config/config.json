@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "take_it_away",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "",
+    "password": null,
+    "database": "take_it_away",
+    "host": "",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "",
+    "password": null,
+    "database": "take_it_away",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
