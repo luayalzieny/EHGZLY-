@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Epilogue:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Gochi+Hand&family=Homemade+Apple&family=Knewave&family=Merienda:wght@700&family=Monoton&family=Nanum+Pen+Script&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@1,300&display=swap');
+/* body{
+    background: url(../photos/team/home-slide-1-1920x800.jpg) no-repeat center !important;
+    background-size: contain !important; 
+} */
+
+/* .bac{
+  background: url(../photos/team/home-slide-1-1920x800.jpg) no-repeat center !important;
+  background-size: cover !important;
+} */
+
+/* ///////////////////////////////////////////////////// */
+.about-page-header{
+    width: 100%;
+    height: 550px;
+    background: url(../photos/imgs/header-img1.jpg) no-repeat center ;
+    background-size: cover;
+}
+.navbar{ 
+    background: transparent ;
+    z-index: 1111;
+}
+nav.sticky {
+    background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9))!important ;
+    transition: 0.5s!important;
+    z-index: 1111111111111111111111111111;
+    padding: 0px 15px!important;
+    transition:  all 0.8s ease;
+
+
+}
+nav.sticky .navbar-brand img{
+    transition:  all 0.8s ease;
+    width: 50px;height: 50px;
+}
+.welcomeTexte {
+    margin-top: 150px;
+ }
+ .welcomeTexte h1{
+     font-size: 100px;
+    font-family: 'Cabin Sketch', cursive;
+ }
+
+ 
+/* <!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// --> */
+
+
+.about-page{
+    width: 100%;
+    height: auto;
+    position: relative;
+
+}
+
+.about-img-circle {
+    position: relative;bottom: 150px;
+}
+.about-img-pages{
+    width: 100%;
+    height: 400px;
+    background: url( ../photos/imgs/take-about3.jpg) no-repeat  center ;
+    background-size: contain;  
+    border-radius: 5px;
+}
+.about-text-about{
+    font-size: 15px;
+}
+.about-text-about .card{
+    background-color: transparent!important;
+    border: none!important;
+
+}
+.about-text-about .card-header{
+    background-color: transparent!important;
+    border: none!important;
+    border-bottom: 1px solid #eb102d!important;
+
+}
+.about-text-title,
+.about-text-about .card-header h5 span{
+    font-family: 'Knewave', cursive;
+
+}
+
+
+/* <!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// --> */
+
+
+.team{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.team-img{
+    width: 100%;
+    height: 350px;
+    background: url(../photos/team/luay-res.png) no-repeat center ;
+    background-size: cover;
+}
+.fa-long-arrow-alt-right,
+.fa-long-arrow-alt-left{
+    font-size: 40px;
+}
+/* .team-data-up {
+
+    border-bottom: 1px ridge white;
+} */
+/* .team-data-up img{
+border-radius: 50%;
+}
+.team-data-up h2{
+    font-family: 'Averia Sans Libre', cursive;
+    font-weight: 700;
+    font-size: 40px;
+} */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+#testimonial{
+    width: 100%;
+    height: auto;
+    background: 
+    linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.5)),
+     url(../photos/imgs/bg_img4.jpg) no-repeat center !important;
+    background-size: cover!important;
+    }
+    .client-img {
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        border: 4px solid #fff;
+        margin: 0px auto 20px;
+        border-radius: 100%;
+    }
+    .carousel-content {
+        padding: 50px 0px;
+    }
+    .carousel-content h3 span {
+        font-size: 17px;
+        font-weight: normal;
+        color: #e8e8e8;
+        text-transform: uppercase;
+    }
+    .client-img img {
+        width: 100%;
+    }
+    #testimonial {
+        text-align: center;
+        padding: 40px 0px;
+        color: #fff;
+    }
+    #testimonial .carousel-control-prev,
+    #testimonial .carousel-control-next {
+        font-size: 36px;
+    }
+    #testimonial h2 {
+        font-size: 40px;
+        font-style: italic;
+        border-bottom: 1px solid #7fbdff;
+        padding-bottom: 20px;
+        display: inline-block;
+    }
+    #testimonial .carousel-indicators li {
+        width: 15px;
+        height: 15px;
+        border-radius: 0%;
+        background-color: transparent;
+        border: 3px solid #eb102d;
+    }    
+
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+
+
+
+
+
+
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+@media screen and (max-width: 1357px) {     
+    
+   
+    .teste-white-buuble-top{
+        top: 50px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 60px!important;
+
+    }
+
+}
+
+@media screen and (max-width: 1199px) {     
+    
+    .about-bursh-img{
+        display: none;
+    }
+    .teste-white-buuble-top{
+        top: 50px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 50px!important;
+    }
+
+}
+
+
+@media screen and (max-width: 991px) {
+  
+    .welcomeTexte h1{
+        font-size: 40px;
+        transition: 0.4s;
+
+    }
+    .welcomeTexte h2{
+        font-size: 25px;
+        transition: 0.4s;
+
+    }
+    .about-img-circle{
+        display: none;
+    }
+    .about-page{
+        margin-top: 30px!important;
+    }
+    .teste-img{
+       
+        margin-left: 40%!important;
+    }
+    .fa-long-arrow-alt-left,
+    .fa-long-arrow-alt-right{
+        display: none;
+    }
+    .team-img1{
+        order: 1;
+    }
+    .team-img2{
+        order: 3;
+    }
+    .team-img3{
+        order: 5;
+    }
+    .team-img4{
+        order: 7;
+    }
+    .team-data1{
+        order: 2;
+    }
+    .team-data2{
+        order: 4;
+    }
+    .team-data3{
+        order: 6;
+    }
+    .team-data4{
+        order: 8;
+    }
+    .teste-white-buuble-top{
+        top: 40px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 40px!important;
+    }
+}
+
+@media screen and (max-width: 767px) { 
+    .welcomeTexte {
+        margin-top: 200px!important;
+        transition: 1s;
+    }
+    .welcomeTexte h1{
+        font-size: 30px;
+    }
+    .welcomeTexte h2{
+        font-size: 20px;
+    }
+    .team-img{
+        width: 100%;
+        height: 350px;
+        background: url(../photos/team/luay-res.png) no-repeat center ;
+        background-size: cover;
+    }
+    .teste-white-buuble-top{
+        top: 35px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 35px!important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .teste-white-buuble-top{
+        top: 22px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 22px!important;
+    } 
+}
+
+@media screen and (max-width: 350px) {
+    .teste-white-buuble-top{
+        top: 15px!important;
+    }
+    .teste-white-buuble-bootom{
+        bottom: 15px!important;
+    }
+}
+
+
+
+
+
+
+   
+   
