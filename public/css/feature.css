@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none!important;
+    text-transform: capitalize!important;  
+    outline: none!important;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font-family: 'Nunito Sans', sans-serif;
+
+
+}
+body{
+  background-color: #EBEDF3!important;  
+}
+p{
+    font-weight: 500;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+.ordaring-page-header {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.5)),
+    url(../photos/new/home-slide-3-1920x800.jpg) no-repeat center ;
+    background-size: cover;
+}
+.navbar{ 
+    background: transparent ;
+    z-index: 1111;
+}
+nav.sticky {
+    background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9))!important ;
+    transition: 0.5s!important;
+    z-index: 1111111111111111111111111111;
+    padding: 0px 15px!important;
+    transition:  all 0.8s ease;
+
+
+}
+nav.sticky .navbar-brand img{
+    transition:  all 0.8s ease;
+    width: 50px;height: 50px;
+}
+.welcomeTexte {
+    margin-top: 150px;
+ }
+ .resturant-logo img {
+     border-radius: 7px;
+
+ }
+.order{
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* background-color: tomato; */
+}
+/* .menu-inner {
+    background-color: white!important;
+} */
+.menu-inner .nav-tabs .nav-item .nav-link{
+    color: #454751!important;
+}
+.menu-inner .nav-tabs .nav-item {
+    color: #EBEDF3!important;
+    border: none!important;
+}
+.tab-content{
+    background-color:white ;
+}
+.menu-item{
+    margin-bottom:30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000 ;
+}
+
+.order-btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin-top: 25px;
+    background-color: transparent;
+}
+
+.tab-a {
+    color: #f30928!important;
+}
+
+
+.a-arrow-up , 
+.arrow-top-link{
+    color: #f30928!important;
+}
+
+.wrapper{
+    width:1500px;
+    margin:100px auto;
+  }
+ 
+  
+  .single-menu{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #a9a9a9;
+  }
+  
+  .single-menu img{
+   width: 80px;
+   height: 80px;
+   
+  }
+  .single-menu h4{
+    text-transform:capitalize;
+    font-size:18px;
+    font-weight: 700;
+    border-bottom:1px dashed #dfc8a7;
+    margin-bottom:5px;
+    padding-bottom:5px;
+    color: #000;
+  }
+  .single-menu h4 span{
+    float:right;
+    color:#c49b63;
+    /* font-style:italic; */
+    font-size: 15px;
+  
+  }
+  
+  .single-menu span{
+      font-size: 14px;
+      font-weight: 500;
+      color: #a9a9a9;
+  
+  }
+
+  input ,
+  select,
+  textarea {
+    outline: none;
+    background-color:#FBFCFD ;
+    border: 1.5px solid #EAECF2 !important;
+    border-radius: 5px;
+    color:#757575!important;
+
+}
+
+
+input::placeholder ,
+select::placeholder,
+textarea::placeholder {
+font-size: 14px;
+} 
+
+.fa-envelope{
+    color: #999999;
+}
+
+.open-hours li span {
+    width: 100%; 
+}
+.days{
+    color: #484848;
+
+}    
+.time{
+    color: #999BA3;
+}
+
+.reset-title{
+    font-size: 17px;
+    font-weight: 900;
+}
+.reset p,
+.reset span{
+    font-size: 13px!important;
+    color: #484848;
+}
+.total-price{
+    background-color:#edf0f3 ;
+    border-radius: 10px;
+}
+.fa-credit-card,.fa-coins{
+    color:#999BA3;
+}
+.payment-text p{
+
+    font-size: 12px;
+    color: #999BA3;
+
+}
+/* .input-group-text{
+    border-radius: 0px; 
+    border-right: none;
+    background-color:#FBFCFD!important;
+    border-color: #EAECF2!important;
+  } */
+
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+@media screen and (max-width: 1357px) {     
+    
+
+}
+
+@media screen and (max-width: 1199px) {     
+    
+
+}
+
+
+@media screen and (max-width: 991px) {
+  
+
+}
+
+@media screen and (max-width: 767px) { 
+   .space-span{
+       width: 50%!important;
+   }
+   
+}
+
+@media screen and (max-width: 575px) {
+    
+}
+
+@media screen and (max-width: 380px) {
+    .empty-space{
+       display: none;
+    }
+    .text-holder{
+        width: 100%!important;
+    }
+}
