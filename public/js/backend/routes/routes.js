@@ -10,7 +10,7 @@ const session=require('express-session')
 app.use(express.urlencoded({ extended: false }))
 
 app.use(session({
-  secret: "fuck hti, all my niggas fuck hti",
+  secret: "Fuck HTI, all my niggas Fuck HTI",
   resave: false,
   saveUninitialized: false ,
   //cookie: { maxAge: "TO BE DECIDED" }

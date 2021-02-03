@@ -25,7 +25,7 @@ app.use(routes)
 
 // server running
 var listener = app.listen(0, function(){
-    console.log('up and running on http://localhost:'+ listener.address().port);
+    console.log('Up and running on http://localhost:'+ listener.address().port);
 });
 
 //end of server running

@@ -100,7 +100,7 @@ const salt=bcrypt.genSalt()
 next()
 })
 
-//end of user schema
+//end of restaurant schema
 
-const restModel=mongoose.model("restModel",userSchema)
+const restModel=mongoose.model("restModel",restSchema)
 module.exports=restModel
