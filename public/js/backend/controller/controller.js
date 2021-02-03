@@ -6,6 +6,7 @@ const bcrypt=require('bcrypt');
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const User=require('./../model/userModel')
 // end of modules used
 
 
