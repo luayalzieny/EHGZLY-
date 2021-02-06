@@ -942,6 +942,11 @@
 <script src="../public/js/custom.js"></script>
 <script>
 
+
+$(document).ready(function() {
+  $('select').niceSelect();
+});
+
 $(window).on('load', function () {
         $('#preloader-active').delay(1050).fadeOut('slow');
         $('body').delay(850).css({
