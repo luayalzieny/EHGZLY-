@@ -80,7 +80,11 @@
                 <div class="col-md-12 col-sm-12 text-center welcomeText">
                     <h1>WELCOME TO TAKE AWAY</h1>
                     <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
-                   
+                    
+                    <%if(user){%>
+                    <h2>Welcome,<%=user.Fname%></h2>
+                    <%}%>
+                    
                     <!-- <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, expedita.</p> -->
                     <!-- <a class="btn btn-success pl-3 pr-3 mr-3 rounded shadow" href=""> LOG IN </a>
                     <a class="btn btn-success pl-3 pr-3  rounded shadow" href="">  BOOK A DOCTOR</a> -->

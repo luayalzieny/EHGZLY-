@@ -12,17 +12,17 @@ const LocalStrategy = require("passport-local").Strategy;
 //middlewares
 
 app.use(express.urlencoded({ extended: false }));
-app.use(passport.initialize())
-app.use(flash())
 
 app.use(session({
-  secret: "Fuck HTI, all my niggas Fuck HTI",
+  secret: "FUCK HTI ,All my friends FUCK HTI",
   resave: false,
   saveUninitialized: false ,
-  //cookie: { maxAge: "TO BE DECIDED" }
+  cookie: { maxAge: 6000000 }
 
-}));
-
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
 //end of middlewares
 
 //routes
@@ -42,8 +42,7 @@ app.post('/loginpage',function(req,res,next){
     successRedirect:"/",
     failureRedirect:"/loginpage",
     failureFlash:true
-  })(req,res,next)
-});
+  })(req,res,next)});
 
 app.post('/logout',(req,res)=>{
   req.logOut();

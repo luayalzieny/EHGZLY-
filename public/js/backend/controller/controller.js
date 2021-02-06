@@ -7,7 +7,12 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User=require('./../model/userModel')
+const bodyParser=require('body-parser')
 // end of modules used
+
+app.use(bodyParser.urlencoded({extended:"true"}))
+app.use(bodyParser.json());
+
 
 
 //user passport authorization
@@ -37,7 +42,7 @@ passport.use(new LocalStrategy(customFields,(email,password,done)=>{
 //end of user passport authorization
 
 
-//passport serialization/deserialization
+//passport serialization && deserialization
 passport.serializeUser((user,done)=>done(null,user.id));
 
 passport.deserializeUser((_id,done)=>{
@@ -130,9 +135,6 @@ exports.get_login_page=(req,res)=>{
     res.render("loginpage" )
 };
 
-exports.post_login_page=(req,res)=>{
-
-};
 
 exports.get_sign_up_page=(req,res)=>{
     res.render("signuppage",{err:""})
@@ -147,11 +149,9 @@ const newUser=new User({
     password:req.body.password
 })
 
-const number=req.body.number
-
 newUser.save((err)=>{
     if(err){
-  const error=handleErrors(err,number)
+  const error=handleErrors(err,req.body.number)
   console.log(error)
     res.render("signuppage")
 }else{

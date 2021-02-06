@@ -7,7 +7,7 @@ const routes=require('./public/js/backend/routes/routes')
 
 
 //middle wares used
-app.use(bodyParser.urlencoded({extended:"true"}))
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
 app.use(express.static(__dirname))
 
