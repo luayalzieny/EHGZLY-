@@ -106,7 +106,6 @@ function checkNotAuthentication(req,res){
 
 // routes functions
 exports.get_home=(req,res)=>{
-    console.log(req.user)
     res.render("index",{user:req.user})
 };
 
