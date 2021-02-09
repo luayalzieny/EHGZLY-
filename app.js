@@ -3,6 +3,8 @@ const express= require('express')
 const app=express()
 const bodyParser=require('body-parser')
 const routes=require('./public/js/backend/routes/routes')
+require("./public/js/backend/config/db")
+let restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 // end of modules used
 
 
@@ -20,7 +22,7 @@ app.use(express.urlencoded({ extended: false }))
 // routes callback
 
 app.use(routes)
-
+app.use(restaurantsRoute)
 // End of routes callback
 
 // server running
