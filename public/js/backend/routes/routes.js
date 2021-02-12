@@ -5,7 +5,6 @@ const controller=require('./../controller/controller');
 const session=require('express-session');
 const passport=require('passport');
 const flash = require('express-flash');
-const LocalStrategy = require("passport-local").Strategy;
 
 // end of modules used
 
