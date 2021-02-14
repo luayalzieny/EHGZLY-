@@ -1,5 +1,5 @@
 const { model } = require("mongoose");
-const restaurants = require("../models/restaurantsModell");
+const restaurants = require("../model/restaurantsModel");
 
 //pushing restaurant's Locations post
 let restaurantName=""

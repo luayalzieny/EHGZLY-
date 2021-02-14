@@ -2,9 +2,10 @@
 const express= require('express')
 const app=express()
 const bodyParser=require('body-parser')
-const routes=require('./public/js/backend/routes/routes')
+const userRoute=require('./public/js/backend/routes/userRoutes')
 require("./public/js/backend/config/db")
-let restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
+const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
+const cartRoute=require('./public/js/backend/routes/cartRoute')
 // end of modules used
 
 
@@ -21,8 +22,9 @@ app.use(express.urlencoded({ extended: false }))
 
 // routes callback
 
-app.use(routes)
+app.use(userRoute)
 app.use(restaurantsRoute)
+app.use(cartRoute)
 // End of routes callback
 
 // server running

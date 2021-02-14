@@ -1,4 +1,3 @@
-const restaurant = require("../models/restaurantsModell");
 const restaurantController=require("../controller/restaurantController")
 
 
