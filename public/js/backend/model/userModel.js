@@ -14,6 +14,8 @@ mongoose.connect("mongodb+srv://ML:manga@cluster0.9qcx5.mongodb.net/ML?retryWrit
 //user schema
 const userSchema=new mongoose.Schema({
     _Id:{type:String
+        ,maxlength:[10]
+        ,index:{unique:[true]}
         // مش في دماغي حاجه تتضاف لده
     },
     Fname:{type:String,

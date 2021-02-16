@@ -1,0 +1,60 @@
+const mongoose=require('mongoose');
+const validator = require('validator');
+
+//connection prop up
+mongoose.connect("mongodb+srv://ML:manga@cluster0.9qcx5.mongodb.net/ML?retryWrites=true&w=majority",{
+    useNewUrlParser:true ,
+    useUnifiedTopology:true,
+    useFindAndModify:true,
+    useCreateIndex:true
+})
+//end of connection prop up
+
+//cart schema
+const cartSchema= mongoose.Schema({
+    _id:{
+        type:String,
+        required:[true],
+        maxlength:[10]
+    },
+    order_number:{
+        type:String,
+        required:[true],
+        maxlength:[10]
+    },
+    customer_id:{type:String,
+        required:[true],
+        maxlength:[10]
+    },
+
+    dishes:[
+    {_id:false,
+            restuarant_name:{type:String,_id:false,
+                
+            },// name of dishes in content
+            content:[{_id:false,
+              meal:{
+                type:String,_id:false,
+                
+            }}]
+    }
+    ],
+    notes:{
+        type:String
+    },
+
+    finishing_time:{
+        type:String
+    },
+    delivery_time:{
+        type:String
+    },
+    total_price:{
+        type:String
+    }
+}
+
+)
+//end of cart schema 
+
+module.exports=new mongoose.model("cart_model",cartSchema)
