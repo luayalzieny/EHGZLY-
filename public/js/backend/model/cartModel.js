@@ -27,18 +27,19 @@ const cartSchema= mongoose.Schema({
         maxlength:[10]
     },
 
-    dishes:[
+    restaurant_name:{
+        type:String,
+        _id:false,
+                    },
+    dishes:
     {_id:false,
-            restuarant_name:{type:String,_id:false,
-                
-            },// name of dishes in content
+            // name of dishes in content
             content:[{_id:false,
               meal:{
                 type:String,_id:false,
-                
-            }}]
-    }
-    ],
+                    }
+                    }]
+    },
     notes:{
         type:String
     },
@@ -50,7 +51,7 @@ const cartSchema= mongoose.Schema({
         type:String
     },
     total_price:{
-        type:String
+        type:Number
     }
 }
 
