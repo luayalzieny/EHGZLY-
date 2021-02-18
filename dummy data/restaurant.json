@@ -1,131 +1,121 @@
 {
-    "result":[
-        {
-            "id":"1",
-            "name":"فروج الزين",
-            "email":"faroga@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    "restaurant_1":  {
+        "id":"1",
+        "name":"فروج الزين",
+        "email":"faroga@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
 
-        },
-        {
-            "id":"2",
-            "name":"الدمشقي",
-            "email":"dmdm@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"3",
-            "name":"Gusto Creep",
-            "email":"Gusto@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"4",
-            "name":"Ibn elbalad Pizza",
-            "email":"pizzaIbnElbalad@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"5",
-            "name":"Burger Box",
-            "email":"Boxo@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"6",
-            "name":"الشرقاوي",
-            "email":"rlsharqwy@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"7",
-            "name":"محروس",
-            "email":"mahroos@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"8",
-            "name":"شيخ العرب",
-            "email":"shekgAlAarab@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        },
-        {
-            "id":"9",
-            "name":"ملك الكبده",
-            "email":"liverking@gmail.com",
-            "password":"test1234",
-            "location":[
-                {
-                    "coordinates":"10th of ramadan city", "phone":"01102132142"
-                }
-            ],
-            "catigory":"category.json",
-            "openTime":"9.00AM - 9.00PM",
-            "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
-        }
-    ]
+    },"restaurant_2": {
+        "id":"2",
+        "name":"الدمشقي",
+        "email":"dmdm@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_3":{
+        "id":"3",
+        "name":"Gusto Creep",
+        "email":"Gusto@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_4":  {
+        "id":"4",
+        "name":"Ibn elbalad Pizza",
+        "email":"pizzaIbnElbalad@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_5": {
+        "id":"5",
+        "name":"Burger Box",
+        "email":"Boxo@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_6":{
+        "id":"6",
+        "name":"الشرقاوي",
+        "email":"rlsharqwy@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_7":{
+        "id":"7",
+        "name":"محروس",
+        "email":"mahroos@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_8":{
+        "id":"8",
+        "name":"شيخ العرب",
+        "email":"shekgAlAarab@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    },"restaurant_9": {
+        "id":"9",
+        "name":"ملك الكبده",
+        "email":"liverking@gmail.com",
+        "password":"test1234",
+        "location":[
+            {
+                "coordinates":"10th of ramadan city", "phone":"01102132142"
+            }
+        ],
+        "catigory":"category.json",
+        "openTime":"9.00AM - 9.00PM",
+        "img":"https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5635/01.jpg"
+    }
 }

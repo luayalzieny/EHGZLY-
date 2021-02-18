@@ -54,4 +54,7 @@ app.get('/about',controller.get_about)
 
 app.get('/contact_us',controller.get_contact)
 
+
+
+
 module.exports=app

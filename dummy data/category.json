@@ -1,114 +1,109 @@
 {
-    "result":[
-        {
-            "id":"1",
-            "category":"pizza",
-            "dishes":[
-                {
-                    "_id":"1",
-                    "name":"cheese pizza",
-                    "price":"35.00",
-                    "size":"meduim",
-                    "content":"cheese,oil,water"
-                },
-                {
-                    "_id":"2",
-                    "name":"tuna pizza",
-                    "price":"35.00",
-                    "size":"meduim",
-                    "content":"tuna,oil,water"
-                },
-                {
-                    "_id":"3",
-                    "name":"chicken pizza",
-                    "price":"35.00",
-                    "size":"meduim",
-                    "content":"chicken,bombs,hell,stufedcrust"
-                }
-            ]
-        },
-        {
+    "restaurant_1": {
+        "id":"1",
+        "category":"pizza",
+        "dishes":[
+            {
+                "_id":"1",
+                "name":"cheese pizza",
+                "price":35.00,
+                "size":"meduim",
+                "content":"cheese,oil,water"
+            },
+            {
+                "_id":"2",
+                "name":"tuna pizza",
+                "price":35.00,
+                "size":"meduim",
+                "content":"tuna,oil,water"
+            },
+            {
+                "_id":"3",
+                "name":"chicken pizza",
+                "price":35.00,
+                "size":"meduim",
+                "content":"chicken,bombs,hell,stufedcrust"
+            }
+        ]
+    },"restaurant_2":  {
             
-            "id":"2",
-            "category":"salad",
-            "dishes":[
-                {
-                    "_id":"1",
-                    "name":"cool slow",
-                    "price":"6.00",
-                    "size":null,
-                    "content":null
-                },
-                {
-                    "_id":"2",
-                    "name":"green salad",
-                    "price":"10.00",
-                    "size":"meduim",
-                    "content":"plants"
-                },
-                {
-                    "_id":"3",
-                    "name":"chicken salad",
-                    "price":"35.00",
-                    "size":"meduim",
-                    "content":"chicken,bombs,hell,stufedcrust"
-                }
-            ]
-        },
-        {
-            "id":"3",
-            "category":"drinks",
-            "dishes":[
-                {
-                    "_id":"1",
-                    "name":"pepsi",
-                    "price":"6.00",
-                    "size":null,
-                    "content":null
-                },
-                {
-                    "_id":"",
-                    "name":"tea",
-                    "price":"4.00",
-                    "size":null,
-                    "content":null
-                },
-                {
-                    "_id":"1",
-                    "name":"cofe",
-                    "price":"10.00",
-                    "size":null,
-                    "content":null
-                }
-            ]
-        },
-        {
+        "id":"2",
+        "category":"salad",
+        "dishes":[
+            {
+                "_id":"1",
+                "name":"cool slow",
+                "price":6.00,
+                "size":null,
+                "content":null
+            },
+            {
+                "_id":"2",
+                "name":"green salad",
+                "price":10.00,
+                "size":"meduim",
+                "content":"plants"
+            },
+            {
+                "_id":"3",
+                "name":"chicken salad",
+                "price":35.00,
+                "size":"meduim",
+                "content":"chicken,bombs,hell,stufedcrust"
+            }
+        ]
+    },"restaurant_3": {
+        "id":"3",
+        "category":"drinks",
+        "dishes":[
+            {
+                "_id":"1",
+                "name":"pepsi",
+                "price":6.00,
+                "size":null,
+                "content":null
+            },
+            {
+                "_id":"",
+                "name":"tea",
+                "price":4.00,
+                "size":null,
+                "content":null
+            },
+            {
+                "_id":"1",
+                "name":"cofe",
+                "price":10.00,
+                "size":null,
+                "content":null
+            }
+        ]
+    },"restaurant_4": {
             
-            "id":"4",
-            "category":"creep",
-            "dishes":[
-                {
-                    "_id":"1",
-                    "name":"sweet creep",
-                    "price":"25.00",
-                    "size":"meduim",
-                    "content":"nutella,banana,drugs"
-                },
-                {
-                    "_id":"2",
-                    "name":"meat creep",
-                    "price":"35.00",
-                    "size":"large",
-                    "content":"dead meat,blood"
-                },
-                {
-                    "_id":"3",
-                    "name":"potato creep",
-                    "price":"10.00",
-                    "size":"small",
-                    "content":"potatos,ketchep,pickles"
-                }
-            ]
-        }
-    ]
+        "id":"4",
+        "category":"creep",
+        "dishes":[
+            {
+                "_id":"1",
+                "name":"sweet creep",
+                "price":25.00,
+                "size":"meduim",
+                "content":"nutella,banana,drugs"
+            },
+            {
+                "_id":"2",
+                "name":"meat creep",
+                "price":35.00,
+                "size":"large",
+                "content":"dead meat,blood"
+            },
+            {
+                "_id":"3",
+                "name":"potato creep",
+                "price":10.00,
+                "size":"small",
+                "content":"potatos,ketchep,pickles"
+            }
+        ]
+    }
 }
