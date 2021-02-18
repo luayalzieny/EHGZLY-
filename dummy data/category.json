@@ -119,12 +119,10 @@
                 
                 "content":"potatos,ketchep,pickles"
             }
-        }
-        ,
-        "notes":"no pickles",
-    
+        },
+        "notes":"",
+        
         "finishing_time":40,
         "delivery_time":30
-        
     }
 }
