@@ -2,108 +2,106 @@
     "restaurant_1": {
         "id":"1",
         "category":"pizza",
-        "dishes":[
-            {
+        "dishes":{
+         "meal_1":   {
                 "_id":"1",
                 "name":"cheese pizza",
-                "price":35.00,
-                "size":"meduim",
+                
                 "content":"cheese,oil,water"
             },
-            {
+           "meal_2": {
                 "_id":"2",
                 "name":"tuna pizza",
                 "price":35.00,
-                "size":"meduim",
+                
                 "content":"tuna,oil,water"
             },
-            {
+            "meal_3":{
                 "_id":"3",
                 "name":"chicken pizza",
                 "price":35.00,
-                "size":"meduim",
+                
                 "content":"chicken,bombs,hell,stufedcrust"
             }
-        ]
+        }
     },"restaurant_2":  {
             
         "id":"2",
         "category":"salad",
-        "dishes":[
-            {
+        "dishes":{
+            "meal_1":{
                 "_id":"1",
                 "name":"cool slow",
                 "price":6.00,
-                "size":null,
+                
                 "content":null
             },
-            {
+            "meal_2":{
                 "_id":"2",
                 "name":"green salad",
                 "price":10.00,
-                "size":"meduim",
+                
                 "content":"plants"
             },
-            {
+            "meal_3":{
                 "_id":"3",
                 "name":"chicken salad",
                 "price":35.00,
-                "size":"meduim",
+                
                 "content":"chicken,bombs,hell,stufedcrust"
             }
-        ]
+        }
     },"restaurant_3": {
         "id":"3",
         "category":"drinks",
-        "dishes":[
-            {
+        "dishes":{
+            "meal_1":{
                 "_id":"1",
                 "name":"pepsi",
                 "price":6.00,
-                "size":null,
+                
                 "content":null
             },
-            {
+            "meal_2":{
                 "_id":"",
                 "name":"tea",
                 "price":4.00,
-                "size":null,
+                
                 "content":null
             },
-            {
+            "meal3":{
                 "_id":"1",
                 "name":"cofe",
                 "price":10.00,
-                "size":null,
                 "content":null
             }
-        ]
+        }
     },"restaurant_4": {
             
         "id":"4",
         "category":"creep",
-        "dishes":[
-            {
+        "dishes":{
+            "meal_1":{
                 "_id":"1",
                 "name":"sweet creep",
                 "price":25.00,
-                "size":"meduim",
+                
                 "content":"nutella,banana,drugs"
             },
-            {
+            "meal_2":{
                 "_id":"2",
                 "name":"meat creep",
                 "price":35.00,
-                "size":"large",
+                
                 "content":"dead meat,blood"
             },
-            {
+           "meal_3": {
                 "_id":"3",
                 "name":"potato creep",
                 "price":10.00,
-                "size":"small",
+                
                 "content":"potatos,ketchep,pickles"
             }
-        ]
+        }
     }
 }
