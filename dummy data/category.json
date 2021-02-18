@@ -23,7 +23,12 @@
                 
                 "content":"chicken,bombs,hell,stufedcrust"
             }
-        }
+        },
+        "notes":"no pickles",
+    
+        "finishing_time":40,
+        "delivery_time":30
+        
     },"restaurant_2":  {
             
         "id":"2",
@@ -50,6 +55,12 @@
                 
                 "content":"chicken,bombs,hell,stufedcrust"
             }
+            ,
+            "notes":"no pickles",
+        
+            "finishing_time":40,
+            "delivery_time":30
+            
         }
     },"restaurant_3": {
         "id":"3",
@@ -75,6 +86,12 @@
                 "price":10.00,
                 "content":null
             }
+            ,
+            "notes":"no pickles",
+        
+            "finishing_time":40,
+            "delivery_time":30
+                
         }
     },"restaurant_4": {
             
@@ -103,5 +120,11 @@
                 "content":"potatos,ketchep,pickles"
             }
         }
+        ,
+        "notes":"no pickles",
+    
+        "finishing_time":40,
+        "delivery_time":30
+        
     }
 }
