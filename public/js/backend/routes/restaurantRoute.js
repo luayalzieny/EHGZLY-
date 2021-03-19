@@ -1,6 +1,5 @@
 const restaurantController=require("../controller/restaurantController")
-
-
+const dataJson=require("./../../../../dummy data/restaurant.json")
 const express =require('express')
 const app=express();
 
