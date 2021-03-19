@@ -2,6 +2,8 @@ const express=require('express');
 const app=express();
 const bodyParser=require('body-parser')
 const cart=require('./../model/cartModel')
+const restaurant=require('./../model/restaurantsModel')
+const dish=require('./../../../../dummy data/category.json')
 const Math=require('mathjs')
 app.use(bodyParser.urlencoded({extended:"true"}))
 app.use(bodyParser.json());
@@ -19,7 +21,7 @@ const order=new cart({
     
     customer_id:Math.round(Math.random()*1000+1),
     order_number:Math.round(Math.random()*1000+1),
-    restaurant_name:"mac" ,
+    restaurant_name:"req.body.restName" ,
     total_price:0
 })
 order.save((err)=>{
@@ -32,18 +34,27 @@ order.save((err)=>{
 // the dishes,deliverytime ,finishing time and total price are left empty
 // until the customer chooses a meal to be added to dishes array in cart
 exports.post_order=(req,res)=>{
+    let order={
+    
+            meal: "reqeal"    
+}
+let meal=req.body.meal
+    
     cart.updateOne({_id:1},
     {
-    // dishes:{$push:order},
-    delivery_time:30+" min",
-    finishing_time:30+" min",
-    $inc:{total_price:50}
+     dishes:{content:{$push:{"meal":meal}}},
+    delivery_time:req.body.delivery_time+" min",
+    finishing_time:req.body.finishing_time+" min",
+    $inc:{total_price:req.body.price}
 },function(err){
         if(err){
         console.log(err)
         res.json(err)
 }else{
-    res.send("data added")
+    cart.find({_id:1},function(err,rest){
+        res.json(rest)
+    })
+
 }
 })
 

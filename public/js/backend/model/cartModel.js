@@ -36,7 +36,8 @@ const cartSchema= mongoose.Schema({
             // name of dishes in content
             content:[{_id:false,
               meal:{
-                type:String,_id:false,
+                type:String,
+                _id:false
                     }
                     }]
     },
@@ -58,4 +59,4 @@ const cartSchema= mongoose.Schema({
 )
 //end of cart schema 
 
-module.exports=new mongoose.model("cart_model",cartSchema)
+module.exports=new mongoose.model("cart",cartSchema)
