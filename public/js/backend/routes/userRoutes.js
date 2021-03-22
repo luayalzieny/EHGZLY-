@@ -10,7 +10,8 @@ const flash = require('express-flash');
 
 //middlewares
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.use(session({
   secret: "FUCK HTI ,All my friends FUCK HTI",
@@ -52,7 +53,7 @@ app.get('/ordering',controller.get_ordering)
 
 app.get('/about',controller.get_about)
 
-app.get('/contact_us',controller.get_contact)
+app.get('/contact',controller.get_contact)
 
 
 

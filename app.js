@@ -10,8 +10,11 @@ const cartRoute=require('./public/js/backend/routes/cartRoute')
 
 
 //middle wares used
-app.use(bodyParser.urlencoded({extended:true}))
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended:true}))
+// app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
 app.use(express.static(__dirname))
 
 

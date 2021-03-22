@@ -19,13 +19,11 @@ const userSchema=new mongoose.Schema({
         // مش في دماغي حاجه تتضاف لده
     },
     Fname:{type:String,
-        index: { unique: [true,"Username already exists"]},
         required:[true,"Please enter first name"],
         max:[10,"First name should be less than 10 characters"]
     },
 
     Lname:{type:String,
-            index: { unique: [true,"Name already exists"]},
             required:[true,"Please enter your last name"],
             max:[10,"Username should be less than 10 characters"]
         },

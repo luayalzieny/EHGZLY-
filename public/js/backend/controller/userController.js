@@ -1,7 +1,7 @@
 //modules used
 const express=require('express');
 const app=express();
-const bodyParser=require('body-parser')
+const bodyParser=require('body-parser');bodyParser
 const bcrypt=require('bcrypt');
 const session = require("express-session");
 const passport = require("passport");
@@ -9,9 +9,10 @@ const LocalStrategy = require("passport-local").Strategy;
 const User=require('../model/userModel')
 // end of modules used
 
-app.use(bodyParser.urlencoded({extended:"true"}))
-app.use(bodyParser.json());
-
+// app.use(bodyParser.urlencoded({extended:true}))
+// app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 
 //user passport authorization
@@ -61,12 +62,14 @@ passport.deserializeUser((_id,done)=>{
 
 //handle errors
 const handleErrors=(err,numb)=>{
-    const errors={username:"",email:"",password:"",number:""}
+    const errors={Fname:"",Lname:"",email:"",password:"",number:""}
 
     //duplication error
-    if(err.code===11000){
-        errors.username=JSON.stringify(Object.values(err.keyValue)[0]).slice(1,-1)+" already exists"
+    if(err.code===11000 && err.keyValue.number||err.keyValue.email){
+        errors.number=JSON.stringify(Object.values(err.keyValue)[0]).slice(1,-1)+" already exists"
+        
     }
+    
     // end of duplication error
     
     //number validation
@@ -149,23 +152,22 @@ exports.post_ordering=(req,res)=>{
 
 
 exports.get_sign_up_page=(req,res)=>{
-    res.render("signuppage",{err:""})
+    res.render("signuppage",{error:""})
 };
 
 exports.post_sign_up_page=(req,res)=>{
 const newUser=new User({
-    Fname:req.body.Fname,
-    Lname:req.body.Lname,
+    Fname:req.body.fname,
+    Lname:req.body.lname,
     email:req.body.email,
     number:req.body.number,
     password:req.body.password
 })
-
 newUser.save((err)=>{
     if(err){
   const error=handleErrors(err,req.body.number)
   console.log(error)
-    res.render("signuppage")
+    res.render("signuppage",{error:error})
 }else{
     res.redirect('/')
 }
