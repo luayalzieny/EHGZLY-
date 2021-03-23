@@ -1,9 +1,9 @@
 //modules used
 const express=require('express');
 const app=express();
-const bodyParser=require('body-parser');bodyParser
+//const bodyParser=require('body-parser');bodyParser
 const bcrypt=require('bcrypt');
-const session = require("express-session");
+//const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User=require('../model/userModel')
@@ -63,13 +63,18 @@ passport.deserializeUser((_id,done)=>{
 //handle errors
 const handleErrors=(err,numb)=>{
     const errors={Fname:"",Lname:"",email:"",password:"",number:""}
-
+    
     //duplication error
-    if(err.code===11000 && err.keyValue.number||err.keyValue.email){
-        errors.number=JSON.stringify(Object.values(err.keyValue)[0]).slice(1,-1)+" already exists"
+    if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="email" ){
+        
+      errors.email=Object.entries(err.keyValue)[0][0]+" already exists"
         
     }
     
+    if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="number")
+    errors.number=Object.entries(err.keyValue)[0][0]+" already exists"
+
+console.log(err)
     // end of duplication error
     
     //number validation
@@ -162,11 +167,12 @@ const newUser=new User({
     email:req.body.email,
     number:req.body.number,
     password:req.body.password
+    
 })
 newUser.save((err)=>{
     if(err){
   const error=handleErrors(err,req.body.number)
-  console.log(error)
+  //console.log(error)
     res.render("signuppage",{error:error})
 }else{
     res.redirect('/')

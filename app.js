@@ -1,7 +1,7 @@
 // Modules used
 const express= require('express')
 const app=express()
-const bodyParser=require('body-parser')
+//const bodyParser=require('body-parser')
 const userRoute=require('./public/js/backend/routes/userRoutes')
 require("./public/js/backend/config/db")
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
@@ -19,7 +19,6 @@ app.use(express.static(__dirname))
 
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
 // end of middleware
 
 
