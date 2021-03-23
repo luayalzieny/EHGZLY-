@@ -1,39 +1,14 @@
 const { model } = require("mongoose");
 const restaurants = require("../model/restaurantsModel");
+mongoose=require("mongoose")
 
-//pushing restaurant's Locations post
-let restaurantName=""
-module.exports.restaurantLocation_post=(req,res)=>{
-    if(req.body.restaurantName)
-        restaurantName=req.body.restaurantName
-
-let location={
-    phone:req.body.phone,
-    Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
-    area:req.body.area
-}
-    restaurants.findOneAndUpdate({restaurantName:restaurantName},
-        {$push:{
-            location:location
-            
-    }},(err,rest)=>{
-        console.log(rest)
-        
-    })
-    restaurants.findOne({restaurantName:restaurantName},(err,data)=>{
-        res.send(data)
-    })
-}
-
-
-//end here
 //handel moongose erorrs function
-let error={ restaurantName:"0",ownerPhone:"0",email:"0",password:"0",'opentime.open':"0",'opentime.close':"0"}
+let error={ restaurantName:"0",mangerPhone:"0",email:"0",password:"0",username:"0"}
 let handelErrors=(err)=>{
   console.log(err.message, err.code);
   if (err.code === 11000) {
-    errors.email = 'that email is already registered';
-    return errors;
+    error.username = 'that username is already registered';
+    return error;
   }
   if (err.message.includes('restaurant validation failed')) {
     
@@ -49,16 +24,20 @@ let handelErrors=(err)=>{
 } 
 //restaurant_post 
 module.exports.restaurant_post=(req,res)=>{
-console.log(req.body)
-
+    
     const rest=new restaurants({
-        restaurantName:req.body.restaurantName,
+        _id:req.body.id,
+        restaurantName:req.body.name,
+        restaurantPhone:req.body.restaurantPhone,
         email:req.body.email,
         password:req.body.password,
-        owner:req.body.owner,
-        ownerPhone:req.body.ownerPhone,
-        
+        username:req.body.username,
+        manger:req.body.manger,
+        mangerPhone:req.body.mangerPhone,
+        img:req.body.img,
         opentime:{open:req.body.open,close:req.body.close}
+        
+        
     }).save(err=>{
         if(err){
             let errors= handelErrors(err);
@@ -66,20 +45,45 @@ console.log(req.body)
           
         }
         console.log("sdadsa")
+
     })
-     
-    restaurantName=req.body.restaurantName
+   
+    
   res.redirect("/location")
 }
 //end here
+//pushing restaurant's Locations post
 
+module.exports.restaurantLocation_post=(req,res)=>{
+    restaurantID =req.session.passport.user
+let location={
+    phone:req.body.phone,
+    Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
+    area:req.body.area
+}
+    restaurants.findOneAndUpdate({_id:restaurantID},
+        {$push:{
+            location:location
+            
+    }},(err,rest)=>{
+        console.log(rest)
+        
+    })
+    res.redirect("/categories")
+  //  restaurants.findOne({restaurantName:restaurantName},(err,data)=>{
+     //   res.send(data)
+  //  })
+}
+
+
+//end here
 //pushinig categories and meals post
 
 module.exports.categories_post=(req,res)=>{
-    if(req.body.restaurantName)
-        restaurantName=req.body.restaurantName
+    restaurantID =req.session.passport.user
+ 
     //if category exists 
-     restaurants.findOneAndUpdate({restaurantName:restaurantName,'categories.category':req.body.category},
+     restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':req.body.category},
      
      {$push:{'categories.$.meal':{name:req.body.name ,price:req.body.price,discreption:req.body.discreption}
     }}
@@ -89,7 +93,7 @@ module.exports.categories_post=(req,res)=>{
             
          // if categoey dosen't exist
         if(rest==null){
-        restaurants.findOneAndUpdate({restaurantName:restaurantName},
+        restaurants.findOneAndUpdate({_id:restaurantID},
         
             {$push:{categories:{
                 category:req.body.category,
@@ -102,7 +106,7 @@ module.exports.categories_post=(req,res)=>{
     }
         })
 
-        restaurants.findOne({restaurantName:restaurantName},(err,data)=>{
+        restaurants.findOne({_id:restaurantID},(err,data)=>{
             res.send(data)
         })
     
