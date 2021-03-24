@@ -20,7 +20,7 @@ const userSchema=new mongoose.Schema({
     },
     Fname:{type:String,
         required:[true,"Please enter first name"],
-        max:[10,"First name should be less than 10 characters"]
+        max:[10,"First name should be less than 10 characters"],
     },
 
     Lname:{type:String,
