@@ -42,6 +42,7 @@ const restaurantSchema= new Schema({
          img:{type:String},
         categories:[categoriesSchema],
         orders:[{type:Object}]
+        ,review:[{FirstName:{type:String},starValue:{type:Number},discreption:{type:String}}]
 
     })
 
