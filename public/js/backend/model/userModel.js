@@ -8,7 +8,7 @@ mongoose.connect("mongodb+srv://ML:manga@cluster0.9qcx5.mongodb.net/ML?retryWrit
     useNewUrlParser:true ,
     useUnifiedTopology:true,
     useCreateIndex:true,
-    useFindAndModify:true
+    useFindAndModify:false
 })
 
 autoIncrement.initialize(mongoose.connection)
