@@ -12,6 +12,8 @@ app.use(express.json())
 //route functions
 
 exports.get_dashboard=(req,res)=>{
+    console.log(req.user)
+
     if(!req.isAuthenticated()){
         return res.redirect('/')
         }
@@ -25,9 +27,10 @@ console.log(req.body)
 
 
     User.updateOne({_id:req.user._id},{
-        //$set:req.body
-        Fname: req.body.Fname ,
-    Lname:req.body.Lname
+        Fname: req.body.Fname || req.user.Fname ,
+    Lname:req.body.Lname||req.user.Lname,
+    email:req.body.email||req.user.email,
+    number:req.body.number||req.body.number
     },function(err){
         if(err)
         {console.log(err); res.redirect('/')
