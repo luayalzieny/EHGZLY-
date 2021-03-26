@@ -76,7 +76,7 @@
 
                   <li class="dropdown user-dropDown ">
                     <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown">
-                    <img  src="../public/photos/avatar-icon-images-4.jpg  " class="profile-image img-fluid " width="40px" height="40px">  <b> UserName </b> </a>
+                    <img  src="../public/photos/avatar-icon-images-4.jpg  " class="profile-image img-fluid " width="40px" height="40px">  <b> <%=user.Fname%> </b> </a>
                     <ul class="dropdown-menu">
                         <li class="pl-2 "><a  class="text-white" href="#dashbord"><i class="fa fa-cog "></i> dashbord</a></li>
                         <hr class="m-0 p-1" > 
@@ -146,8 +146,8 @@
           <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
             <hr class="p-0 m-0">
-          <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
-              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i>  delete profile</span></a>
+         <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
+              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i> Delete Profile</span></a>
             <!-- ///////////////////////////////////////////////// -->
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -157,8 +157,10 @@
                           <i class="fas fa-frown-open"></i>
                           <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
                           <div class="row justify-content-center align-items-center">
+                            <form method="POST" action="/delete_profile">
                           <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
-                          <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
+                        </form>
+                          <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancel </button>
                           </div>
                         </div>
                         
@@ -167,8 +169,8 @@
                   </div>
             <!-- ////////////////////////////////////////////////// -->
               <hr class="p-0 m-0">
-          <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i>  Sign-out</span></a>
+              <form method="POST" action="logout"> <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
+              <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i></form><button type="submit" class="btn "> Sign-out</button> </span></a></form>
                 
           </div>
   </div>
@@ -424,22 +426,22 @@
            <!-- /////////////////////////////////////////////////////////////// -->
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Account_Setting" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h5>ACCOUNT SETTING</h5>
-            <form>
+            <form action="User_Update_Dashboard" method="POST">
             <div class="row">
               <div class="col-lg-6">
                 
                   <div class="form-group">
-                    <input  type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter First Name" required>
+                    <input  type="text" class="form-control" id="exampleInputEmail1" name="Fname"  placeholder="<%=user.Fname%>" >
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter Last Name" required>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="Lname" placeholder="<%=user.Lname%>" >
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="<%=user.email%>">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputPhone" placeholder="Phone" required>
+                    <input type="text" class="form-control" id="exampleInputPhone" name="number" placeholder="<%=user.number%>">
                   </div>
                   
                 
@@ -462,13 +464,13 @@
 
             <div class="col-lg-12">
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
+                <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="password" >
               </div>
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
+                <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="new password">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
+                <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="confirm password" >
               </div>
             </div>
 
