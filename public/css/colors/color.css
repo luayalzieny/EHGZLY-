@@ -18,6 +18,7 @@ body
 .fa-arrow-right,
 .rating-icon,
 .bracket-text a,
+.pages-header-span a:hover,
 .fa-arrow-alt-circle-right,
 .fa-arrow-alt-circle-left,
 .about-text-about h2,
@@ -25,8 +26,11 @@ body
 .login-header-span a,
 .signup-header-span a,
 .login-header-span a:hover,
-.signup-header-span a:hover
-{color: #eb102d!important;}
+.signup-header-span a:hover,
+.single-menu h4 span,
+.department .nav-link:focus,
+.extra_order_Price
+{color: #f30928!important;}
 
 /* ////////////// */
 
@@ -34,10 +38,10 @@ body
 .serv-bac1,
 .about-btun,
 .resto-butn,
-
 .order-step span,
 .text-title::after,
-footer
+footer,
+.dashbord-bac
 {background-color:#eb102d ;}
 
 /* ///////////// */
@@ -57,7 +61,9 @@ footer
 {color: #E2F8F9!important;
  border: 1px solid #E2F8F9;}
 
-
+ /* .department .nav-link {
+     border: 1px solid #eb102d ;
+ } */
 
 
 

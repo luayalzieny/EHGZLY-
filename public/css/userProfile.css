@@ -107,7 +107,7 @@ nav.sticky .navbar-brand img{
 .order-btn{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 50%!important;
     border: 1px solid #000;
     background-color: transparent;
 }
@@ -144,6 +144,28 @@ nav.sticky .navbar-brand img{
     margin: 0 auto;
 }
 .cart-list{ overflow-x:scroll;}
+.cart-list::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+.cart-list::-webkit-scrollbar-track {
+      background-color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+   
+  /* Handle */
+.cart-list::-webkit-scrollbar-thumb {
+    background: #dddddd; 
+    border-radius: 7px;
+  }
+  
+  /* Handle on hover */
+.cart-list::-webkit-scrollbar-thumb:hover {
+    background: #777777; 
+  }
+
 .pop-up-body{  
    margin-top: 250px;
 }
@@ -184,12 +206,81 @@ form .form-group input { outline: none!important;color: #FDFDFD; }
     border: 1px solid #000;
     
 }
+#exampleModal-order-1 {
+    margin-top: 50px!important;
+}
+.modal-content{
+    width: 71%;
+    margin: 0 auto;
+    border: none;
+}
+.modal-header{
+    border: none!important;
+}
+.modal-title{
+    font-size:20px!important;
+    color: black;
+    /* border: none!important; */
+}
+.model-name{
+    font-size: 17px!important;
+    color: black;
+}
+.modal-order-data{
+    font-size: 15px!important;
+}
+.first-span{
+    color: #777777;
+}
+.second-span{
+color: #313139;
+}
 
+.orderD-modal-content{
+    height: 690px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+
+}
+
+.orderD-modal-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .orderD-modal-content::-webkit-scrollbar-track {
+      background-color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+   
+  /* Handle */
+  .orderD-modal-content::-webkit-scrollbar-thumb {
+    background: #dddddd; 
+    border-radius: 7px;
+  }
+  
+  /* Handle on hover */
+  .orderD-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #777777; 
+  }
+
+.price-span{
+    margin-left:10px!important;
+    color: #777777;
+}
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
-
+/* .orderD-modal-content{
+    background:linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),
+    url(../photos/new3/imgaya\ \(13\).jpg) no-repeat center ;
+    background-size: cover;
+    border-radius: 30px;
+    color: white!important;
+} */
 
 
 
