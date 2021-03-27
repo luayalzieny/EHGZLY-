@@ -30,7 +30,7 @@ console.log(req.body)
         Fname: req.body.Fname || req.user.Fname ,
     Lname:req.body.Lname||req.user.Lname,
     email:req.body.email||req.user.email,
-    number:req.body.number||req.body.number
+    number:req.body.number||req.user.number
     },function(err){
         if(err)
         {console.log(err); res.redirect('/')
