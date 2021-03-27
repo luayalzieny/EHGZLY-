@@ -178,7 +178,7 @@ nav.sticky .navbar-brand img{
 
 }
 form .form-group label { color: #464160; }
-form .form-group input { outline: none!important;color: #FDFDFD; }
+form .form-group input { outline: none!important;color: #FDFDFD; color: #000; }
 .up-file{
     background-color: transparent;
     border: 1px solid #000;
