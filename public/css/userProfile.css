@@ -11,13 +11,7 @@
 body{
     background-color: #d3d4d8!important;
 }
-.orderD-modal-content{
-    background:linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),
-    url(../photos/new3/imgaya\ \(13\).jpg) no-repeat center ;
-    background-size: cover;
-    border-radius: 30px;
-    color: white!important;
-}
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
@@ -280,7 +274,13 @@ color: #313139;
 /* /////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
-
+.orderD-modal-content{
+    background:linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),
+    url(../photos/new3/imgaya\ \(13\).jpg) no-repeat center ;
+    background-size: cover;
+    border-radius: 30px;
+    color: white!important;
+}
 
 
 
