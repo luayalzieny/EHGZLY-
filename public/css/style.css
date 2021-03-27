@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Reem+Kufi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=La+Belle+Aurore&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none!important;
+    text-transform: capitalize!important;  
+    outline: none!important;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.modal{z-index: 111111111!important;}
+
+
+
+
+
+/* body{
+    height: 6000px;
+    background: linear-gradient(to right, #F1EFED, #E2F8F9); 
+} */
+/* .bac{
+  background: url(../photos/team/home-slide-1-1920x800.jpg) no-repeat center !important;
+  background-size: cover !important;
+} */
+.p_has_fs{
+    font-family: 'Graduate', cursive!important;
+}
+.text-title{
+    font-size: 28px;
+    font-family: 'Rubik Mono One', sans-serif!important;
+}
+.header-banner{
+    width: 100%;
+    height: 100vh;
+    background-size:contain;
+    background-image: linear-gradient(rgba(0,0,0,0.8) , rgba(0,0,0,0.8)) ;
+    /* background:  url(../photos/imgs/bg_img2.jpg) no-repeat  center;
+    background-size: cover; */
+}
+.overlay{  
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)); 
+}
+
+.navbar{ 
+    background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9)) ;
+    z-index: 1111;
+}
+.nav-link{font-weight: 400!important;font-size: 17px!important;}
+.nav-link{transition: all 0.6s ease;}
+.nav-btun{
+    width: auto;
+    border-radius: 20px;
+    margin-left: 50px;
+    background-color:transparent ;
+    outline: none;
+    transition:  all 0.8s ease;
+}
+.nav-btun:hover{
+    width: auto;
+    border-radius: 20px;
+    margin-left: 50px;
+    outline: none;
+    border: 1px solid #60d16d; ;
+}
+nav.sticky {
+    background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9)) ;
+    transition: 0.5s!important;
+    z-index: 1111111111111111111111111111;
+    padding: 0px 15px!important;
+    transition:  all 0.8s ease;
+
+
+}
+nav.sticky .navbar-brand img{
+    transition:  all 0.8s ease;
+    width: 50px;height: 50px;
+}
+
+
+.welcomeText {
+    margin-top: 235px;
+}
+.welcomeText h1{
+    font-size:60px;
+    letter-spacing: 5px;
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+    /* color: rgb(124, 1, 1)!important; */
+}
+.welcomeText h2 span{
+    font-family: 'Cinzel Decorative', cursive!important;
+}
+.welcomeText p{
+    font-family: 'Harmattan', sans-serif;
+    font-size: 20px;
+
+}
+.submitBtn{
+    background-color: #eb102d;
+    color: #fff;
+}
+
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+#quickly-services{
+width: 100%;
+height: auto;
+position: relative;
+bottom: 35px;
+}
+.service-carry{
+    background-color: #fff;
+    box-shadow: -1px -1px 6px -1px rgba(0,0,0,1);   
+}
+.quick_service {
+    transition: all 0.8s ease-in-out;
+    padding: 0px;
+    margin: 0px;
+}
+.quick_service i{
+    color: #505050;
+}
+
+.quick_service h5{
+    color: #000;
+    font-family: 'Special Elite', cursive;
+
+
+}
+.quick_service:hover {
+    background-color: #FF0000!important;
+    box-shadow: 0px 12px 14px 0px rgba(179,168,168,1);
+}
+.quick_service:hover i,.quick_service:hover h5 {
+   color: #ffff!important;
+}
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+#About{
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* background: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)), 
+    url(../img/) no-repeat center;
+    background-size: cover; */
+}
+
+.about-img{
+    width: 100%;
+    height: 400px;
+    background: url( ../photos/imgs/logo.jpg) no-repeat  center ;
+    background-size: contain;  
+    border-radius: 5px;
+} 
+.about-text h2,.about-text h4{
+    font-family: 'Merriweather', serif;
+}
+.about-text p{
+    font-family: 'Harmattan', sans-serif;
+    font-size: 20px;
+
+}
+.about-btun{
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+    border: 1.5px solid #60d16d;
+    border-radius: 5px;
+    outline: none!important;
+}
+
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+#how{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.order-step{
+    border-radius: 40px!important;
+}
+.order-step h4{
+    color:#3d4d67 ;
+}
+.order-step p{
+    color:#afb1b7 ;
+}
+.order-step span{
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%!important;
+    line-height: 36px;
+    
+}
+.fa-arrow-right{font-size: 40px;}
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+.blog{
+    width: 100%;
+    height: auto;
+    position: relative; 
+}
+
+.shadow{
+    box-shadow: 1px 1px 0px 0px ;
+
+}
+.bordaraya{
+    width: 280px;
+    height: 5px;
+    background-color: #eee;
+    margin: 0 auto ;
+}
+.blog-card:hover .bordaraya{
+    background-color: #e22a33;
+    transition: all 0.6s ease;
+    height: 7px;
+}
+
+
+
+.red-section{
+    width: 100%;
+    height: auto!important;
+    background-color: #e52b34;
+    
+
+}
+.butn2{
+    background-color: #e52b34;
+    color: white;
+    outline: none;
+    border: none;
+    transition: all 0.4s ease-in-out;
+
+}
+.butn2:hover{
+    background-color: #fff;
+    border: 1px solid  #e22a33;
+    color: #e22a33!important;
+}
+
+
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+.doc-photo{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px!important;
+}
+.doc-photo-marg{
+    margin-top: 100px;
+   margin-bottom: -250px;
+}
+/* //////////////////////////////////////////// */ 
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+.restos {
+    width: 100%;
+    height: auto;
+    position: relative; 
+}
+
+.resto-img{
+    width: 100%;
+    height: 200px;
+    background:  no-repeat  center ;
+    background-size: cover;  
+    border-radius: 5px; 
+}
+.resto-img-circle{  position: absolute; top: 155px; left: 40%;}
+.open-sight{
+    position: absolute;
+    top: 15px;
+    left: 4px;
+    padding: 3px 10px;
+    line-height: normal;
+    background: #1f9607;
+    font-size: 10px;
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+    min-height: 20px;
+    min-width: 52px;
+    text-align: center;
+}
+.open-sight:before{
+    width: 0;
+    height: 0;
+    border-top: 10px solid #1f9607;
+    border-left: 10px solid transparent;
+    content: "";
+    left: 0;
+    position: absolute;
+    bottom: -10px
+}
+.bookmarkRibbon {
+    width: 10px;
+    height: 0px;
+    border-top: 11px solid #1f9607;
+    border-bottom: 10.5px solid #1f9607;
+    border-right: 5px solid transparent;
+    position: absolute;
+    top: 0px;
+    right: -6px;
+}
+.resto-butn{
+    margin-top: 8px!important;
+    transition: all 0.6s ease-out;
+    border: 1px solid #eb102d;
+    line-height: 25px;
+}
+.resto-butn:hover{
+    background-color: transparent;
+    
+}
+.restos .card-body{
+    font-family: 'Poppins', sans-serif!important;
+    border: 1px solid #ddd; 
+}
+.icon-restu1{font-size: 29px;position: absolute; top: 168px; left: 15px;}
+.icon-restu2{color: #ffc613!important;position: absolute; top: 180px; right: 100px;}
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+.top-restos {
+    width: 100%;
+    height: auto;
+    position: relative; 
+}
+.rating{
+margin-top: -10px;
+font-size:12px;
+}
+.flaticon-like{font-style: 15px!important;}
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+footer{
+    width: 100%;
+    height: auto;
+    /* background:linear-gradient(to right, #90df7d, #7fe991), */
+    /* url( ../img/world.jpg ) no-repeat  center;
+    background-size: cover; */
+}
+.footer-brand{
+    font-family: 'Graduate', cursive!important;
+}
+footer h2{
+    text-align: left; text-decoration-line: none;
+}
+footer h5 {
+    color: #fff!important;
+}
+.context-dark, .bg-gray-dark, .bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #f3d6d6;
+}
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #1e5f74;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}
+.social{
+    font-size: 25px;
+    
+}
+
+
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+/* /////////////////////////////////////////// */
+
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+/* responsive *//* responsive */
+
+@media screen and (max-width: 1199px) {     
+    .text-div {
+        margin-top: 200px;
+    }
+    .doc-photo-marg{
+       margin-bottom: -0px;
+       transition: 1s;
+
+    }
+
+}
+
+
+@media screen and (max-width: 991px) {
+    .nav-btun{margin: 0px; }
+    .nav-btun:hover{margin: 0px; }
+    .welcomeText h1{
+        font-size: 40px;
+        transition: 0.4s;
+
+    }
+    .welcomeText h2{
+        font-size: 25px;
+        transition: 0.4s;
+
+    }
+    .quickly-services{
+        bottom: 20px!important;
+        padding-top: 0px!important;
+        transition: 0.4s;
+    }
+    /* .about-img{
+        padding: 50px!important;
+    } */
+    .footer-marg{
+        text-align: left!important;
+        margin-top: 20px!important;
+    }
+    .step-arrow{display: none;}
+    .res-rating{
+     width: 33.3333%!important;
+     padding: 10px;
+
+    }
+    
+}
+
+@media screen and (max-width: 767px) { 
+    .welcomeText {
+        margin-top: 250px!important;
+        transition: 1s;
+    }
+    .welcomeText h1{
+        font-size: 30px;
+    }
+    .welcomeText h2{
+        font-size: 20px;
+    }
+    .doc-photo-marg{
+        margin-bottom: -30px;
+        transition: 1s;
+     }
+}
+
+@media screen and (max-width: 575px) {
+    .quick_service{
+        width: 33.333%!important;
+    }
+     
+}
+
+@media screen and (max-width: 377px) {
+    .McDonalds-rating{
+        margin-top: 22px;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

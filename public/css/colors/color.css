@@ -1,0 +1,73 @@
+body
+{
+    background-color: #fff!important;
+}
+/* /////////////////////////////////////////////// */
+.navbar-brand,
+.nav-link.activelink,
+.nav-link:hover,
+.nav-btun:hover,
+.welcomeText h1,
+.welcomeText h2 span,
+.about-text h2,
+.text-title,
+.about-link,
+.how i,
+.icon-restu1,
+.resto-butn:hover,
+.fa-arrow-right,
+.rating-icon,
+.bracket-text a,
+.pages-header-span a:hover,
+.fa-arrow-alt-circle-right,
+.fa-arrow-alt-circle-left,
+.about-text-about h2,
+.about-text-about .card-header, 
+.login-header-span a,
+.signup-header-span a,
+.login-header-span a:hover,
+.signup-header-span a:hover,
+.single-menu h4 span,
+.department .nav-link:focus,
+.extra_order_Price
+{color: #f30928!important;}
+
+/* ////////////// */
+
+.nav-btun:hover,
+.serv-bac1,
+.about-btun,
+.resto-butn,
+.order-step span,
+.text-title::after,
+footer,
+.dashbord-bac
+{background-color:#eb102d ;}
+
+/* ///////////// */
+
+.nav-link,
+.nav-btun,
+.welcomeText h2,
+.nav-btun:hover,
+.testemonial .text-center small,
+.testemonial .text-center p 
+{color: #E2F8F9!important;}
+
+/* .services-carry{
+    border: 1px solid #60d16d;} */
+
+.nav-btun
+{color: #E2F8F9!important;
+ border: 1px solid #E2F8F9;}
+
+ /* .department .nav-link {
+     border: 1px solid #eb102d ;
+ } */
+
+
+
+
+
+ /* #EA1C2D
+ #CA252B */
