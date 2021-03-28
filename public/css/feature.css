@@ -10,9 +10,13 @@
     outline: none!important;
     /* font-family: 'Nanum Gothic', sans-serif; */
     font-family: 'Nunito Sans', sans-serif;
-
-
 }
+.modal{
+    z-index: 1111111111!important;
+    
+}
+
+
 body{
   background-color: #EBEDF3!important;  
 }
@@ -39,7 +43,7 @@ p{
 nav.sticky {
     background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9))!important ;
     transition: 0.5s!important;
-    z-index: 1111111111111111111111111111;
+    z-index: 111111;
     padding: 0px 15px!important;
     transition:  all 0.8s ease;
 
@@ -81,10 +85,10 @@ nav.sticky .navbar-brand img{
     border-bottom: 1px solid #000 ;
 }
 
-.order-btn{
+.order-btn-profile{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 50%!important;
     border: 1px solid #000;
     margin-top: 25px;
     background-color: transparent;
@@ -142,6 +146,79 @@ nav.sticky .navbar-brand img{
       color: #a9a9a9;
   
   }
+
+  .order-btn{
+    background-color: transparent;
+    border: none;
+}
+
+.extra-modal-content{
+    margin-top: 50px;
+    width: 80%;
+    margin: 0 auto;
+    height: 70%;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+
+}
+.modal-body ul li {
+    margin-left: 10px!important;
+}
+
+.extra-modal-content::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+/* Track */
+.extra-modal-content::-webkit-scrollbar-track {
+      background-color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+   
+/* Handle */
+.extra-modal-content::-webkit-scrollbar-thumb {
+    background: #7777; 
+    border-radius: 7px;
+  }
+  
+/* Handle on hover */
+.extra-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #777777; 
+  }
+
+.Extra-category-name{
+    font-size: 19px;
+    color: #528CCC;
+
+}
+.Required-text{
+    font-size: 25px;
+    padding: 2px;
+    color: #f30928!important;
+}
+.extra-modal-content label{
+    color: #528CCC!important;
+}
+.extra-price
+{
+    color: #f30928!important;
+}
+
+.Extra-submit{
+
+    background-color:#f30928!important;
+    color: #fff!important;
+    border: 1px solid transparent!important;
+    outline: none!important;
+}
+.Extra-reset{
+background-color:#528CCC!important;
+    color: #fff!important;
+    border: 1px solid transparent!important;
+    outline: none!important;
+}
 
   input ,
   select,

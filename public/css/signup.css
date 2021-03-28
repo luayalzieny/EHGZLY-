@@ -42,7 +42,6 @@ body{
     height: auto;
     background-color: black!important;
     background: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7))!important;
-    padding: 10px;
 }
 .signup-buttons input{
     background-color: transparent;

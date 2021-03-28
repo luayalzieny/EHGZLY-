@@ -1,18 +1,15 @@
 const express=require('express');
 const app=express();
-const bodyParser=require('body-parser')
+const bodyParser=require('body-parser');
 const cart=require('./../model/cartModel')
 const restaurant=require('./../model/restaurantsModel')
 const dish=require('./../../../../dummy data/category.json')
 const rest=require('./../../../../dummy data/restaurant.json')
 const Math=require('mathjs')
-app.use(bodyParser.urlencoded({extended:"true"}))
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended:"true"}))
+app.use(express.json());
 
-let order={
-        content:[{meal:"mchiken"
-        }]
-}
+
 //routes function
 // cart order is created when entering the meals page with order
 // number generated and customer id placed 

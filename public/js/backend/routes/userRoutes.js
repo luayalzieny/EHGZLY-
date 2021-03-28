@@ -1,11 +1,11 @@
 // modules used
 const express=require('express');
 const app=express();
-const controller=require('../controller/userController');
 const session=require('express-session');
 const passport=require('passport');
 const flash = require('express-flash');
-
+const controller=require('../controller/userController');
+const User_Dashboard=require('./../controller/userDashboard')
 // end of modules used
 
 //middlewares
@@ -25,6 +25,9 @@ app.use(passport.session())
 app.use(flash())
 //end of middlewares
 
+//basic functions
+
+//end of basic functions
 //routes
 app.get('/',controller.get_home);
 app.post('/',controller.post_home);
@@ -55,6 +58,9 @@ app.get('/about',controller.get_about)
 
 app.get('/contact',controller.get_contact)
 
+app.get('/User_Dashboard',User_Dashboard.get_dashboard)
+app.post('/User_Update_Dashboard',User_Dashboard.post_update_dashboard)
+app.post('/delete_profile',User_Dashboard.post_delete_dashboard)
 
 
 

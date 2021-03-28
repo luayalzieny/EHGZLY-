@@ -37,7 +37,7 @@ app.post('/restaurantLogin',function(req,res,next){
 
 app.get("/restaurant",restaurantController.restaurant_get);
 app.get("/location",restaurantController.location_get)
-const dataJson=require("./../../../../dummy data/category.json")
+const cat_data=require("./../../../../dummy data/category.json")
 
 
 

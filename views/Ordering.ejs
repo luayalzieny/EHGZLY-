@@ -119,17 +119,17 @@
         <div class="tab-content col-lg-12 p-0 m-0">
           <div class="tab-pane p-3 active" id="menu" role="tabpanel">
             
-            <ul class="  text-center row" id="to-top">
+            <!-- <ul class="  text-center row" id="to-top">
               <li class=" pl-4"> <a class="text-danger" href="#pizza">pizza</a> </li>
               <li class=" pl-4"> <a class="text-danger" href="#meat">meat</a> </li>
               <li class=" pl-4"> <a class="text-danger" href="#kabab">kabab</a> </li>
               <li class=" pl-4"> <a class="text-danger" href="#fish">fish</a> </li>
               <li class=" pl-4"> <a class="text-danger" href="#chicken">chicken</a> </li>
-            </ul>
+            </ul> -->
            <hr>
            <article style="box-sizing: border-box;" class="p-1">
             <div class="menu-title" id="pizza">
-              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top"> <i  class="fa fa-arrow-up"></i>  </a> </span>  </h4> 
+              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4> 
               <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
             </div>
             <ul>
@@ -143,13 +143,242 @@
                           <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
                       </div>
                       <div  class="pl-3">
-                        <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
+                        <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                        <!-- Button trigger modal -->
+  
+                            <!-- Modal -->
+                            <div class="modal fade" id="orderExtra-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content extra-modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                              </div>
+                                <div class="modal-body">
+                                    <!-- ///////////////////////////////////////////////// -->
+                                    <!-- ///////////////////////////////////////////////// -->
+                                  <form action="">
+
+                                    
+                                    <ul>
+                                      <div class="d-flex">
+                                        <div class="font-weight-bolder Extra-category-name">Cold Drink </div>
+                                        <div class="ml-auto  Required-text"><i class="fa fa-wine-bottle"></i></div>
+                                      </div>
+                                      <hr>
+
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink1" value="option1">
+                                            <label class="form-check-label" for="Cold-Drink1">Cocktail</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£2.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink2" value="option2">
+                                            <label class="form-check-label" for="Cold-Drink2">Coke / Diet Coke / Pepsi</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£4.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink3" value="option3">
+                                            <label class="form-check-label" for="Cold-Drink3">Sangria</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£2.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
+                                            <label class="form-check-label" for="Cold-Drink4">Red Bull</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£4.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>   
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
+                                            <label class="form-check-label" for="Cold-Drink4"> Sprite / 7up / Fresh Lime</label>
+                                          </div>
+                                        
+                                          <div class="ml-auto  extra-price ">£0.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <!-- ////////////////////////////////////////////////////// -->
+
+
+
+                                      <div class="d-flex mt-3">
+                                        <div class="font-weight-bolder Extra-category-name">Sausages  </div>
+                                        <div class="ml-auto  Required-text"><i class="fa fa-hotdog"></i></div>
+                                      </div>
+                                      <hr>
+
+                                      
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Sausages-1" type="checkbox" id="Sausages1" >
+                                            <label class="form-check-label" for="Sausages1">Spicy Mayonnaise</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£1.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages2" >
+                                            <label class="form-check-label" for="Sausages2">Tequila Lime Sauce</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£0.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages3" >
+                                            <label class="form-check-label" for="Sausages3">Soy Sauce</label>
+                                          </div>
+
+                                          <div class="ml-auto  extra-price ">£2.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Sausages-4" type="checkbox" id="Sausages4" >
+                                            <label class="form-check-label" for="Sausages4">Garlic Sauce</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£3.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>   
+
+
+
+
+                                      <!-- /////////////////////////////////////////////////////////// -->
+
+
+                                      <div class="d-flex mt-3">
+                                        <div class="font-weight-bolder Extra-category-name">Extra Topping </div>
+                                        <div class="ml-auto  Required-text"><i class="fas fa-clipboard-list"></i></div>
+                                      </div>
+                                      <hr>
+
+                                      
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Extra-Topping1" type="checkbox" id="Extra-Topping1" value="option1">
+                                            <label class="form-check-label" for="Extra-Topping1">Asparagus</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£1.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Extra-Topping2" type="checkbox" id="Extra-Topping2" value="option1">
+                                            <label class="form-check-label" for="Extra-Topping2">Pepperoni</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£0.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Extra-Topping3" type="checkbox" id="Extra-Topping3" value="option1">
+                                            <label class="form-check-label" for="Extra-Topping3">Tuna</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£3.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Extra-Topping4" type="checkbox" id="Extra-Topping4" value="option1">
+                                            <label class="form-check-label" for="Extra-Topping4">Sweet corn</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£1.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+                                      <li class="mt-2">
+                                        <div class="d-flex">
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="Extra-Topping5" type="checkbox" id="Extra-Topping5" value="option1">
+                                            <label class="form-check-label" for="Extra-Topping5">Jalapenos</label>
+                                          </div>
+
+                                          <div class="ml-auto extra-price  ">£0.00</div>
+                                        </div>
+                                      </li>
+                                      <hr>
+
+                                      
+                                    </ul>
+
+                                    <!-- ///////////////////////////////////////////////// -->
+                                    <!-- ///////////////////////////////////////////////// -->
+                                    <div class="d-flex mt-3">
+                                      <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
+                                      <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
+                                    </div>
+
+                                  </form>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
                       </div>
                   </div>
               </li>
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <li class="mt-4 d-flex menu ">
@@ -160,14 +389,109 @@
                         <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
                     </div>
                     <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
+                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal2" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                      <!-- Button trigger modal -->
+                    
+                          <!-- Modal -->
+                          <div class="modal fade" id="orderExtra-modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content extra-modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                            </div>
+                              <div class="modal-body">
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <!-- ///////////////////////////////////////////////// -->
+                                <form action="">
+                    
+                                  
+                                  <ul>
+                                    <div class="d-flex">
+                                      <div class="font-weight-bolder Extra-category-name">Cold Drink </div>
+                                      <div class="ml-auto  Required-text"><i class="fa fa-wine-bottle"></i></div>
+                                    </div>
+                                    <hr>
+                    
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink1" value="option1">
+                                          <label class="form-check-label" for="Cold-Drink1">Cocktail</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£2.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink2" value="option2">
+                                          <label class="form-check-label" for="Cold-Drink2">Coke / Diet Coke / Pepsi</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£4.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink3" value="option3">
+                                          <label class="form-check-label" for="Cold-Drink3">Sangria</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£2.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
+                                          <label class="form-check-label" for="Cold-Drink4">Red Bull</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£4.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>   
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
+                                          <label class="form-check-label" for="Cold-Drink4"> Sprite / 7up / Fresh Lime</label>
+                                        </div>
+                                      
+                                        <div class="ml-auto  extra-price ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <!-- ////////////////////////////////////////////////////// -->
+                    
+                                    <div class="d-flex mt-3">
+                                      <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
+                                      <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
+                                    </div>
+                                    
+                                  </ul>
+
+                                </form>
+                    
                 </div>
             </li>
             <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
               <li class="mt-4 d-flex menu ">
                 <div class="single-menu img-fluid ">
                   <img class="img-fluid img-holder" src="../public/photos/menu/1.jpg"  alt="">
@@ -176,192 +500,171 @@
                         <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
                     </div>
                     <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-            </ul>
-          </article>
-
-
-
-
-
-
-
-
-
-
-
-
-          <article style="box-sizing: border-box;" class="p-1">
-            <div class="menu-title" id="pizza">
-              <h4 id="meat"> Meat <span> <a class="arrow-top-link" href="#to-top"> <i  class="fa fa-arrow-up"></i>  </a> </span></h4>
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div>
-            <ul>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                      <div class="menu-content ml-3 ">
-                          <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                      </div>
-                      <div  class="pl-3">
-                        <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                      </div>
-                  </div>
-              </li>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-            </ul>
-          </article>
-
-          
-
-
-
-
-
-
-
-
-
-
-          <article style="box-sizing: border-box;" class="p-1">
-            <div class="menu-title" id="kabab">
-              <h4 id="meat"> kabab <span> <a class="arrow-top-link" href="#to-top"> <i  class="fa fa-arrow-up"></i>  </a> </span></h4>
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div>
-            <ul>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                      <div class="menu-content ml-3 ">
-                          <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                      </div>
-                      <div  class="pl-3">
-                        <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                      </div>
-                  </div>
-              </li>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-            </ul>
-          </article>
+                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal3" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                      <!-- Button trigger modal -->
                     
-
-
-
-
-
-
-
-
-
-
-          <article style="box-sizing: border-box;" class="p-1">
-            <div class="menu-title" id="fish">
-              <h4 id="meat"> Fish <span> <a class="arrow-top-link" href="#to-top"> <i  class="fa fa-arrow-up"></i>  </a> </span> </h4>
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div>
-            <ul>
+                          <!-- Modal -->
+                          <div class="modal fade" id="orderExtra-modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content extra-modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                            </div>
+                              <div class="modal-body">
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <!-- ///////////////////////////////////////////////// -->
+                                <form action="">
+                                  <ul>
+                                    <div class="d-flex mt-3">
+                                      <div class="font-weight-bolder Extra-category-name">Sausages  </div>
+                                      <div class="ml-auto  Required-text"><i class="fa fa-hotdog"></i></div>
+                                    </div>
+                                    <hr>
+                    
+                                    
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Sausages-1" type="checkbox" id="Sausages1" >
+                                          <label class="form-check-label" for="Sausages1">Spicy Mayonnaise</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£1.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages2" >
+                                          <label class="form-check-label" for="Sausages2">Tequila Lime Sauce</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages3" >
+                                          <label class="form-check-label" for="Sausages3">Soy Sauce</label>
+                                        </div>
+                    
+                                        <div class="ml-auto  extra-price ">£2.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Sausages-4" type="checkbox" id="Sausages4" >
+                                          <label class="form-check-label" for="Sausages4">Garlic Sauce</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£3.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>   
+                    
+                    
+                    
+                    
+                                    <!-- /////////////////////////////////////////////////////////// -->
+                    
+                    
+                                    <div class="d-flex mt-3">
+                                      <div class="font-weight-bolder Extra-category-name">Extra Topping </div>
+                                      <div class="ml-auto  Required-text"><i class="fas fa-clipboard-list"></i></div>
+                                    </div>
+                                    <hr>
+                    
+                                    
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping1" type="checkbox" id="Extra-Topping1" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping1">Asparagus</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£1.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping2" type="checkbox" id="Extra-Topping2" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping2">Pepperoni</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping3" type="checkbox" id="Extra-Topping3" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping3">Tuna</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£3.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping4" type="checkbox" id="Extra-Topping4" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping4">Sweet corn</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£1.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping5" type="checkbox" id="Extra-Topping5" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping5">Jalapenos</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                    
+                                    
+                                  </ul>
+                    
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <div class="d-flex mt-3">
+                                    <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
+                                    <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
+                                  </div>
+                    
+                                </form>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </li>
+           <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                      <div class="menu-content ml-3 ">
-                          <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                      </div>
-                      <div  class="pl-3">
-                        <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                      </div>
-                  </div>
-              </li>
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <li class="mt-4 d-flex menu ">
                 <div class="single-menu">
@@ -371,66 +674,117 @@
                         <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
                     </div>
                     <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
+                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal4" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                      <!-- Button trigger modal -->
+                    
+                          <!-- Modal -->
+                          <div class="modal fade" id="orderExtra-modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content extra-modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                            </div>
+                              <div class="modal-body">
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <!-- ///////////////////////////////////////////////// -->
+                                <form action="">
+                                  <ul>
+                                    <div class="d-flex mt-3">
+                                      <div class="font-weight-bolder Extra-category-name">Extra Topping </div>
+                                      <div class="ml-auto  Required-text"><i class="fas fa-clipboard-list"></i></div>
+                                    </div>
+                                    <hr>
+                    
+                                    
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping1" type="checkbox" id="Extra-Topping1" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping1">Asparagus</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£1.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping2" type="checkbox" id="Extra-Topping2" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping2">Pepperoni</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping3" type="checkbox" id="Extra-Topping3" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping3">Tuna</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£3.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping4" type="checkbox" id="Extra-Topping4" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping4">Sweet corn</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£1.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                                    <li class="mt-2">
+                                      <div class="d-flex">
+                                        <div class="form-check form-check-inline">
+                                          <input class="form-check-input" name="Extra-Topping5" type="checkbox" id="Extra-Topping5" value="option1">
+                                          <label class="form-check-label" for="Extra-Topping5">Jalapenos</label>
+                                        </div>
+                    
+                                        <div class="ml-auto extra-price  ">£0.00</div>
+                                      </div>
+                                    </li>
+                                    <hr>
+                    
+                                    
+                                  </ul>
+                    
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <!-- ///////////////////////////////////////////////// -->
+                                  <div class="d-flex mt-3">
+                                    <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
+                                    <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
+                                  </div>
+                    
+                                </form>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </li>
+           <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
             </ul>
           </article>
 
-          
-
-
-
-
-
-          
-
-          <article style="box-sizing: border-box;" class="p-1">
-            <div class="menu-title" id="chicken">
-              <h4 id="meat"> Chicken <span> <a class="arrow-top-link" href="#to-top"> <i  class="fa fa-arrow-up"></i>  </a> </span> </h4>
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div>
-            <ul>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                  <div class="single-menu">
-                      <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                      <div class="menu-content ml-3 ">
-                          <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                      </div>
-                      <div  class="pl-3">
-                        <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                      </div>
-                  </div>
-              </li>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-                            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button class="order-btn border border-danger"> <i class="fa fa-plus text-danger"></i> </button>
-                    </div>
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-            </ul>
-          </article>
 
           </div>
           <!-- ////////////////////////////////////////// -->
@@ -640,7 +994,7 @@
               <div class="text-center mt-3">
                 <button class="btn btn-danger signup-btun  p-1  col-lg-12 col-md-12 col-sm-12 " type="submit">confirm order</button>
               </div>
-
+              
             </form>
           </div>
         </div>
