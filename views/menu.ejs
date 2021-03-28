@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <form action="/categories" method="post">
+        <div  id="div1">
+
+        </div>
+        <button>add all</button>
+    </form>
+    <button id="button1">add</button>
+</body>
+<script >
+    let div1 = document.getElementById("div1");
+    let add=document.getElementById("button1")
+    let i=0;
+   function form (){
+    console.log("alo")
+        let input1 = document.createElement("input");
+        ID=i+"[category]"
+        input1.name=ID
+        let p1 =document.createElement("p");
+        let node = document.createTextNode("catagry name");
+        p1.appendChild(node);
+        div1.appendChild(p1);
+        div1.appendChild(input1);
+
+
+        let input2 = document.createElement("input");
+        ID=i+"[name]"
+        input2.name=ID
+        let p2 =document.createElement("p");
+        node = document.createTextNode("meal name");
+        p2.appendChild(node);
+        div1.appendChild(p2);
+        div1.appendChild(input2);
+
+        input3 = document.createElement("input");
+        ID=i+"[price]"
+        input3.name=ID
+        let p3 =document.createElement("p");
+         node = document.createTextNode("price");
+         p3.appendChild(node);
+
+         
+         div1.appendChild(p3);
+         div1.appendChild(input3);
+         
+         input4 = document.createElement("input");
+         ID=i+"[discreption]"
+         input4.name=ID
+         let p4 =document.createElement("p");
+          node = document.createTextNode("discreption");
+         p4.appendChild(node);
+        div1.appendChild(p4);
+        div1.appendChild(input4);
+
+        i++;
+
+    div1.appendChild(input4);
+
+   } 
+   form()
+
+    add.addEventListener("click",()=>form());
+
+
+</script>
+</html>
