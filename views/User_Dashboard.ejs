@@ -53,7 +53,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active"><a href="index" class="nav-link ">Home</a></li>
               <li class="nav-item"><a href="about" class="nav-link ">about us</a></li>
-              <li class="nav-item"><a href="how_it_work" class="nav-link activelink ">How It Works</a></li>
+              <li class="nav-item"><a href="how_it_work" class="nav-link ">How It Works</a></li>
               <li class="nav-item"><a href="faqs" class="nav-link ">FAQS</a></li>
               <li class="nav-item"><a href="contact" class="nav-link  ">Contact us</a></li>
               <li class="nav-item"><a href="loginpage" class="nav-link  ">logIn/signUp</a></li>
@@ -122,6 +122,10 @@
           <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
             <hr class="p-0 m-0">
+            <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
+            <hr class="p-0 m-0">
+
          <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i> Delete Profile</span></a>
             <!-- ///////////////////////////////////////////////// -->
@@ -916,14 +920,19 @@
                   <input class="mt-3 ml-5 up-file" type="file"  id="inpUpload">
                 </div>
               </div>
+              <button type="submit" class="btn btn-danger ml-2" onClick="return checkform();">Submit</button>
             </div>
 
-              <script>
-            
-              </script>
 
-
-            <h5 class=" text-capitalize mt-3"> CHANGE PASSWORD </h5>
+          </form>
+          </div>
+          <!-- /////////////////////////////////////////////////////////////// -->
+          <!-- /////////////////////////////////////////////////////////////// -->
+          <!-- /////////////////////////////////////////////////////////////// -->
+         
+           <div class="tab-pane fade shadow rounded bg-white show  p-5" id="change_password" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <h5>CHANGE PASSWORD</h5>
+         
             <div class="row">
 
             <div class="col-lg-12">
@@ -939,7 +948,7 @@
               </div>
             </div>
 
-              <button type="submit" class="btn btn-primary" onClick="return checkform();">Submit</button>
+              <button type="submit" class="btn btn-danger ml-3" onClick="return checkform();">Submit</button>
 
             </div>
           </form>
