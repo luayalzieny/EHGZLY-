@@ -61,6 +61,7 @@ app.get('/contact',controller.get_contact)
 app.get('/User_Dashboard',User_Dashboard.get_dashboard)
 app.post('/User_Update_Dashboard',User_Dashboard.post_update_dashboard)
 app.post('/delete_profile',User_Dashboard.post_delete_dashboard)
+app.post('/changePassword',User_Dashboard.post_change_Password_dashboard)
 
 
 

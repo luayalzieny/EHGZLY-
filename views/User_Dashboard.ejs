@@ -45,13 +45,13 @@
 <section class="profile-banner">
     <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-          <a class="navbar-brand" href="index"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
+          <a class="navbar-brand" href="/"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> <i class="fa fa-bars"></i> </span> 
           </button>
           <div class="collapse navbar-collapse ml-auto" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active"><a href="index" class="nav-link ">Home</a></li>
+              <li class="nav-item active"><a href="/" class="nav-link ">Home</a></li>
               <li class="nav-item"><a href="about" class="nav-link ">about us</a></li>
               <li class="nav-item"><a href="how_it_work" class="nav-link ">How It Works</a></li>
               <li class="nav-item"><a href="faqs" class="nav-link ">FAQS</a></li>
@@ -895,24 +895,32 @@
            <!-- /////////////////////////////////////////////////////////////// -->
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Account_Setting" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h5>ACCOUNT SETTING</h5>
-            <form id="myForm" action="User_Update_Dashboard" method="POST">
+            <form id="myForm1" action="User_Update_Dashboard" method="POST">
             <div class="row">
               <div class="col-lg-6">
                 
                   <div class="form-group">
                     <input  type="text" class="form-control" id="exampleInputEmail1" name="Fname"  placeholder="<%=user.Fname%>" >
                   </div>
+                  
+                  <p id="warning_Fname"></p>
+                  
                   <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputEmail1" name="Lname" placeholder="<%=user.Lname%>" >
                   </div>
+
+                  <p id="warning_Lname"></p>
+                  
                   <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="<%=user.email%>">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
+                  
                   <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputPhone" name="number" placeholder="<%=user.number%>">
                   </div>
                   
+                  <p id="warning_number"></p>
                 
               </div>
               <div class="col-lg-6">
@@ -925,33 +933,37 @@
             </div>
 
 
-          </form>
-          </div>
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
+           </form>
+           </div>
+           <!-- ///// ////////////////////////////////////////////////////////// -->
+           <!-- /////////////////////////////////////////////////////////////// -->
+           <!-- /////////////////////////////////////////////////////////////// -->
          
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="change_password" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h5>CHANGE PASSWORD</h5>
          
             <div class="row">
-
+              <form  onSubmit="return checkform_password();" id="myForm2" action="/changePassword" method="POST">
             <div class="col-lg-12">
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="password" >
+                  <%if(err){%>
+                    <h4 class="mt-3" style="text-align: center;"> <%=err%></h4>
+                    <%}%>
               </div>
               <div class="form-group">
-                <p id="warning"></p>
+                
                 <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="new password">
               </div>
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="confirm password" >
               </div>
             </div>
-
-              <button type="submit" class="btn btn-danger ml-3" onClick="return checkform();">Submit</button>
+            <p id="warning_password"></p>
+              <button type="submit" class="btn btn-danger ml-3">Submit</button>
 
             </div>
+          </form>
           </form>
           </div>
           <!-- /////////////////////////////////////////////////////////////// -->
@@ -1022,7 +1034,7 @@
       <!-- <h1 class="text-center ">mostafa</h1> -->
       <div class="text-center doc-photo-marg">
         <img class=" doctors-img-pre  ml-auto img-fluid img-responsive" src="../public/photos/imgs/takeaway-catering-logo-large.png" width="100px" height="100px" alt="doctors">
-        <p class="p_has_fs">We care about your mental health </p>
+        <p class="p_has_fs">We Care About Your Happiness </p>
       </div>
     </div>
   </section>

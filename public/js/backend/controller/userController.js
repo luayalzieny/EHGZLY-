@@ -105,6 +105,8 @@ function checkAuthentication(req,res){
     return res.redirect('/')
 }
     }
+
+    
 //end of basic functions
 
 

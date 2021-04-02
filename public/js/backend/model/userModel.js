@@ -18,13 +18,16 @@ autoIncrement.initialize(mongoose.connection)
 const userSchema=new mongoose.Schema({
     Fname:{type:String,
         required:[true,"Please Enter Your First Name"],
-        max:[10,"First Name Should Be Less Than 10 Characters"]
+        maxlength:[10,"First Name Should Be Less Than 10 Characters"],
+        minlength:[3,"First Name Should Be Atleast 3 Characters"]
     },
 
     Lname:{
         type:String,
         required:[true,"Please Enter Your Last Name"],
-        max:[10,"Last Name Should Be Less Than 10 Characters"]
+        maxlength:[10,"Last Name Should Be Less Than 10 Characters"],
+        minlength:[3,"Last Name Should Be Atleast 3 Characters"]
+       
         
     },
 
