@@ -1,11 +1,10 @@
 const restaurantController=require("../controller/restaurantController")
-//<<<<<<< Updated upstream
+const restaurantDashboard = require("../controller/restDashboard")
 const dataJson=require("./../../../../dummy data/restaurant.json")
-//=======
 const passport = require("passport");
 const session = require("express-session");
 
-//>>>>>>> Stashed changes
+
 const express =require('express')
 const app=express();
 
@@ -31,12 +30,17 @@ app.post("/categories",restaurantController.categories_post)
 app.post('/restaurantLogin',function(req,res,next){
     passport.authenticate("local",{
       successRedirect:"/location",
-      failureRedirect:"/restaurantLogin",
+      failureRedirect:"/restLogin",
     })(req,res,next);
 });
+app.post("/update",restaurantDashboard.restaurant_updateMenu_post)
+//app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post)
 
+
+app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
 app.get("/location",restaurantController.location_get)
+app.get("/categories",restaurantController.categories_get)
 const cat_data=require("./../../../../dummy data/category.json")
 
 

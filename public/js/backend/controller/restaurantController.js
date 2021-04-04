@@ -1,14 +1,24 @@
 const { model } = require("mongoose");
 const restaurants = require("../model/restaurantsModel");
 mongoose=require("mongoose")
+const express =require('express')
+const app=express();
+const path = require('path');
 
+////////////////////////////////////////////////////////////////////////////////////////////
 //handel moongose erorrs function
-let error={ restaurantName:"0",mangerPhone:"0",email:"0",password:"0",username:"0"}
+let error={ restaurantName:"0",mangerPhone:"0",email:"0",password:"0",username:"0",manger:"0"}
 let handelErrors=(err)=>{
   console.log(err.message, err.code);
+
   if (err.code === 11000) {
-    error.username = 'that username is already registered';
-    return error;
+      let massage= err.message.slice(80,85)
+      if(massage=="email")
+      error.email = 'that email is already registered';
+      else
+      error.username = 'that username is already registered';
+      console.log(massage)
+    
   }
   if (err.message.includes('restaurant validation failed')) {
     
@@ -22,11 +32,14 @@ let handelErrors=(err)=>{
   
   return error;
 } 
-//restaurant_post 
+
+////////////////////////////////////////////////////////////////////////
+//restaurant main post (name email.....) 
 module.exports.restaurant_post=(req,res)=>{
-    
+ console.log(req.body.restaurantPhone)
+ error={ restaurantName:"0",mangerPhone:"0",email:"0",password:"0",username:"0",manger:"0"}
     const rest=new restaurants({
-        _id:req.body.id,
+        //_id:req.body.id,
         restaurantName:req.body.name,
         restaurantPhone:req.body.restaurantPhone,
         email:req.body.email,
@@ -34,26 +47,30 @@ module.exports.restaurant_post=(req,res)=>{
         username:req.body.username,
         manger:req.body.manger,
         mangerPhone:req.body.mangerPhone,
-        img:req.body.img,
-        opentime:{open:req.body.open,close:req.body.close}
+        // img:req.body.img,
+        //opentime:{open:req.body.open,close:req.body.close}
         
         
     }).save(err=>{
         if(err){
-            let errors= handelErrors(err);
-            console.log(errors)
+            let obj =handelErrors(err);
+            console.log(obj)
+            
+            res.redirect("/restaurant")
           
         }
-        console.log("sdadsa")
 
+        else
+        res.redirect("/restLogin")
     })
+
    
     
-  res.redirect("/location")
+  
 }
-//end here
-//pushing restaurant's Locations post
+////////////////////////////////////////////////////////////////
 
+//pushing restaurant's Locations post
 module.exports.restaurantLocation_post=(req,res)=>{
     restaurantID =req.session.passport.user
 let location={
@@ -76,16 +93,25 @@ let location={
 }
 
 
-//end here
-//pushinig categories and meals post
+///////////////////////////////////////////////////////////////////////////////////////////
 
+//pushinig categories and meals post
 module.exports.categories_post=(req,res)=>{
-    restaurantID =req.session.passport.user
- 
+   // restaurantID =req.session.passport.user
+    restaurantID="605ca44b916fc90040ea4be8"
+    
+    let i=0
+
+    console.log(req.body)
+    
+
+ while(req.body[i]){
+     newobj=req.body[i]
+
     //if category exists 
-     restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':req.body.category},
+     restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':newobj.category},
      
-     {$push:{'categories.$.meal':{name:req.body.name ,price:req.body.price,discreption:req.body.discreption}
+     {$push:{'categories.$.meal':{name:newobj.name ,price:newobj.price,discreption:newobj.discreption}
     }}
      ,(err,rest)=>{
         if(err)
@@ -96,8 +122,8 @@ module.exports.categories_post=(req,res)=>{
         restaurants.findOneAndUpdate({_id:restaurantID},
         
             {$push:{categories:{
-                category:req.body.category,
-                meal:{name:req.body.name ,price:req.body.price,discreption:req.body.discreption}
+                category:newobj.category,
+                meal:{name:newobj.name ,price:newobj.price,discreption:newobj.discreption}
             }}},(err,rest)=>{
             if(err)
         console.log(err);
@@ -105,20 +131,34 @@ module.exports.categories_post=(req,res)=>{
         })
     }
         })
-
-        restaurants.findOne({_id:restaurantID},(err,data)=>{
-            res.send(data)
-        })
+        i=i+1
+    }
+     //   restaurants.findOne({_id:restaurantID},(err,data)=>{
+      //      res.send(data)
+       // })
     
     }
-//end here
+//////////////////////////////////////////////////////////////////////////////////
 
+//get functions 
 module.exports.restaurant_get=(req,res)=>{
     //console.log("gettt")
-    res.send("information form")
+   
+   
+    res.render("../../../../views/resturant-regestration.ejs",{error})
     };
+
+    module.exports.login_get=(req,res)=>{
+        res.send("login form")
+    }
 
 
    module.exports.location_get=(req,res)=>{
        res.send("location form")
    }
+  
+   module.exports.categories_get=(req,res)=>{
+ 
+    res.render("../../../../views/menu.ejs")
+}
+//////////////////////////////////////////////////////////////////////////////////////
