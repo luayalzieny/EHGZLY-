@@ -23,21 +23,28 @@ exports.get_dashboard=(req,res)=>{
 }
 
 exports.post_update_dashboard=(req,res)=>{
-
+    const errors={email:"",number:""};
 
     User.updateOne({_id:req.user._id},{
         Fname: req.body.Fname || req.user.Fname ,
-    Lname:req.body.Lname||req.user.Lname,
-    email:req.body.email||req.user.email,
-    number:req.body.number||req.user.number,
+        
+        Lname:req.body.Lname||req.user.Lname,
+        
+        email:req.body.email||req.user.email,
+        
+        number:req.body.number||req.user.number,
     
-   
-
 },function(err){
         if(err)
         {console.log(err);
-            controller.handleErrors(err,req.body.number)
-         res.redirect('/')
+            
+            if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="email" ){
+                errors.email=Object.entries(err.keyValue)[0][0]+" already exists"
+              }
+              
+              if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="number")
+              errors.number=Object.entries(err.keyValue)[0][0]+" already exists"
+                   res.redirect('/')
         }else{
             res.redirect('User_Dashboard')
         }
@@ -84,7 +91,10 @@ exports.post_change_Password_dashboard=(req,res)=>{
             });
             
         }else{
-        return res.render("User_Dashboard",{user:req.user,err:"Wrong password entered"})
+        return res.render("User_Dashboard",{user:req.user,
+        err:"Wrong Password Entered"
+      //  ,server_error:"The Data You Entered Contains An Error Go To The Section Involved To See What It Was "
+    })
         
           }
     })

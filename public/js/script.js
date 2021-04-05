@@ -16,13 +16,13 @@ function checkform(){
     }
 }
 
-//     if(form1.number.value){
-//         if(form1.number.value.length!==11 || form1.number.value.length[0]!=0 && form1.number.value.length[1]!=1){
-//         document.getElementById("warning_number").innerHTML="Please Enter Valid Number Consisting Of 11 Numbers";
-//         form1.number.focus();
-//         return false;
-//     }
-// }
+    if(form1.number.value){
+        if(form1.number.value.length!=11 || form1.number.value[0]!=0 && form1.number.value[1]!=1){
+        document.getElementById("warning_number").innerHTML="Please Enter Valid Number Consisting Of 11 Numbers";
+        form1.number.focus();
+        return false;
+    }
+}
 return true;
 }
 
@@ -34,16 +34,38 @@ function checkform_password(){
     if(form2.newPassword.value != form2.confirmNewPassword.value)
     {
         document.getElementById("warning_password").innerHTML="Password And Confirm Password Must Be The Same";
-        form1.password.focus();
+        form2.password.focus();
         return false;
     }
 
     if(form2.newPassword.value<3){
     document.getElementById("warning_password").innerHTML="New Password Must Be Longer Than 3 Characters"
-    form1.newPassword.focus();
+    form2.newPassword.focus();
     return false;    
     }
 
  return true;   
 
 }
+
+
+
+function server_error_password(){
+   // let form2 = document.getElementById('myForm2');
+    if(document.getElementById("server_err_password").innerHTML){
+    
+
+        document.getElementById("department").scrollIntoView()
+        document.getElementById("click_password").click()
+    }
+}
+
+function server_error_account(){
+    
+     if(document.getElementById("server_err_account").innerHTML){
+        
+ 
+         document.getElementById("department").scrollIntoView()
+         document.getElementById("click_account").click()
+     }
+ }

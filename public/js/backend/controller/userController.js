@@ -185,4 +185,3 @@ newUser.save((err)=>{
 };
 
 // end of routes functions
-

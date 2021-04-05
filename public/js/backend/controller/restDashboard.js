@@ -1,5 +1,5 @@
 const { model } = require("mongoose");
-const restaurants = require("../models/restaurantsModell");
+const restaurants = require("./../model/restaurantsModel");
 mongoose=require("mongoose")
 const express =require('express')
 const app=express();

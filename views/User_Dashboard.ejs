@@ -27,7 +27,7 @@
     <title> | user profile | </title>
 
 </head>
-<body style="background-color: #EBEDF3!important;">
+<body onload="return server_error_password();"  style="background-color: #EBEDF3!important;">
 
 <!-- ? Preloader Start -->
 <!-- <div id="preloader-active">
@@ -72,7 +72,7 @@
                 <div class="col-md-12 col-sm-12 row  welcomeTexte">
                     <div class="  col-lg-12 col-md-12 col-sm-12 ">
                       <div class=" text-white text-center mt-5 ">
-                        <h2 class="display-3"> welcome [ user name ]  </h2>
+                        <h2 class="display-3"> Welcome <%=user.Fname%> <%=user.Lname%>  </h2>
                         </div>
                     </div>
                 </div>
@@ -114,10 +114,10 @@
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-list-alt mr-3 "></i>  Statementas</span></a>
             <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
+              <span class=" text-dark font-weight-bold small text-uppercase" id="click_account"></span>><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
             <hr class="p-0 m-0">
             <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
+              <span class=" text-dark font-weight-bold small text-uppercase" id="click_password"><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
             <hr class="p-0 m-0">
 
          <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
@@ -936,13 +936,13 @@
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="change_password" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <h5>CHANGE PASSWORD</h5>
          
-            <div class="row">
+            <div id="myF" class="row">
               <form  onSubmit="return checkform_password();" id="myForm2" action="/changePassword" method="POST">
             <div class="col-lg-12">
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="password" >
                   <%if(err){%>
-                    <h4 class="mt-3" style="text-align: center;"> <%=err%></h4>
+                    <h4 class="mt-3" id="server_err" style="text-align: center;"> <%=err%></h4>
                     <%}%>
               </div>
               <div class="form-group">
