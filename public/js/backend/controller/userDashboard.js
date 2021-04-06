@@ -44,12 +44,12 @@ exports.post_update_dashboard=(req,res)=>{
               
               if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="number")
               errors.number=Object.entries(err.keyValue)[0][0]+" already exists"
-                   res.redirect('/')
+                   res.render('User_Dashboard',{err:errors})
         }else{
             res.redirect('User_Dashboard')
         }
 
-    })
+    }) 
 
     
 
@@ -93,7 +93,6 @@ exports.post_change_Password_dashboard=(req,res)=>{
         }else{
         return res.render("User_Dashboard",{user:req.user,
         err:"Wrong Password Entered"
-      //  ,server_error:"The Data You Entered Contains An Error Go To The Section Involved To See What It Was "
     })
         
           }
