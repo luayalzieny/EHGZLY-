@@ -12,6 +12,11 @@
 body{
     background-color: #d3d4d8!important;
 }
+
+
+
+
+
 .modal-style{
     background:linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7)),
     url(../photos/new3/imgaya\ \(13\).jpg) no-repeat center ;
@@ -22,12 +27,15 @@ body{
 .close{
     color: #fff!important;
 }
+.table{
+    font-size: 15px;
+}
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
-.profile-banner {
+.resturant-banner {
     width: 100%;
     height: 450px;
     background:linear-gradient(rgba(0,0,0,0.2) , rgba(0,0,0,0.2)),
@@ -65,7 +73,7 @@ nav.sticky .navbar-brand img{
  }
 
 
-.dropdown-pages .dropdown-menu{
+ .dropdown-pages .dropdown-menu{
     background-color: #0d0d0d!important;
     border: 2px solid #7f7f7f;
     /* border-bottom-left-radius: 55px!important;
@@ -75,19 +83,10 @@ nav.sticky .navbar-brand img{
     color: #fff!important;
     background-color: transparent!important;
 } */
-.Restrurant-profile-image {border-radius: 10px }
 
-.user-dropDown .dropdown-menu{
-    width: 150px;
-    height: auto;
-}
-.user-dropDown .dropdown-menu {
-    background-color: #0d0d0d!important;
-    border: 2px solid #7f7f7f;
-}
-.user-dropDown .dropdown-menu  ul li a{
-    color: white!important;
-}
+.profile-image {border-radius: 50% }
+
+
 
 /* //////////////////////////////////////////// */
 /* /////////////////////////////////////////// */
@@ -140,6 +139,7 @@ nav.sticky .navbar-brand img{
     padding: 5px;
     border-radius: 10px;
 }
+
 .cancelled span{
     background-color:#ff0000;
     color: #fff;
@@ -236,3 +236,69 @@ label{
     border: 1px solid #eceef4!important;
     border-radius: 5px;
 }
+
+
+#MENU_BUILDER .nav-tabs .nav-item .nav-link{
+    color: #454751!important;
+
+}
+.menu_category_btn{
+    font-size: 12px!important;
+}
+#menu_category_modal input,
+#menu_category_modal select,
+#menu_category_modal textarea,
+#menu_category_Edit input,
+#menu_category_Edit select,
+#menu_category_Edit textarea,
+.team-modal input,
+.team-modal select,
+.team-modal textarea
+{
+    background-color: #fdfdfd;
+    color: #9097a1;
+    border: 1px solid #eceef4;
+    border-radius: 5px;
+}
+.table-striped{
+    font-size: 15px;
+}
+.Earnings-div .earn-price{
+font-size:15px ;
+    
+}
+
+
+.pop-up-body{  
+    margin-top: 250px!important;
+ }
+  .fa-frown-open{color:#999999;font-size: 80px;}
+  .delete-message{ color: #575757;}
+  .yes-del{
+     background-color: #eb102d!important;
+     border: 0.5px solid #eb102d!important; 
+     color: #fffefe!important; 
+     border-radius: 5px!important;
+     transition: all 0.5s ease-in-out!important;
+ }
+ 
+ .cancle-del{
+     background-color: #D0D0D0!important;
+     border: 0.5px solid #D0D0D0!important; 
+     color: #fffefe!important; 
+     border-radius: 5px!important;
+     transition: all 0.5s ease-in-out!important;
+ 
+ }
+ .yes-del:hover{
+     background-color: transparent!important;
+     border: 0.5px solid #eb102d!important; 
+     color: #eb102d!important; 
+ 
+ }
+ .cancle-del:hover{
+     background-color: transparent!important;
+     border: 0.5px solid #D0D0D0!important; 
+     color: #D0D0D0!important; 
+ 
+ }
