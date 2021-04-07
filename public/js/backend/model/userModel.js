@@ -44,7 +44,8 @@ const userSchema=new mongoose.Schema({
         required:[true,"Please enter your number"],
         index:{unique:true},
         minlength:[11,"Length of numbers is 11"],
-        maxlength:[11,"Length of numbers is 11"]
+        maxlength:[11,"Length of numbers is 11"],
+        validate:[validator.isNumeric,"Please Enter A Valid Number"]
     },
 
     password:{

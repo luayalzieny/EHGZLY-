@@ -18,7 +18,7 @@ exports.get_dashboard=(req,res)=>{
         return res.redirect('/')
         }
       
-        res.render('User_Dashboard',{user:req.user,err:""})
+        res.render('User_Dashboard',{user:req.user,err:"",err_password:""})
   
 }
 
@@ -42,9 +42,10 @@ exports.post_update_dashboard=(req,res)=>{
                 errors.email=Object.entries(err.keyValue)[0][0]+" already exists"
               }
               
-              if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="number")
+              if(err.code===11000 && Object.entries(err.keyValue)[0][0]=="number"){
               errors.number=Object.entries(err.keyValue)[0][0]+" already exists"
-                   res.render('User_Dashboard',{err:errors})
+            }
+                   res.render('User_Dashboard',{user:req.user,err:errors,err_password:""})
         }else{
             res.redirect('User_Dashboard')
         }
@@ -92,7 +93,7 @@ exports.post_change_Password_dashboard=(req,res)=>{
             
         }else{
         return res.render("User_Dashboard",{user:req.user,
-        err:"Wrong Password Entered"
+            err_password:"Wrong Password Entered"
     })
         
           }
