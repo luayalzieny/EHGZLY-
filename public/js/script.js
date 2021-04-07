@@ -38,7 +38,7 @@ function checkform_password(){
         return false;
     }
 
-    if(form2.newPassword.value<3){
+    if(form2.newPassword.value.length<3){
     document.getElementById("warning_password").innerHTML="New Password Must Be Longer Than 3 Characters"
     form2.newPassword.focus();
     return false;    
@@ -49,23 +49,22 @@ function checkform_password(){
 }
 
 
+//if wrong old password is entered or updated info contained errors
+function server_error(){
 
-function server_error_password(){
-   // let form2 = document.getElementById('myForm2');
+      if(document.getElementById("server_err_account").innerHTML){    
+ 
+        document.getElementById("department").scrollIntoView()
+        document.getElementById("click_account").click()
+    
+    }
+
     if(document.getElementById("server_err_password").innerHTML){
     
-
         document.getElementById("department").scrollIntoView()
         document.getElementById("click_password").click()
     }
+
 }
 
-function server_error_account(){
-    
-     if(document.getElementById("server_err_account").innerHTML){
-        
- 
-         document.getElementById("department").scrollIntoView()
-         document.getElementById("click_account").click()
-     }
- }
+

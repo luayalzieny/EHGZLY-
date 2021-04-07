@@ -27,7 +27,8 @@
     <title> | user profile | </title>
 
 </head>
-<body onload="return server_error_password();"  style="background-color: #EBEDF3!important;">
+<!--   -->
+<body onload="return server_error();" style="background-color: #EBEDF3!important;">
 
 <!-- ? Preloader Start -->
 <!-- <div id="preloader-active">
@@ -42,7 +43,7 @@
 </div> -->
 
 
-<section class="profile-banner">
+<section class="profile-banner" >
     <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
         <div class="container">
           <a class="navbar-brand" href="/"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
@@ -114,12 +115,11 @@
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-list-alt mr-3 "></i>  Statementas</span></a>
             <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#Account_Setting" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase" id="click_account"></span>><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
+              <span class=" text-dark font-weight-bold small text-uppercase" id="click_account"><i class="fa fa-user-cog mr-3 "></i>  Account Setting</span></a>
             <hr class="p-0 m-0">
             <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#change_password" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase" id="click_password"><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
+              <span class=" text-dark font-weight-bold small text-uppercase" id="click_password" ><i class="fa fa-user-cog mr-3 "></i>  change password</span></a>
             <hr class="p-0 m-0">
-
          <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#exampleModal"  id="v-pills-settings-tab"href="#delete_profile" role="tab">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i> Delete Profile</span></a>
             <!-- ///////////////////////////////////////////////// -->
@@ -162,7 +162,7 @@
                 <div class="welcomed-text p-2">
                   <h3 class="mt-3">welcome to your account</h3>
                   <p style="color: #F6FBFD;" class="mt-4">my account gives you a quick access to settings and tools for mangining your account like
-                    [changing address] and [changing password] . you can manage orderds booking and statement and may more
+                    [Changing Account Details] and [Changing Password] . you can manage orderds booking and statement and may more
                   </p>
                 </div>
               </div>
@@ -907,11 +907,18 @@
                   
                   <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="<%=user.email%>">
+                    <%if(err.email){%>
+                      <p id="server_err_account"><%=err.email%></p>
+                    <%}%>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   
                   <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputPhone" name="number" placeholder="<%=user.number%>">
+                    <%if(err.number){%>
+                      <p id="server_err_account"><%=err.number%></p>
+                    <%}%>
+                    
                   </div>
                   
                   <p id="warning_number"></p>
@@ -940,17 +947,17 @@
               <form  onSubmit="return checkform_password();" id="myForm2" action="/changePassword" method="POST">
             <div class="col-lg-12">
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="password" >
-                  <%if(err){%>
-                    <h4 class="mt-3" id="server_err" style="text-align: center;"> <%=err%></h4>
+                <input type="password" class="form-control col-lg-12" name="password" id="exampleInputPassword1" placeholder="Old Password" >
+                  <%if(err_password){%>
+                    <h4 class="mt-3" id="server_err_password" style="text-align: center;"> <%=err_password%></h4>
                     <%}%>
               </div>
               <div class="form-group">
                 
-                <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="new password">
+                <input type="password" class="form-control col-lg-12" name="newPassword" id="exampleInputPassword2" placeholder="New Password">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="confirm password" >
+                <input type="password" class="form-control col-lg-12" name="confirmNewPassword" id="exampleInputPassword3" placeholder="Confirm Password" >
               </div>
             </div>
             <p id="warning_password"></p>
