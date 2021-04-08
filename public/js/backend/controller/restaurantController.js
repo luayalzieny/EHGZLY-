@@ -145,7 +145,7 @@ module.exports.restaurant_get=(req,res)=>{
     //console.log("gettt")
    
    
-    res.render("../../../../views/resturant-regestration.ejs",{error})
+    res.render("./resturant-regestration.ejs",{error})
     };
 
     module.exports.login_get=(req,res)=>{

@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const bcrypt=require('bcrypt')
 const validator = require('validator');
 const { type } = require('os');
+const autoIncrement = require('mongoose-auto-increment');
 const categoriesSchema=new Schema({
 
         category:{type:String},
@@ -11,7 +12,7 @@ const categoriesSchema=new Schema({
         descreption:{type:String}
 
 })
-
+autoIncrement.initialize(mongoose.connection)
 
 const restaurantSchema= new Schema({
     
@@ -55,6 +56,7 @@ const restaurantSchema= new Schema({
         }],
         opentime:{open:{type:String},close:{type:String}},
          img:{type:String},
+         coverimg:{type:String},
         categories:[categoriesSchema],
         orders:[{type:Object}]
 
@@ -66,7 +68,7 @@ const restaurantSchema= new Schema({
     next()
     })
     
-
-
+    
+   restaurantSchema.plugin(autoIncrement.plugin,'restaurant');
 const restaurant=mongoose.model("restaurant",restaurantSchema)
 module.exports = restaurant;

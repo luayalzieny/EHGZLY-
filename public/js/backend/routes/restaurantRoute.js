@@ -34,9 +34,9 @@ app.post('/restaurantLogin',function(req,res,next){
     })(req,res,next);
 });
 app.post("/update",restaurantDashboard.restaurant_updateMenu_post)
-//app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post)
+app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post)
 
-
+app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
 app.get("/location",restaurantController.location_get)

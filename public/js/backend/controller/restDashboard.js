@@ -53,20 +53,57 @@ module.exports.restaurant_updateMenu_post=(req,res)=>{
 
 //main information update 
 module.exports.restaurant_updateMainInformation_post=(req,res)=>{
-    restaurantID =req.session.passport.user;
-    restaurants.findById({restaurantID},(err,rest)=>{
+    //restaurantID =req.session.passport.user;
+    restaurantID=5
+    console.log(req.body)
+    restaurants.findOne({_id:restaurantID},(err,rest)=>{
         if(err)
         console.log(err)
-        restaurants.findByIdAndUpdate({restaurantID},{
-            restaurantName:req.body.name||rest.restaurantName,
+        if(req.body.cat){
+            let data =new Array();
+          cat=req.body.cat
+          if(typeof cat =="string"){
+              data =new Array(cat)
+            }
+            else{
+            data=cat
+        }
+
+          data.forEach(element => {
+              
+              restaurants.findOneAndUpdate({_id:restaurantID},
+      
+                  {$push:{categories:{
+                      category:element,
+                      
+                  }}},(err,rest)=>{
+                  if(err)
+              console.log(err);
+                  
+              })
+          });  }
+        restaurants.findOneAndUpdate({_id:restaurantID},{
+            restaurantName:req.body.restaurantName||rest.restaurantName,
             restaurantPhone:req.body.restaurantPhone||rest.restaurantPhone,
             email:req.body.email||rest.email,
             username:req.body.username||rest.username,
             manger:req.body.manger||rest.manger,
-            mangerPhone:req.body.mangerPhone||rest.mangerPhone
+            mangerPhone:req.body.mangerPhone||rest.mangerPhone,
+            img:req.body.img||rest.img||"no logo",
+            coverimg:req.body.coverimg||rest.coverimg||"no cover",
+
         },(err,rest2)=>{
+            if(err)
             console.log(err)
         })
     })
     
 }
+
+
+////////////////////////////////////////////
+//get
+module.exports.rest_profile_get=(req,res)=>{
+
+    res.render("./resturant-profile")
+    };
