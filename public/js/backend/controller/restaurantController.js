@@ -98,7 +98,7 @@ let location={
 //pushinig categories and meals post
 module.exports.categories_post=(req,res)=>{
    // restaurantID =req.session.passport.user
-    restaurantID="605ca44b916fc90040ea4be8"
+    restaurantID=5
     
     let i=0
 
@@ -136,7 +136,7 @@ module.exports.categories_post=(req,res)=>{
      //   restaurants.findOne({_id:restaurantID},(err,data)=>{
       //      res.send(data)
        // })
-    
+     res.redirect("/restprofile")
     }
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -157,8 +157,30 @@ module.exports.restaurant_get=(req,res)=>{
        res.send("location form")
    }
   
-   module.exports.categories_get=(req,res)=>{
- 
-    res.render("../../../../views/menu.ejs")
+   module.exports.categories_get= async (req,res)=>{
+    restaurantID=5
+    
+   
+    restaurants.findOne({_id:restaurantID},(err,rest)=>{
+        if(err)
+        console.log(err)
+        
+        let cats=rest.categories
+        let cat=new Array();
+        cats.forEach(element => {
+            cat.push(element.category)
+        });
+        console.log(cat)
+        res.render("./restuant-profile.ejs",{cat})
+        })
+    
+ //  try{
+   // cat = await getCat()
+    
+    //}
+    //catch(err){
+     //   console.log(err)
+   // }
+
 }
 //////////////////////////////////////////////////////////////////////////////////////

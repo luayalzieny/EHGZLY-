@@ -70,18 +70,20 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
         }
 
           data.forEach(element => {
-              
+              if(element !='0'){
               restaurants.findOneAndUpdate({_id:restaurantID},
       
                   {$push:{categories:{
                       category:element,
                       
-                  }}},(err,rest)=>{
-                  if(err)
-              console.log(err);
+                         }}},(err,rest)=>{
+                                 if(err)
+                                     console.log(err);
                   
-              })
-          });  }
+                                        })
+                             }
+                        } 
+          )}
         restaurants.findOneAndUpdate({_id:restaurantID},{
             restaurantName:req.body.restaurantName||rest.restaurantName,
             restaurantPhone:req.body.restaurantPhone||rest.restaurantPhone,
@@ -97,13 +99,27 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
             console.log(err)
         })
     })
-    
+    res.redirect("/restprofile")  
 }
 
 
 ////////////////////////////////////////////
 //get
 module.exports.rest_profile_get=(req,res)=>{
+    //restaurantID =req.session.passport.user;
+    restaurantID=5
+    restaurants.findOne({_id:restaurantID},(err,rest)=>{
+        if(err)
+        console.log(err)
+        
+        let cats=rest.categories
+        let cat=new Array();
+        cats.forEach(element => {
+            cat.push(element.category)
+        });
+        console.log(cat)
+        res.render("./resturant-profile",{cat})
+        })
 
-    res.render("./resturant-profile")
+   
     };

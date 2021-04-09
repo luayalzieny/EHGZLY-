@@ -566,19 +566,19 @@
                         <br>  
                         <select id="select-cat" style="width: 80%!important;color: #9097a1;" class="mul-select p-3 mt-1 mb-3" multiple="true" name="cat">
                           <option value="0" selected="selected" > food</option>
-                          <option value="1" > pizza</option>
-                          <option value="2" > Pasta</option>
-                          <option value="3" > stakes</option>
-                          <option value="4">burgger</option>
-                          <option value="5" > Beef Roast</option>
-                          <option value="6" >Cheese Burger</option>
-                          <option value="7">Chicken </option>
-                          <option value="8">Chicken Roast</option>
-                          <option value="9">Chines Soup</option>
-                          <option value="10">apple pie  </option>
-                          <option value="11" > apple juice</option>
-                          <option value="12">Carrot Juice</option>
-                          <option value="13">coffee</option>
+                          <option value="pizza" > pizza</option>
+                          <option value="Pasta" > Pasta</option>
+                          <option value="stakes" > stakes</option>
+                          <option value="burgger">burgger</option>
+                          <option value="Beef Roast" > Beef Roast</option>
+                          <option value="Cheese Burger" >Cheese Burger</option>
+                          <option value="Chicken">Chicken </option>
+                          <option value="Chicken Roast">Chicken Roast</option>
+                          <option value="Chines Soup">Chines Soup</option>
+                          <option value="apple pie">apple pie  </option>
+                          <option value="apple juice" > apple juice</option>
+                          <option value="Carrot Juice">Carrot Juice</option>
+                          <option value="coffee">coffee</option>
                           
                         </select>
                     </div> 
@@ -628,48 +628,17 @@
                                     </button>
                                   </div>
                                   <div class="modal-body">
-                                    <form action="">
-                                      <div class="form-row">
+                                    <form action="/categories" method="post">
+                                      <div class="form-row" id="div0">
                                           <!-- ////////////////////////////////////////// -->
-                                          <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                                              <select id="select-cat"  class=" col-lg-12 p-2 mb-3" >
-                                                <option value="0" selected="selected" > select meal category</option>
-                                                <option value="1" > pizza</option>
-                                                <option value="2" > Pasta</option>
-                                                <option value="3" > stakes</option>
-                                                <option value="4">burgger</option>
-                                                <option value="5" > Beef Roast</option>
-                                                <option value="6" >Cheese Burger</option>
-                                                <option value="7">Chicken </option>
-                                                <option value="8">Chicken Roast</option>
-                                                <option value="9">Chines Soup</option>
-                                                <option value="10">apple pie  </option>
-                                                <option value="11" > apple juice</option>
-                                                <option value="12">Carrot Juice</option>
-                                                <option value="13">coffee</option>
-                                                
-                                              </select>
-                                          </div> 
-                                          <!-- ////////////////////////// -->
-                                          <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                            <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal name">
-
-                                          </div>
-                                        <!-- ////////////////////////// -->
-                                        <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                                          <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal price">
-                                        </div>
-                                        <!-- ////////////////////////// -->
-                                        <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                          <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="meal description">
-                                        </div>
+                                         
                                       <!-- ////////////////////////// -->
-                                      </div>
-                                      <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
-                                      <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
-
-                                      <hr>
-                                    </form>
+                                    </div>
+                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
+                                    
+                                    <hr>
+                                  </form>
+                                  <button id="button1" class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
                                   </div>
                                  
                                 </div>
@@ -1404,7 +1373,97 @@ const input=document.querySelector('#inpUpload');
           })
 
   </script>
+<script >
+    
+  let cat ="<%=cat%>"
+  console.log(cat)
+  cats=new Array()
+ 
+  let div0 = document.getElementById("div0");
+  let add=document.getElementById("button1")
+  let i=0;
+  let str=""
 
+  for(let j=0;j<cat.length;j=j+1){
+      if(cat[j]==','){
+          cats.push(str)
+          str=""
+      }
+      else
+      str=str+cat[j]
+  }
+  console.log(cats)
+
+  
+ function form (){
+  
+      let div1 = document.createElement('div');
+      div1.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
+      let select = document.createElement("select");
+      select.className=" col-lg-12 p-2 mb-3"
+      select.placeholder= "select category"
+      ID=i+"[category]"
+      select.name=ID
+      let option = document.createElement('option');
+         option.text="select category"
+         option.value=""
+          select.options.add(option,1)
+
+      cats.forEach(element => {
+           option = document.createElement('option');
+         option.text=element
+          select.options.add(option,1)
+      });
+      div0.appendChild(div1);
+      div1.appendChild(select);
+
+     
+      let div2 = document.createElement('div');
+      div2.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
+      let input2 = document.createElement("input");
+      ID=i+"[name]"
+      input2.name=ID
+      input2.className="col-lg-12 p-2 mb-3" 
+      input2.placeholder="meal name"
+      div0.appendChild(div2);
+      div2.appendChild(input2);
+
+      let div3 = document.createElement('div');
+      div3.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
+      input3 = document.createElement("input");
+      ID=i+"[price]"
+      input3.name=ID
+      input3.className="col-lg-12 p-2 mb-3" 
+      input3.placeholder="price"
+      div0.appendChild(div3);
+      div3.appendChild(input3);
+       
+      let div4 = document.createElement('div');
+      div4.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
+      input4 = document.createElement("input");
+      ID=i+"[discreption]"
+      input4.name=ID
+      input4.className="col-lg-12 p-2 mb-3" 
+      input4.placeholder="meal discreption"
+      div0.appendChild(div4);
+      div4.appendChild(input4);
+      // let p4 =document.createElement("p");
+        //node = document.createTextNode("discreption");
+       //p4.appendChild(node);
+      //div1.appendChild(p4);
+      
+
+      i++;
+
+  //div0.appendChild(input4);
+
+ } 
+ form()
+
+  add.addEventListener("click",()=>form());
+
+
+</script>
 
 
 </body>
