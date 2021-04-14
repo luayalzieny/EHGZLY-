@@ -142,7 +142,7 @@
                           <i class="fas fa-frown-open"></i>
                           <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
                           <div class="row justify-content-center align-items-center">
-                          <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
+                          <form action="/deletrest" method="post"><button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button></form>
                           <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
                           </div>
                         </div>
@@ -152,8 +152,8 @@
                   </div>
             <!-- ////////////////////////////////////////////////// -->
               <hr class="p-0 m-0">
-          <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i>  SIGN OUT</span></a>
+              <form method="POST" action="restlogout"> <a class="  nav-link py-2 p-2  " href="#!"  id="v-pills-settings-tab"  aria-controls="v-pills-settings" aria-selected="false">
+                <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i></form><button type="submit" class="btn "> Sign-out</button> </span></a></form>
                 
           </div>
   </div>
@@ -650,66 +650,65 @@
                     <!-- /////////////////////////// -->
                     <ul class="category-crud mt-5">
 
-                      <li class="category-row">
-                        
+                    <li class="category-row">
+                     
                       <div class="d-flex">
-                        <div class="font-weight-bolder Extra-category-name">the meal Name </div>
+                        <div class="font-weight-bolder Extra-category-name"> 
+                        <% let i = 0;%>
+                          <% while (i < cats.length) { %>
+                          <p>catagory: <%=cats[i].category%> <i  id="<%=cats[i].category %>" onclick="getid(this.id)" type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit" id='alo'></i>  </p>
+         
+                            <% let j=0;%>
+                            
+                            <% while (j < cats[i].meal.length ){ %>
+                              <p>&emsp;meal name: <%=cats[i].meal[j].name  %><i  id="<%=cats[i].category %>,<%=cats[i].meal[j].name%>-<%=cats[i].meal[j].price%>_<%=cats[i].meal[j].description%>"type="button" onclick="getid2(this.id)" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_meal_Edit" ></i></p>
+                              <p>&emsp;price:<%=cats[i].meal[j].price  %></i></p>
+                              <p>&emsp;description: <%=cats[i].meal[j].description  %></p>
+                              <br>
+                              <%  j++%>
+                              <% }%>
+                          
+                            <hr>
+                            <%     i++; %>
+                            <%     }%></div>
                         <div class="ml-auto  Required-text">
                     
-                          <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit" ></i>
+                          <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_meal_Edit" ></i>
                           
                           
                           
                           <!-- Modal -->
-                          <div class="modal fade" id="menu_category_Edit" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
+                          <div class="modal fade" id="menu_meal_Edit" tabindex="-1" role="dialog" aria-labelledby="menu_meal_Edit_Label" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">update category</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">update meal</h5>
                                   <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                  <form action="">
-                                    <div class="form-row">
+                                  <form action="/update"method="post">
+                                    <div id="menu" class="form-row">
                                         <!-- ////////////////////////////////////////// -->
-                                        <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                                            <select id="select-cat"  class=" col-lg-12 p-2 mb-3" >
-                                              <option value="0" selected="selected" > update meal category</option>
-                                              <option value="1" > pizza</option>
-                                              <option value="2" > Pasta</option>
-                                              <option value="3" > stakes</option>
-                                              <option value="4">burgger</option>
-                                              <option value="5" > Beef Roast</option>
-                                              <option value="6" >Cheese Burger</option>
-                                              <option value="7">Chicken </option>
-                                              <option value="8">Chicken Roast</option>
-                                              <option value="9">Chines Soup</option>
-                                              <option value="10">apple pie  </option>
-                                              <option value="11" > apple juice</option>
-                                              <option value="12">Carrot Juice</option>
-                                              <option value="13">coffee</option>
-                                              
-                                            </select>
-                                        </div> 
+                                      
                                         <!-- ////////////////////////// -->
                                         <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                          <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal name">
+                                          <input type="text" class="col-lg-12 p-2 mb-3" id="newname" value=""  name="newname">
 
                                         </div>
                                       <!-- ////////////////////////// -->
                                       <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal price">
+                                        <input type="number" class="col-lg-12 p-2 mb-3" id="newprice" value=""  name="newprice"> 
                                       </div>
                                       <!-- ////////////////////////// -->
                                       <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="update meal description">
+                                        <input type="text" class="col-lg-12 p-2 mb-3" id="newdescription" value="" name="newdescription">
                                       </div>
                                     <!-- ////////////////////////// -->
                                     </div>
-                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
-                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
+                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit">update </button>
+                                  
 
                                     <hr>
                                   </form>
@@ -720,15 +719,52 @@
                             </div>
                           </div>
 
+
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="menu_category_Edit" tabindex="-1" role="dialog" aria-labelledby="menu_category_Edit_Label" aria-hidden="true">
+                           <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                
+                                <h5 class="modal-title" id="exampleModalLabel">update category</h5>
+                                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="/update"method="post">
+                                  <div id="catagory" class="form-row">
+                                      <!-- ////////////////////////////////////////// -->
+                                      
+                                      <!-- ////////////////////////// -->
+                                      <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
+                                        <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="updatecategory" name="category">
+                                      </div>
+                                     
+                                    <!-- ////////////////////////// -->
+                                    </div>
+                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit">update </button>
+                                  
+
+                                    <hr>
+                                </form>
+
+                               </div>
+                               
+                             </div>
+                           </div>
+                        </div>
+
                         <!-- /////////////////////////////////////// -->
 
                           <i class=" ml-3 text-danger  fas fa-trash"></i>
 
                         </div>
-                       
+                      
                       </div>
                       <hr>
-                      </li>
+                    </li>
 
 
 
@@ -1153,20 +1189,20 @@
            <!-- /////////////////////////////////////////////////////////////// -->
            <!-- /////////////////////////////////////////////////////////////// -->
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="CHANGE_PASSWORD" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <form>
+            <form action="/restChangePassword"method="POST">
 
             <h5 class=" text-capitalize mt-3"> CHANGE PASSWORD </h5>
             <div class="row">
 
             <div class="col-lg-12">
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required>
+                <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required name="oldpassword">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword2" placeholder="new password" required>
+                <input type="password" class="form-control col-lg-12" id="password" placeholder="new password" required name="newpassword">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control col-lg-12" id="exampleInputPassword3" placeholder="confirm password" required>
+                <input type="password"  class="form-control col-lg-12" id="confirm_password" placeholder="confirm password" required>
               </div>
             </div>
 
@@ -1373,10 +1409,10 @@ const input=document.querySelector('#inpUpload');
           })
 
   </script>
-<script >
+<script  >
     
   let cat ="<%=cat%>"
-  console.log(cat)
+
   cats=new Array()
  
   let div0 = document.getElementById("div0");
@@ -1389,10 +1425,15 @@ const input=document.querySelector('#inpUpload');
           cats.push(str)
           str=""
       }
+      else if(j==cat.length-1){
+        str=str+cat[j]
+        cats.push(str)
+      }
       else
       str=str+cat[j]
   }
   console.log(cats)
+
 
   
  function form (){
@@ -1405,10 +1446,10 @@ const input=document.querySelector('#inpUpload');
       ID=i+"[category]"
       select.name=ID
       let option = document.createElement('option');
-         option.text="select category"
-         option.value=""
+         option.text="select "
+        
           select.options.add(option,1)
-
+          
       cats.forEach(element => {
            option = document.createElement('option');
          option.text=element
@@ -1441,14 +1482,14 @@ const input=document.querySelector('#inpUpload');
       let div4 = document.createElement('div');
       div4.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
       input4 = document.createElement("input");
-      ID=i+"[discreption]"
+      ID=i+"[description]"
       input4.name=ID
       input4.className="col-lg-12 p-2 mb-3" 
-      input4.placeholder="meal discreption"
+      input4.placeholder="meal description"
       div0.appendChild(div4);
       div4.appendChild(input4);
       // let p4 =document.createElement("p");
-        //node = document.createTextNode("discreption");
+        //node = document.createTextNode("description");
        //p4.appendChild(node);
       //div1.appendChild(p4);
       
@@ -1462,6 +1503,93 @@ const input=document.querySelector('#inpUpload');
 
   add.addEventListener("click",()=>form());
 
+
+
+  //////////////////////////////////////////////////////////////////////////////////////
+  let password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  console.log("aloooo")
+  if(password.value != confirm_password.value) {
+    console.log("worong")
+    confirm_password.setCustomValidity("Passwords Don't Match");
+    confirm_password.reportValidity();
+     
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+confirm_password.addEventListener("change", ()=>validatePassword());
+confirm_password.addEventListener("change", ()=>validatePassword());
+
+
+</script>
+<script>
+  function getid(id){
+   let model= document.getElementById("catagory")
+  let inputttt = document.createElement("input");
+  inputttt.value=id
+ inputttt.name="oldcategory"
+ inputttt.style.display="none";
+   model.appendChild(inputttt);
+  console.log(id)
+  }
+  function getid2(id){
+   let model= document.getElementById("menu")
+   let catagoryname=""
+   let mealname=""
+   let price=""
+   let description=""
+   let str=""
+   console.log(id)
+for(let j=0;j<id.length;j=j+1){
+if(id[j]===','){
+
+catagoryname=str
+
+str=""
+}
+else if(id[j]=='-'){
+mealname=str;
+str=""
+}
+else if(id[j]=='_'){
+price=str;
+price = parseInt(price)
+str=""
+}
+else if(j==id.length-1){
+str=str+id[j]
+description=str;
+}
+else
+str=str+id[j]
+}
+
+  let inputttt1 = document.createElement("input");
+  inputttt1.value=catagoryname
+ inputttt1.name="oldcategory"
+ inputttt1.style.display="none";
+   model.appendChild(inputttt1);
+  
+
+   let inputttt2 = document.createElement("input");
+   inputttt2.value=mealname
+   inputttt2.name="oldname"
+ inputttt2.style.display="none";
+   model.appendChild(inputttt2);
+  
+
+  let newname= document.getElementById("newname")
+  newname.required =true
+  newname.value=mealname
+  let newprice= document.getElementById("newprice")
+  newprice.value=price
+  newprice.required =true
+  let newdescription= document.getElementById("newdescription")
+  newdescription.value=description
+  }
 
 </script>
 

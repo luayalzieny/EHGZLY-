@@ -33,7 +33,9 @@ passport.use(new LocalStrategy(customFields,(email,password,done)=>{
 
 
 //passport serialization && deserialization
-passport.serializeUser((user,done)=>done(null,user.id));
+passport.serializeUser(function (user,done)
+{  console.log('OK')
+  done(null,user.id)});
 
 passport.deserializeUser((_id,done)=>{
   restaurant.findById({_id},function(err,user){

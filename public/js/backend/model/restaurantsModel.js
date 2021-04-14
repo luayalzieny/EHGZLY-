@@ -8,8 +8,8 @@ const autoIncrement = require('mongoose-auto-increment');
 const categoriesSchema=new Schema({
 
         category:{type:String},
-        meal:[{name:{type:String,},price:{type:Number},discreption:{type:String}}],
-        descreption:{type:String}
+        meal:[{name:{type:String,},price:{type:Number},description:{type:String}}],
+       
 
 })
 autoIncrement.initialize(mongoose.connection)
@@ -56,7 +56,6 @@ const restaurantSchema= new Schema({
         }],
         opentime:{open:{type:String},close:{type:String}},
          img:{type:String},
-         coverimg:{type:String},
         categories:[categoriesSchema],
         orders:[{type:Object}]
 
@@ -68,7 +67,7 @@ const restaurantSchema= new Schema({
     next()
     })
     
-    
-   restaurantSchema.plugin(autoIncrement.plugin,'restaurant');
+
+    restaurantSchema.plugin(autoIncrement.plugin,'restaurant');
 const restaurant=mongoose.model("restaurant",restaurantSchema)
 module.exports = restaurant;

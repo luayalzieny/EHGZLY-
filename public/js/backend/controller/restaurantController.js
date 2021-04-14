@@ -73,6 +73,7 @@ module.exports.restaurant_post=(req,res)=>{
 //pushing restaurant's Locations post
 module.exports.restaurantLocation_post=(req,res)=>{
     restaurantID =req.session.passport.user
+    console.log(req.session)
 let location={
     phone:req.body.phone,
     Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
@@ -97,12 +98,13 @@ let location={
 
 //pushinig categories and meals post
 module.exports.categories_post=(req,res)=>{
-   // restaurantID =req.session.passport.user
-    restaurantID=5
-    
-    let i=0
 
-    console.log(req.body)
+    console.log(req.session)
+   restaurantID =req.session.passport.user
+  //  restaurantID=5
+    console.log(restaurantID)
+    let i=0
+   // console.log(req.body)
     
 
  while(req.body[i]){
@@ -111,7 +113,7 @@ module.exports.categories_post=(req,res)=>{
     //if category exists 
      restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':newobj.category},
      
-     {$push:{'categories.$.meal':{name:newobj.name ,price:newobj.price,discreption:newobj.discreption}
+     {$push:{'categories.$.meal':{name:newobj.name ,price:newobj.price,Description:newobj.Description}
     }}
      ,(err,rest)=>{
         if(err)
@@ -123,10 +125,10 @@ module.exports.categories_post=(req,res)=>{
         
             {$push:{categories:{
                 category:newobj.category,
-                meal:{name:newobj.name ,price:newobj.price,discreption:newobj.discreption}
+                meal:{name:newobj.name ,price:newobj.price,Description:newobj.Description}
             }}},(err,rest)=>{
             if(err)
-        console.log(err);
+        console.log("asd");
             
         })
     }
@@ -149,30 +151,29 @@ module.exports.restaurant_get=(req,res)=>{
     };
 
     module.exports.login_get=(req,res)=>{
-        res.send("login form")
+        res.render("./loginrest")
     }
-
 
    module.exports.location_get=(req,res)=>{
        res.send("location form")
    }
   
-   module.exports.categories_get= async (req,res)=>{
-    restaurantID=5
+  // module.exports.categories_get= async (req,res)=>{
+    //restaurantID=5
     
    
-    restaurants.findOne({_id:restaurantID},(err,rest)=>{
-        if(err)
-        console.log(err)
+    //restaurants.findOne({_id:restaurantID},(err,rest)=>{
+      //  if(err)
+       // console.log(err)
         
-        let cats=rest.categories
-        let cat=new Array();
-        cats.forEach(element => {
-            cat.push(element.category)
-        });
-        console.log(cat)
-        res.render("./restuant-profile.ejs",{cat})
-        })
+       // let cats=rest.categories
+       // let cat=new Array();
+       // cats.forEach(element => {
+        //    cat.push(element.category)
+       // });
+       // console.log(cat)
+       // res.render("./restuant-profile.ejs",{cat})
+       // })
     
  //  try{
    // cat = await getCat()
@@ -182,5 +183,5 @@ module.exports.restaurant_get=(req,res)=>{
      //   console.log(err)
    // }
 
-}
+//}
 //////////////////////////////////////////////////////////////////////////////////////
