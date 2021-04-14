@@ -56,6 +56,7 @@ const restaurantSchema= new Schema({
         }],
         opentime:{open:{type:String},close:{type:String}},
          img:{type:String},
+         coverimg:{type:String},
         categories:[categoriesSchema],
         orders:[{type:Object}]
 
