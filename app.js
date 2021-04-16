@@ -2,9 +2,9 @@
 const express= require('express')
 const app=express()
 //const bodyParser=require('body-parser')
-const userRoute=require('./public/js/backend/routes/userRoutes')
+// const userRoute=require('./public/js/backend/routes/userRoutes')
 require("./public/js/backend/config/db")
-// require("./public/js/backend/config/passport")
+require("./public/js/backend/config/passport")
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 const cartRoute=require('./public/js/backend/routes/cartRoute')
 // end of modules used
@@ -25,7 +25,7 @@ app.set('view engine', 'ejs')
 
 // routes callback
 
-app.use(userRoute)
+// app.use(userRoute)
 app.use(restaurantsRoute)
 app.use(cartRoute)
 // End of routes callback
