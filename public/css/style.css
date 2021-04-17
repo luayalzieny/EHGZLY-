@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Reem+Kufi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=La+Belle+Aurore&family=Rubik+Mono+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +12,7 @@
     text-decoration: none!important;
     text-transform: capitalize!important;  
     outline: none!important;
-    font-family: 'Reem Kufi', sans-serif;
+    font-family: 'Jua', sans-serif!important;
 }
 
 .modal{z-index: 111111111!important;}
