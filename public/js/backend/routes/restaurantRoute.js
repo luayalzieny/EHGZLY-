@@ -12,6 +12,7 @@ const app=express();
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+
 app.use(session({
   secret: "FUCK HTI ,All my friends FUCK HTI",
   resave: false,
@@ -19,7 +20,7 @@ app.use(session({
   cookie: { maxAge: 20000000000000}
 
 }))
-app.use(passport.initialize())
+app.use(passport.initialize({ userProperty: 'restUser' }));
 app.use(passport.session())
 app.use(flash())
 
@@ -44,12 +45,12 @@ app.post('/restChangePassword',restaurantDashboard.changeRestPass_post)
 app.post("/update",restaurantDashboard.restaurant_updateMenu_post)
 app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post)
 app.post("/deletrest",restaurantDashboard.deletRest_post)
-
+app.post("/deletcat",restaurantDashboard.deletcategryandmeals)
 
 app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
-app.get("/location",restaurantController.location_get)
+//app.get("/location",restaurantController.location_get)
 //app.get("/categories",restaurantController.categories_get)
 const cat_data=require("./../../../../dummy data/category.json")
 
