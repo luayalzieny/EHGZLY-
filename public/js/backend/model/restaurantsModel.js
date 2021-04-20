@@ -50,7 +50,7 @@ const restaurantSchema= new Schema({
             required:[true,"Please enter a password"],
             minlength:[3,"Minimum password length is 3 characters"]
         },
-        location:[{phone:{type:String},
+        location:[{//phone:{type:String},
         Coordinates :{Latitude:{type:Number},Longitude:{type:Number}},
         area:{type:String}
         }],

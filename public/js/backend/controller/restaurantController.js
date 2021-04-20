@@ -75,7 +75,7 @@ module.exports.restaurantLocation_post=(req,res)=>{
     restaurantID =req.session.passport.user
     console.log(req.session)
 let location={
-    phone:req.body.phone,
+
     Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
     area:req.body.area
 }

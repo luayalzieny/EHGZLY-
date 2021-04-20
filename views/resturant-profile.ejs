@@ -530,19 +530,19 @@
 
                   <!-- ////////////////////////////////////////// -->
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="state city">
+                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="state city" name="area">
                   </div>
 
                 <!-- ////////////////////////////////////////// -->
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Latitude ">
+                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Latitude " name="Latitude">
                   </div>
 
                 <!-- ////////////////////////////////////////// -->
                 <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                  <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Longitude">
+                  <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Longitude" name=Longitude>
                 </div>
-
+         
                 <!-- ////////////////////////////////////////// -->
                   <h6 class="p-2"> if you need to find the addres of your resturant with Longitude and   Latitude click here <a class="text-danger" href="https://www.latlong.net/convert-address-to-lat-long.html"> LatLong.net  </a> </h6>
                   <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
@@ -656,12 +656,16 @@
                         <div class="font-weight-bolder Extra-category-name"> 
                         <% let i = 0;%>
                           <% while (i < cats.length) { %>
-                          <p>catagory: <%=cats[i].category%> <i  id="<%=cats[i].category %>" onclick="getid(this.id)" type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit" id='alo'></i>  </p>
+                          <p>catagory: <%=cats[i].category%>
+                             <i  id="<%=cats[i].category %>" onclick="getid(this.id)" type="button"  class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_category_Edit"></i>
+                             <i id="<%=cats[i].category %>" onclick="getid3(this.id)" type="button"  data-toggle="modal" data-target="#DELETE-category" class=" ml-3 text-danger fas fa-trash"></i>  </p>
          
                             <% let j=0;%>
                             
                             <% while (j < cats[i].meal.length ){ %>
-                              <p>&emsp;meal name: <%=cats[i].meal[j].name  %><i  id="<%=cats[i].category %>,<%=cats[i].meal[j].name%>-<%=cats[i].meal[j].price%>_<%=cats[i].meal[j].description%>"type="button" onclick="getid2(this.id)" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_meal_Edit" ></i></p>
+                              <p>&emsp;meal name: <%=cats[i].meal[j].name  %>
+                                <i  id="<%=cats[i].category %>,<%=cats[i].meal[j].name%>-<%=cats[i].meal[j].price%>_<%=cats[i].meal[j].description%>"type="button" onclick="getid2(this.id)" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_meal_Edit" ></i> 
+                                <i id="<%=cats[i].category %>,<%=cats[i].meal[j].name%>" onclick="getid4(this.id)" type="button"  data-toggle="modal" data-target="#DELETE-category-meal" class=" ml-3 text-danger fas fa-trash"></i></p>
                               <p>&emsp;price:<%=cats[i].meal[j].price  %></i></p>
                               <p>&emsp;description: <%=cats[i].meal[j].description  %></p>
                               <br>
@@ -673,7 +677,6 @@
                             <%     }%></div>
                         <div class="ml-auto  Required-text">
                     
-                          <i type="button" class="text-primary fas fa-edit " data-toggle="modal" data-target="#menu_meal_Edit" ></i>
                           
                           
                           
@@ -756,9 +759,50 @@
                            </div>
                         </div>
 
+                        <!-- ///////////////////////////////////////////////// -->
+                  <!-- Modal -->
+                  <div class="modal fade" id="DELETE-category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog pop-up-body " role="document">
+                      <div class="modal-content">
+                        <div class="modal-body text-center">
+                          <i class="fas fa-frown-open"></i>
+                          <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
+                          <div class="row justify-content-center align-items-center">
+                            <form action="/deletcat" method="post" >
+                              <div id=DELETEcategory></div>
+                          <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
+                        </form>
+                          <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                       <!-- ///////////////////////////////////////////////// -->
+                  <!-- Modal -->
+                  <div class="modal fade" id="DELETE-category-meal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog pop-up-body " role="document">
+                      <div class="modal-content">
+                        <div class="modal-body text-center">
+                          <i class="fas fa-frown-open"></i>
+                          <h4 class="delete-message mt-3">You Want To Delete?!!</h4>
+                          <div class="row justify-content-center align-items-center">
+                            <form id="deletmealform"action="/deletcat" method="post" >
+                            
+                          <button class="yes-del btn p-1 pl-3 pr-3 mr-2" > Yes, delete </button>
+                        </form>
+                          <button class=" cancle-del btn p-1 pl-3 pr-3 ml-2" data-dismiss="modal"> no, cancle </button>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+
                         <!-- /////////////////////////////////////// -->
 
-                          <i class=" ml-3 text-danger  fas fa-trash"></i>
 
                         </div>
                       
@@ -1472,6 +1516,7 @@ const input=document.querySelector('#inpUpload');
       let div3 = document.createElement('div');
       div3.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
       input3 = document.createElement("input");
+      input3.type="number"
       ID=i+"[price]"
       input3.name=ID
       input3.className="col-lg-12 p-2 mb-3" 
@@ -1526,6 +1571,7 @@ confirm_password.addEventListener("change", ()=>validatePassword());
 
 </script>
 <script>
+  //edit category
   function getid(id){
    let model= document.getElementById("catagory")
   let inputttt = document.createElement("input");
@@ -1535,6 +1581,7 @@ confirm_password.addEventListener("change", ()=>validatePassword());
    model.appendChild(inputttt);
   console.log(id)
   }
+  //edit meal
   function getid2(id){
    let model= document.getElementById("menu")
    let catagoryname=""
@@ -1590,7 +1637,55 @@ str=str+id[j]
   let newdescription= document.getElementById("newdescription")
   newdescription.value=description
   }
+  //delet category
+  function getid3(id){
+    form=document.getElementById("DELETEcategory")
+    let inputttt = document.createElement("input");
+    inputttt.value=id
+    inputttt.name="oldcategory"
+    inputttt.style.display="none";
+    form.appendChild(inputttt);
+    console.log(id)
+  }
+  //delelt meal 
+  function getid4(id){
+    "DELETE-category-meal"
+    let model= document.getElementById("deletmealform")
+   let catagoryname=""
+   let mealname=""
+   str=""
+   console.log(id)
+for(let j=0;j<id.length;j=j+1){
+  console.log()
+if(id[j]===','){
 
+catagoryname=str
+
+str=""
+}
+else if(j==id.length-1){
+str=str+id[j]
+mealname=str;
+}
+else
+str=str+id[j]
+}
+
+  let inputttt1 = document.createElement("input");
+  inputttt1.value=catagoryname
+ inputttt1.name="oldcategory"
+ inputttt1.style.display="none";
+   model.appendChild(inputttt1);
+  
+
+   let inputttt2 = document.createElement("input");
+   inputttt2.value=mealname
+   inputttt2.name="oldname"
+ inputttt2.style.display="none";
+   model.appendChild(inputttt2);
+  
+  }
+  
 </script>
 
 

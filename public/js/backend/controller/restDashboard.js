@@ -5,6 +5,7 @@ const express =require('express')
 const app=express();
 const path = require('path');
 const bcrypt = require('bcrypt');
+const { monitorEventLoopDelay } = require("perf_hooks");
 //menu update
 module.exports.restaurant_updateMenu_post=(req,res)=>{
     if(!req.session.passport.user){
@@ -106,6 +107,21 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
             console.log(err)
         })
     })
+    if(req.body.Latitude){
+        let location={
+
+            Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
+            area:req.body.area
+        }
+            restaurants.findOneAndUpdate({_id:restaurantID},
+                {$push:{
+                    location:location
+                    
+            }},(err,rest)=>{
+                console.log(rest)
+                
+            })
+    }
     res.redirect("/restprofile")  
 }
 
@@ -150,11 +166,52 @@ module.exports.changeRestPass_post=(req,res)=>{
         
         res.redirect("/restLogin")
     }
+
     ////////////////////////////////////////////////////////////////////////////
+    module.exports.deletcategryandmeals=(req,res)=>{
+        restaurantID=req.session.passport.user
+        console.log(req.body)
+   
     
+    if(req.body.oldname){
+       
+    restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':req.body.oldcategory},
+    {$pull:{'categories.$.meal':{name:req.body.oldname} },
+   
+}
+    ,(err,rest)=>{
+       if(err)
+      console.log(err);
+      console.log(rest)
+      
+           
+       })
+    }
+    else{
+
+       
+    restaurants.findOneAndUpdate({_id:restaurantID},
+    {$pull:{categories:{category:req.body.oldcategory }},
+   
+    } 
+
+    ,(err,rest)=>{
+       if(err)
+      console.log(err);
+      console.log(rest)
+      
+           
+       })
+    }
+    res.redirect("/restprofile")
+}
+    /////////////////////////////////////////////////////////////////
+
     //get
     module.exports.rest_profile_get=(req,res)=>{
-      
+       // console.log(req.session)
+       // console.log(req.restUser)
+        //console.log(req.User)
         if(!req.session.passport){
             res.redirect("/restLogin")
         }
@@ -162,7 +219,7 @@ module.exports.changeRestPass_post=(req,res)=>{
             res.redirect("/restLogin")
         }
         else{
-        console.log(req.session.passport.user)
+       // console.log(req.session.passport.user)
         restaurantID =req.session.passport.user;
         //restaurantID=7
        //console.log(restaurantID)
@@ -171,12 +228,12 @@ module.exports.changeRestPass_post=(req,res)=>{
             console.log(err)
             
             let cats=rest.categories
-            console.log(cats)
+            //console.log(cats)
             let cat=new Array();
             cats.forEach(element => {
                 cat.push(element.category)
             });
-            console.log(cat)
+            //console.log(cat)
             res.render("./resturant-profile",{cat,cats})
             })
     
