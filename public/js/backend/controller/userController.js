@@ -7,6 +7,7 @@ const bcrypt=require('bcrypt');
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User=require('../model/userModel')
+const rest=require('./../model/restaurantsModel')
 // end of modules used
 
 app.use(express.urlencoded({ extended: true }))
@@ -93,19 +94,6 @@ console.log(err)
 }
 //end of handle errors
 
-
-function checkAuthentication(req,res){
-    if(req.isAuthenticated()){
-      return res.redirect('/')
-      }
-    }
-    
-  function checkNotAuthentication(req,res){
-    if(!req.isAuthenticated()){
-    return res.redirect('/')
-}
-    }
-
     
 //end of basic functions
 
@@ -116,8 +104,8 @@ exports.get_home=(req,res)=>{
     res.render("index",{user:req.user})
 };
 
-exports.post_home=(req,res)=>{
-//search to be made
+exports.get_map=(req,res)=>{
+res.render('map',{user:req.user})
 };
 
 exports.get_about=(req,res)=>{
@@ -138,7 +126,7 @@ exports.get_how_it_work=(req,res)=>{
 
 
 exports.get_login_page=(req,res)=>{
-    checkAuthentication(req,res)
+   // checkAuthentication(req,res)
     res.render("loginpage" )
 };
 
@@ -158,7 +146,7 @@ exports.post_ordering=(req,res)=>{
 
 
 exports.get_sign_up_page=(req,res)=>{
-    checkAuthentication(req,res)
+   // checkAuthentication(req,res)
     res.render("signuppage",{error:""})
 };
 
@@ -183,5 +171,9 @@ newUser.save((err)=>{
 
 })
 };
+
+
+
+
 
 // end of routes functions

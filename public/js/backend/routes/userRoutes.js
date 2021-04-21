@@ -5,6 +5,7 @@ const session=require('express-session');
 const passport=require('passport');
 const flash = require('express-flash');
 const controller=require('../controller/userController');
+const cartController=require('./../controller/cartController')
 const User_Dashboard=require('./../controller/userDashboard')
 // end of modules used
 
@@ -26,20 +27,35 @@ app.use(flash())
 //end of middlewares
 
 //basic functions
-
+function checkAuthentication(req,res,next){
+  if(req.isAuthenticated()){
+    return res.redirect('/')
+    }
+  next()
+  }
+  
+function checkNotAuthentication(req,res,next){
+  if(!req.isAuthenticated()){
+  return res.redirect('/')
+}
+next()
+  }
 //end of basic functions
+
 //routes
 app.get('/',controller.get_home);
-app.post('/',controller.post_home);
+
+
+app.get('/',controller.get_map);
 
 app.get('/faqs',controller.get_faqs);
 
 app.get('/how_it_work',controller.get_how_it_work);
 
-app.get('/signuppage',controller.get_sign_up_page);
+app.get('/signuppage',checkAuthentication,controller.get_sign_up_page);
 app.post('/signuppage',controller.post_sign_up_page);
 
-app.get('/loginpage',controller.get_login_page);
+app.get('/loginpage',checkAuthentication,controller.get_login_page);
 app.post('/loginpage',function(req,res,next){
   passport.authenticate("local",{
     successRedirect:"/",
@@ -47,10 +63,7 @@ app.post('/loginpage',function(req,res,next){
     failureFlash:true
   })(req,res,next)});
 
-app.post('/logout',(req,res)=>{
-  req.logOut();
-  res.redirect("/")
-})
+app.get('/map',checkNotAuthentication,controller.get_map)
 
 app.get('/ordering',controller.get_ordering)
 
@@ -63,6 +76,11 @@ app.post('/User_Update_Dashboard',User_Dashboard.post_update_dashboard)
 app.post('/delete_profile',User_Dashboard.post_delete_dashboard)
 app.post('/changePassword',User_Dashboard.post_change_Password_dashboard)
 
+app.get('/menu/:restName',cartController.get_menuRest)
 
 
+app.post('/logout',(req,res)=>{
+  req.logOut();
+  res.redirect("/")
+})
 module.exports=app
