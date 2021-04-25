@@ -1,5 +1,14 @@
 // Modules used
 const express= require('express')
+const dotenv = require('dotenv');
+const cors = require('cors');
+const path = require('path');
+
+
+// load environment variables
+dotenv.config({ path: './public/js/backend/config/config.env' });
+
+
 const app=express()
 //const bodyParser=require('body-parser')
 const userRoute=require('./public/js/backend/routes/userRoutes')
@@ -16,10 +25,18 @@ const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static(__dirname))
+// Set static folder
+app.use(express.static(path.join(__dirname)));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.set('view engine', 'ejs')
+
+
+// Enable cors
+app.use(cors());
+
+
 // end of middleware
 
 
@@ -28,6 +45,9 @@ app.set('view engine', 'ejs')
 app.use(userRoute)
 app.use(restaurantsRoute)
 //app.use(cartRoute)
+
+app.use('/api/v1/stores', require('./public/js/backend/routes/stores'));
+
 // End of routes callback
 
 // server running

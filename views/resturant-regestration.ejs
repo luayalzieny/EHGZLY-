@@ -105,6 +105,20 @@
                                         <p><%=error.password %></p>
                                         <%}%>
                                     </div>
+                                    <!-- ////////////////////////// -->
+                                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                                      <input type="text" class="col-lg-12 p-2  " id="address" name="address" value="" required placeholder="LongLat *">
+                                      <%if (error.address!=0){%>
+                                        <p><%=error.address %></p>
+                                        <%}%>
+                                    </div>
+                                     <!-- ////////////////////////// -->
+                                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                                      <input type="text" class="col-lg-12 p-2  " id="kitchen" name="kitchen" value="" required placeholder="kitchen *">
+                                      <%if (error.kitchen!=0){%>
+                                        <p><%=error.kitchen %></p>
+                                        <%}%>
+                                    </div>
                                 </div>
                              <!-- ////////////////////////////////////////// -->
                                     
@@ -114,7 +128,7 @@
                             <span>By Registering You Confirm That You Accept The Terms & Conditions And Privacy Policy</span>
                             </div>
                               </div>
-                              <button class="mt-3" >Back to <a style="color: #eb102d;" >log in</a></button>
+                              <button type="submit" ><a style="color: #eb102d;" >submit</a></button>
                             </form>
                                                      
                         </div>
