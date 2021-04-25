@@ -12,8 +12,8 @@ mapboxgl.setRTLTextPlugin(
     var map = new mapboxgl.Map({
       container: 'map', // The container ID
       style: 'mapbox://styles/mapbox/streets-v11', // The map style to use
-      center: [ 31.74164772033691,
-            30.300167426544057], // Starting position [lng, lat]
+      center: [ 30.531005859375,
+        30.36813582872057], // Starting position [lng, lat]
       zoom: 15 // Starting zoom level
     });
 
