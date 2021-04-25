@@ -36,7 +36,7 @@ let handelErrors=(err)=>{
 ////////////////////////////////////////////////////////////////////////
 //restaurant main post (name email.....) 
 module.exports.restaurant_post=(req,res)=>{
- console.log(req.body.restaurantPhone)
+ console.log(req.body)
  error={ restaurantName:"0",mangerPhone:"0",email:"0",password:"0",username:"0",manger:"0"}
     const rest=new restaurants({
         //_id:req.body.id,
@@ -47,6 +47,8 @@ module.exports.restaurant_post=(req,res)=>{
         username:req.body.username,
         manger:req.body.manger,
         mangerPhone:req.body.mangerPhone,
+        address:req.body.address,
+        kitchen:req.body.kitchen
         // img:req.body.img,
         //opentime:{open:req.body.open,close:req.body.close}
         
