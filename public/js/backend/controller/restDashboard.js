@@ -5,7 +5,35 @@ const express =require('express')
 const app=express();
 const path = require('path');
 const bcrypt = require('bcrypt');
-const { monitorEventLoopDelay } = require("perf_hooks");
+/////////////////////////////////////////////////////////////////////////////
+//error handeling
+let error={ email:"0",password:"0",username:"0",restaurantPhone:"0"}
+let handelErrors=(err)=>{
+    console.log(err.message, err.code);
+  
+    if (err.code === 11000) {
+        let massage= err.message.slice(80,85)
+        if(massage=="email")
+        error.email = 'that email is already registered';
+        else if(massaage="usern")
+        error.username = 'that username is already registered';
+        else
+        error.restaurantPhone='that phone is already registered'
+        console.log(massage)
+      
+    }
+    if (err.message.includes('restaurant validation failed')) {
+      
+      Object.values(err.errors).forEach(({ properties }) => {
+      
+        error[properties.path] = properties.message;
+        console.log (error[properties.path])
+      });
+    }
+    
+    
+    return error;
+  } 
 //menu update
 module.exports.restaurant_updateMenu_post=(req,res)=>{
     if(!req.session.passport.user){
@@ -63,7 +91,7 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
    // }
     restaurantID =req.session.passport.user;
     //restaurantID=7
-   // console.log(req.body)
+    console.log(req.body)
     restaurants.findOne({_id:restaurantID},(err,rest)=>{
         if(err)
         console.log(err)
@@ -104,7 +132,8 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
 
         },(err,rest2)=>{
             if(err)
-            console.log(err)
+          error=handelErrors(err)
+           console.log(error)
         })
     })
     if(req.body.Latitude){
@@ -147,6 +176,7 @@ module.exports.changeRestPass_post=(req,res)=>{
                 })
             }
             else{
+                error.password="worg password"
                 //wrong password
             }
         
@@ -208,10 +238,7 @@ module.exports.changeRestPass_post=(req,res)=>{
     /////////////////////////////////////////////////////////////////
 
     //get
-    module.exports.rest_profile_get=(req,res)=>{
-       // console.log(req.session)
-       // console.log(req.restUser)
-        //console.log(req.User)
+    module.exports.rest_profile_get=(req,res,next)=>{
         if(!req.session.passport){
             res.redirect("/restLogin")
         }
@@ -234,8 +261,14 @@ module.exports.changeRestPass_post=(req,res)=>{
                 cat.push(element.category)
             });
             //console.log(cat)
-            res.render("./resturant-profile",{cat,cats})
+            console.log(error)
+            let errorss=error
+            let coverimg=rest.coverimg
+            error=error={ email:"0",password:"0",username:"0"}
+            res.render("./resturant-profile",{cat,cats,errorss,coverimg})
             })
     
+      
         }
+        console.log(error)
         };

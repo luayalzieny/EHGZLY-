@@ -36,7 +36,7 @@
     <title> | Resturant profile | </title>
 
 </head>
-<body style="background-color: #EBEDF3!important;">
+<body style="background-color: #EBEDF3!important;" onload="onpageload()">
 
 <!-- ? Preloader Start -->
 <!-- <div id="preloader-active">
@@ -114,7 +114,7 @@
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-cog mr-3 "></i>  DASHBOARD</span></a>
             <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " id="v-pills-profile-tab" data-toggle="pill" href="#MY_RESTAURANT" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fas fa-utensils mr-3  "></i>  MY RESTAURANT</span></a>
+              <span class=" text-dark font-weight-bold small text-uppercase" id ="restsittingsButton"><i class=" fas fa-utensils mr-3  "></i>  MY RESTAURANT</span></a>
             <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#MENU_BUILDER" role="tab" aria-controls="v-pills-messages" aria-selected="false">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fab fa-elementor mr-3 "></i>  MENU BUILDER</span></a>
@@ -129,7 +129,7 @@
                 <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fas fa-file-invoice-dollar mr-3 "></i>  EARNINGS</span></a>
               <hr class="p-0 m-0">
               <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#CHANGE_PASSWORD" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-user-cog mr-3 "></i>  CHANGE PASSWORD</span></a>
+                <span class=" text-dark font-weight-bold small text-uppercase" id ="changePasswordButton"><i class="fa fa-user-cog mr-3 "></i>  CHANGE PASSWORD</span></a>
               <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " data-toggle="modal" data-target="#DELETE-profile" id="v-pills-settings-tab"href="#delete_profile" role="tab">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa fa-trash-alt mr-3"></i>  DELETE PROFILE</span></a>
@@ -475,35 +475,45 @@
                             <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
                               <img class="img-fluid" src="../public/photos/kfc-meal.png" id="defultImg2" alt="" width="180" height="180" >
                               <p>choose cover photo</p>
-                              <input style="width: 100%;" class="    up-file" type="file"  id="inpUpload2">
+                              <input style="width: 100%;" class="    up-file" type="file" name="coverimg"  id="inpUpload2">
                             </div>
                         <!-- ////////////////////////// -->
 
                         <!-- ////////////////////////// -->
                             <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                                <input type="text" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Restaurant name *" name="restaurantName">
+                                <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="Restaurant name *" name="restaurantName">
                               </div>
                         <!-- ////////////////////////// -->
 
                               <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                <input type="text" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Restaurant phone" name="restaurantPhone">
+                                <input type="tel" class="col-lg-12 p-2" id="restaurantPhone" value=""  placeholder="Restaurant phone" name="restaurantPhone" pattern="[0-1]{2}[0-9]{9}">
+                                <p>format: 01xxxxxxxxx</p>
                               </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                            <input type="text" class="col-lg-12 p-2" id="validationCustom" value=""  placeholder="Manager Name" name="manger">
+                            <input type="text" class="col-lg-12 p-2" id="manger" value=""  placeholder="Manager Name" name="manger">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Manager Contact phone" name="mangerPhone">
+                            <input type="tel" class="col-lg-12 p-2 mb-3" id="mangerPhone" value=""  placeholder="Manager Contact phone" name="mangerPhone" pattern="[0-1]{2}[0-9]{9}">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="email" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Contact Email" name="email">
+                            <input type="email" class="col-lg-12 p-2 mb-3" id="email" value=""  placeholder="Contact Email" name="email">
+                            <%if(errorss.email != 0){%>
+                              <%=errorss.email%>
+                              <% } %>
                           </div>
-                       
+                       <!-- ////////////////////////////////////////// -->
+                          <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
+                            <input type="text" class="col-lg-12 p-2 mb-3" id="username" value=""  placeholder="username" name="username">
+                            <%if(errorss.username != 0){%>
+                              <%=errorss.username%>
+                              <% } %>
+                           </div>
                         <!-- ////////////////////////////////////////// -->
                         <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
                           <select class="col-lg-12 p-2 mb-3" name="" id="">
@@ -523,10 +533,7 @@
                       <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="pickup time">
                     </div>
 
-                  <!-- ////////////////////////////////////////// -->
-                  <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="contry">
-                  </div>
+                  
 
                   <!-- ////////////////////////////////////////// -->
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
@@ -1242,6 +1249,10 @@
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" id="exampleInputPassword1" placeholder="password" required name="oldpassword">
               </div>
+              <%if(errorss.password != 0){%>
+              <%=errorss.password%>
+              <% } %>
+              
               <div class="form-group">
                 <input type="password" class="form-control col-lg-12" id="password" placeholder="new password" required name="newpassword">
               </div>
@@ -1686,6 +1697,23 @@ str=str+id[j]
   
   }
   
+</script>
+<script>
+  function onpageload(){
+    let emailerror='<%=errorss.email%>';
+    let usererror='<%=errorss.username%>';
+    let passworderror='<%=errorss.password%>';
+    let restphoneerror='<%=errorss.restphoneerror%>'
+    changePasswordButton=document.getElementById("changePasswordButton")
+    restsittingsButton=document.getElementById("restsittingsButton")
+    console.log(passworderror)
+    if(passworderror!=0){
+      changePasswordButton.click()
+    }
+    else if(emailerror!=0||usererror!=0){
+      restsittingsButton.click()
+    }
+  }
 </script>
 
 
