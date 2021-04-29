@@ -4,6 +4,8 @@ mongoose=require("mongoose")
 const express =require('express')
 const app=express();
 const path = require('path');
+const mimeType=['image/jpeg','image/png','images/gif']
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //handel moongose erorrs function

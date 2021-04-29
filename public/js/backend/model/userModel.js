@@ -58,9 +58,15 @@ const userSchema=new mongoose.Schema({
         index:{unique:false},
         order:{type:String},
         content:{type:String}
-    }]
+    }],
+    image:{
+        type: Buffer, 
+         },
+         imageType:{
+             type:String
+         }
 
-})
+},{timestamps:true})
 
 
 userSchema.pre('save',async function(next){
@@ -68,6 +74,16 @@ userSchema.pre('save',async function(next){
     this.password=await bcrypt.hash(this.password,salt)
     next()
 })
+
+//this function will add a virtual parameter that wont be added to the database but will be used to save the 
+    //image and its path and convert it to base64 file
+userSchema.virtual('image_path').get(function(){
+        if(this.image!=null && this.imageType!=null){
+            return `data:${this.imageType};charset=utf-8;base64,
+            ${this.image.toString('base64')}`
+        }
+    })
+
 
 userSchema.plugin(autoIncrement.plugin,'userModel');
 const userModel=mongoose.model("userModel",userSchema)

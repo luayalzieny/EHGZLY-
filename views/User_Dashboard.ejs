@@ -24,6 +24,14 @@
     <link rel="stylesheet" href="../public/css/colors/color.css">
     <link rel="stylesheet" href="../public/css/userProfile.css">
     <link rel="stylesheet" href="../public/css/new-preloader.css">
+    <!-- filepond image plugins -->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script defer   src="./../public/js/imageUpload.js"></script>
     <title> | user profile | </title>
 
 </head>
@@ -926,7 +934,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="p-3 row justify-content-center align-items-center">
-                  <img class="img-fluid " src="../public/photos/avatar-icon-images-4.jpg" id="defultImg" alt="" width="180" height="180" >
+                  <img class="img-fluid "  src="../public/photos/avatar-icon-images-4.jpg" type="file" name="file" id="defultImg" alt="" width="180" height="180" >
                   <input class="mt-3 ml-5 up-file" type="file"  id="inpUpload">
                 </div>
               </div>

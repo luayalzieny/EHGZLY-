@@ -51,7 +51,7 @@ const cartSchema= mongoose.Schema({
         type:Number
     }
 }
-
+,{timestamps:true}
 )
 //end of cart schema 
 

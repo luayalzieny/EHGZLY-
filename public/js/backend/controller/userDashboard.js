@@ -3,6 +3,8 @@ const app=express();
 const bcrypt=require('bcrypt');
 const User=require('../model/userModel')
 const controller=require('../controller/userController')
+const mimeType=['image/jpeg','image/png','images/gif']
+
 // end of modules used
 
 app.use(express.urlencoded({ extended: true }))

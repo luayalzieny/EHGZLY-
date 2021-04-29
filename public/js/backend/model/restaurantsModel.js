@@ -91,12 +91,12 @@ const restaurantSchema= new Schema({
             required:[true,'please enter your phone number']
             },
         
-        createdAt: {
-            type: Date,
-            default: Date.now
-            }
+        // createdAt: {
+        //     type: Date,
+        //     default: Date.now
+        //     }
 
-    })
+    },{timestamps:true})
 
 
   
@@ -124,7 +124,16 @@ const restaurantSchema= new Schema({
 
     next()
     })
-    
+
+    //this function will add a virtual parameter that wont be added to the database but will be used to save the 
+    //image and its path and convert it to base64 file
+restaurantSchema.virtual('image_path').get(function(){
+        if(this.image!=null && this.imageType!=null){
+            return `data:${this.imageType};charset=utf-8;base64,
+            ${this.image.toString('base64')}`
+        }
+    })
+
 
     restaurantSchema.plugin(autoIncrement.plugin,'restaurant');
 const restaurant=mongoose.model("restaurant",restaurantSchema) // restaurant model

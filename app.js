@@ -16,6 +16,7 @@ const userRoute=require('./public/js/backend/routes/userRoutes')
 //require("./public/js/backend/config/passport")
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 //const cartRoute=require('./public/js/backend/routes/cartRoute')
+
 // end of modules used
 
 
@@ -43,7 +44,7 @@ app.use(cors());
 // routes callback
 
 app.use(userRoute)
-app.use(restaurantsRoute)
+//app.use(restaurantsRoute)
 //app.use(cartRoute)
 
 app.use('/api/v1/stores', require('./public/js/backend/routes/stores'));
