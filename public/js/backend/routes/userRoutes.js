@@ -76,7 +76,7 @@ app.post('/User_Update_Dashboard',User_Dashboard.post_update_dashboard)
 app.post('/delete_profile',User_Dashboard.post_delete_dashboard)
 app.post('/changePassword',User_Dashboard.post_change_Password_dashboard)
 
-app.get('/menu/:restName',cartController.get_menuRest)
+app.get('/menu/:restName/:restID',cartController.get_menuRest)
 
 
 app.post('/logout',(req,res)=>{

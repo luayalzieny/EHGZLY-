@@ -18,31 +18,35 @@ app.use(express.json());
 exports.get_menuRest=(req,res)=>{
 
     let customName=req.params.restName
-
-    rest.findOne({restaurantName:customName},function(err,result){
-        if(err){
-            return console.log(err)
-        }
-        if(!result){
-            return res.render('erorr404')
-        }
+    let restID=req.params.restID
+    let custom={
+        customName,restID
+    }
+    res.send(custom)
+    // rest.findOne({restaurantName:customName},function(err,result){
+    //     if(err){
+    //         return console.log(err)
+    //     }
+    //     if(!result){
+    //         return res.render('erorr404')
+    //     }
         
-        const order=new cart({
-            _id:1,
+    //     const order=new cart({
+    //         _id:1,
             
-            customer_id:Math.round(Math.random()*1000+1),
-            order_number:Math.round(Math.random()*1000+1),
-            restaurant_name:1 ,
-            total_price:0
-        })
-        order.save((err)=>{
-            if(err){
-           return console.log(err)}
-        })
+    //         customer_id:Math.round(Math.random()*1000+1),
+    //         order_number:Math.round(Math.random()*1000+1),
+    //         restaurant_name:1 ,
+    //         total_price:0
+    //     })
+    //     order.save((err)=>{
+    //         if(err){
+    //        return console.log(err)}
+    //     })
 
-        //res.render('menu')
-       res.json(result)
-    })
+    //     //res.render('menu')
+    //    res.json(result)
+    // })
 
 
 
