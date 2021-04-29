@@ -239,6 +239,7 @@ module.exports.changeRestPass_post=(req,res)=>{
 
     //get
     module.exports.rest_profile_get=(req,res,next)=>{
+       // console.log(req)
         if(!req.session.passport){
             res.redirect("/restLogin")
         }

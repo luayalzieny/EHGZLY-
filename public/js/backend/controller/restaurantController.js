@@ -4,6 +4,8 @@ mongoose=require("mongoose")
 const express =require('express')
 const app=express();
 const path = require('path');
+require("./../config/db")
+require("./../config/passport")
 const mimeType=['image/jpeg','image/png','images/gif']
 
 

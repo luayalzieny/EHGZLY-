@@ -1,14 +1,17 @@
-
 const restaurant=require("../model/restaurantsModel")
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require('bcrypt');
+const express=require('express');
+const app=express();
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 const customFields={
   usernameField:"email",
   passwordField:"password"
 }
-passport.use(new LocalStrategy(customFields,(email,password,done)=>{
+passport.use('rest',new LocalStrategy(customFields,(email,password,done)=>{
   restaurant.findOne({$or:[{email},{username:email}]},(err,user)=>{
     console.log(email)
       if(err){
@@ -33,9 +36,9 @@ passport.use(new LocalStrategy(customFields,(email,password,done)=>{
 
 
 //passport serialization && deserialization
-passport.serializeUser(function (user,done)
-{  console.log('OK')
-  done(null,user.id)});
+passport.serializeUser(function (rest,done){
+   console.log("ok")
+  done(null,rest.id)});
 
 passport.deserializeUser((_id,done)=>{
   restaurant.findById({_id},function(err,user){

@@ -12,8 +12,7 @@ dotenv.config({ path: './public/js/backend/config/config.env' });
 const app=express()
 //const bodyParser=require('body-parser')
 const userRoute=require('./public/js/backend/routes/userRoutes')
-//require("./public/js/backend/config/db")
-//require("./public/js/backend/config/passport")
+
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 //const cartRoute=require('./public/js/backend/routes/cartRoute')
 
@@ -21,8 +20,7 @@ const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 
 
 //middle wares used
-// app.use(bodyParser.urlencoded({extended:true}))
-// app.use(bodyParser.json());
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -42,9 +40,9 @@ app.use(cors());
 
 
 // routes callback
-
 app.use(userRoute)
-//app.use(restaurantsRoute)
+
+app.use(restaurantsRoute)
 //app.use(cartRoute)
 
 app.use('/api/v1/stores', require('./public/js/backend/routes/stores'));

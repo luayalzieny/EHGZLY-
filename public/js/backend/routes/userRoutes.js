@@ -57,7 +57,7 @@ app.post('/signuppage',controller.post_sign_up_page);
 
 app.get('/loginpage',checkAuthentication,controller.get_login_page);
 app.post('/loginpage',function(req,res,next){
-  passport.authenticate("local",{
+  passport.authenticate("user",{
     successRedirect:"/",
     failureRedirect:"/loginpage",
     failureFlash:true
