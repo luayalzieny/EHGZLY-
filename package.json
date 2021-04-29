@@ -1,7 +1,7 @@
 {
   "name": "grad_proj",
   "version": "1.0.0",
-  "description": "Our great Galsa",
+  "description": "Our great TakeAways",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
