@@ -30,7 +30,7 @@
     <title> | order | </title>
 
 </head>
-<body>
+<body onload="onloadfunction()">
 
 <!-- ? Preloader Start -->
 <!-- <div id="preloader-active">
@@ -79,8 +79,9 @@
                           <img class="" src="../public/photos/imgs/kfc.jpg" width="80" height="80"  alt=""> 
                         </div>
                          <div class=" p-3 text-light">
-                          <h1>Kfc – Kentucky</h1>
-                          <p>  <i class="fas fa-pizza-slice"></i> Hot Dogs, Pizza & Stakes</p>
+                           
+                          <h1><%=rest.restaurantName%></h1>
+                          <p>  <i class="fas fa-pizza-slice"></i> <%=rest.kitchen%></p>
                          </div>
                         </div>
                     </div>
@@ -127,26 +128,34 @@
               <li class=" pl-4"> <a class="text-danger" href="#chicken">chicken</a> </li>
             </ul> -->
            <hr>
+           
            <article style="box-sizing: border-box;" class="p-1">
-            <div class="menu-title" id="pizza">
-              <h4 id="pizza"> Pizza  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4> 
-              <span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span>  
-            </div>
-            <ul>
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+            <%let categories=rest.categories%>
+            <%categories.forEach(cat => { %>
+              <div class="menu-title" id="pizza">
+                <h4 id="<%cat.category%>"><%=cat.category%>  <span> <a class="arrow-top-link" href="#to-top">   </a> </span>  </h4> 
+                <!--span style="font-size: 14px; color: #a9a9a9;">Cheese, tomatoes, mushrooms, garlic, mussels, cockles, olives</span-->  
+              </div>
+              <ul>
+                <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+           
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <li class="mt-4 d-flex menu ">
+                <% let meals=cat.meal%>
+                <%meals.forEach(meal => { %>
                   <div class="single-menu">
-                      <img src="../public/photos/menu/pizza-1.png"  alt="">
+                      <!--img src="../public/photos/menu/pizza-1.png"  alt=""-->
                       <div class="menu-content ml-3 ">
-                          <h4> Special Pizza<span>£50.00</span></h4>
-                          <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
+                        <br>
+                          <h4> <%=meal.name%><span><%=meal.price%></span></h4>
+                          <span><%=meal.description%> </span>  
                       </div>
                       <div  class="pl-3">
-                        <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                        <button onclick="pushmeal(this.id)" id="<%=meal.name%>+<%=meal.price%>" type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
+                        
                         <!-- Button trigger modal -->
   
-                            <!-- Modal -->
+                            <!-- Modal >
                             <div class="modal fade" id="orderExtra-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content extra-modal-content">
@@ -158,7 +167,7 @@
                               </div>
                                 <div class="modal-body">
                                     <!-- ///////////////////////////////////////////////// -->
-                                    <!-- ///////////////////////////////////////////////// -->
+                                    <!-- ///////////////////////////////////////////////// >
                                   <form action="">
 
                                     
@@ -224,7 +233,7 @@
                                         </div>
                                       </li>
                                       <hr>
-                                      <!-- ////////////////////////////////////////////////////// -->
+                                      <!-- ////////////////////////////////////////////////////// >
 
 
 
@@ -283,7 +292,7 @@
 
 
 
-                                      <!-- /////////////////////////////////////////////////////////// -->
+                                      <!-- /////////////////////////////////////////////////////////// >
 
 
                                       <div class="d-flex mt-3">
@@ -352,22 +361,26 @@
                                       
                                     </ul>
 
-                                    <!-- ///////////////////////////////////////////////// -->
-                                    <!-- ///////////////////////////////////////////////// -->
+                                    <!-- ///////////////////////////////////////////////// >
                                     <div class="d-flex mt-3">
                                       <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
                                       <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
                                     </div>
-
+                                    
                                   </form>
-                                  </div>
-                                  
                                 </div>
+                                
                               </div>
                             </div>
+                          </div>
+                          <!-- ///////////////////////////////////////////////// -->
+                          
                       </div>
                   </div>
-              </li>
+                </li>
+                <% }); %>
+                <% }); %>
+
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -381,399 +394,7 @@
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu img-fluid ">
-                    <img class="" src="../public/photos/menu/pizza-3.png"  alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>California-Style Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal2" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
-                      <!-- Button trigger modal -->
-                    
-                          <!-- Modal -->
-                          <div class="modal fade" id="orderExtra-modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content extra-modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                              <div class="modal-body">
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <!-- ///////////////////////////////////////////////// -->
-                                <form action="">
-                    
-                                  
-                                  <ul>
-                                    <div class="d-flex">
-                                      <div class="font-weight-bolder Extra-category-name">Cold Drink </div>
-                                      <div class="ml-auto  Required-text"><i class="fa fa-wine-bottle"></i></div>
-                                    </div>
-                                    <hr>
-                    
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink1" value="option1">
-                                          <label class="form-check-label" for="Cold-Drink1">Cocktail</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£2.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink2" value="option2">
-                                          <label class="form-check-label" for="Cold-Drink2">Coke / Diet Coke / Pepsi</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£4.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink3" value="option3">
-                                          <label class="form-check-label" for="Cold-Drink3">Sangria</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£2.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
-                                          <label class="form-check-label" for="Cold-Drink4">Red Bull</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£4.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>   
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="cold-Drink-1" type="checkbox" id="Cold-Drink4" value="option4">
-                                          <label class="form-check-label" for="Cold-Drink4"> Sprite / 7up / Fresh Lime</label>
-                                        </div>
-                                      
-                                        <div class="ml-auto  extra-price ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <!-- ////////////////////////////////////////////////////// -->
-                    
-                                    <div class="d-flex mt-3">
-                                      <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
-                                      <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
-                                    </div>
-                                    
-                                  </ul>
-
-                                </form>
-                    
-                </div>
-            </li>
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu img-fluid ">
-                  <img class="img-fluid img-holder" src="../public/photos/menu/1.jpg"  alt="">
-                  <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal3" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
-                      <!-- Button trigger modal -->
-                    
-                          <!-- Modal -->
-                          <div class="modal fade" id="orderExtra-modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content extra-modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                              <div class="modal-body">
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <!-- ///////////////////////////////////////////////// -->
-                                <form action="">
-                                  <ul>
-                                    <div class="d-flex mt-3">
-                                      <div class="font-weight-bolder Extra-category-name">Sausages  </div>
-                                      <div class="ml-auto  Required-text"><i class="fa fa-hotdog"></i></div>
-                                    </div>
-                                    <hr>
-                    
-                                    
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Sausages-1" type="checkbox" id="Sausages1" >
-                                          <label class="form-check-label" for="Sausages1">Spicy Mayonnaise</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£1.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages2" >
-                                          <label class="form-check-label" for="Sausages2">Tequila Lime Sauce</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Sausages-2" type="checkbox" id="Sausages3" >
-                                          <label class="form-check-label" for="Sausages3">Soy Sauce</label>
-                                        </div>
-                    
-                                        <div class="ml-auto  extra-price ">£2.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Sausages-4" type="checkbox" id="Sausages4" >
-                                          <label class="form-check-label" for="Sausages4">Garlic Sauce</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£3.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>   
-                    
-                    
-                    
-                    
-                                    <!-- /////////////////////////////////////////////////////////// -->
-                    
-                    
-                                    <div class="d-flex mt-3">
-                                      <div class="font-weight-bolder Extra-category-name">Extra Topping </div>
-                                      <div class="ml-auto  Required-text"><i class="fas fa-clipboard-list"></i></div>
-                                    </div>
-                                    <hr>
-                    
-                                    
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping1" type="checkbox" id="Extra-Topping1" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping1">Asparagus</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£1.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping2" type="checkbox" id="Extra-Topping2" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping2">Pepperoni</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping3" type="checkbox" id="Extra-Topping3" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping3">Tuna</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£3.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping4" type="checkbox" id="Extra-Topping4" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping4">Sweet corn</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£1.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping5" type="checkbox" id="Extra-Topping5" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping5">Jalapenos</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                    
-                                    
-                                  </ul>
-                    
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <div class="d-flex mt-3">
-                                    <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
-                                    <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
-                                  </div>
-                    
-                                </form>
-                                </div>
-                                
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </li>
-           <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
-              <li class="mt-4 d-flex menu ">
-                <div class="single-menu">
-                    <img src="../public/photos/imgs/mac.jpg" width="65" height="65" alt="">
-                    <div class="menu-content ml-3 ">
-                        <h4>Foodbakery Special Pizza<span>£50.00</span></h4>
-                        <span>Cheese, tomatoes, tuna fish, sweetcorn and italian and some extra like Sauces , Spices and drinks  </span>  
-                    </div>
-                    <div  class="pl-3">
-                      <button  type="button"  data-toggle="modal" data-target="#orderExtra-modal4" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
-                      <!-- Button trigger modal -->
-                    
-                          <!-- Modal -->
-                          <div class="modal fade" id="orderExtra-modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content extra-modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title text-uppercase font-weight-bolder " id="exampleModalLabel">Extras</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                              <div class="modal-body">
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <!-- ///////////////////////////////////////////////// -->
-                                <form action="">
-                                  <ul>
-                                    <div class="d-flex mt-3">
-                                      <div class="font-weight-bolder Extra-category-name">Extra Topping </div>
-                                      <div class="ml-auto  Required-text"><i class="fas fa-clipboard-list"></i></div>
-                                    </div>
-                                    <hr>
-                    
-                                    
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping1" type="checkbox" id="Extra-Topping1" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping1">Asparagus</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£1.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping2" type="checkbox" id="Extra-Topping2" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping2">Pepperoni</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping3" type="checkbox" id="Extra-Topping3" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping3">Tuna</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£3.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping4" type="checkbox" id="Extra-Topping4" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping4">Sweet corn</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£1.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                                    <li class="mt-2">
-                                      <div class="d-flex">
-                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" name="Extra-Topping5" type="checkbox" id="Extra-Topping5" value="option1">
-                                          <label class="form-check-label" for="Extra-Topping5">Jalapenos</label>
-                                        </div>
-                    
-                                        <div class="ml-auto extra-price  ">£0.00</div>
-                                      </div>
-                                    </li>
-                                    <hr>
-                    
-                                    
-                                  </ul>
-                    
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <!-- ///////////////////////////////////////////////// -->
-                                  <div class="d-flex mt-3">
-                                    <div class="font-weight-bolder "><input type="submit" class="btn Extra-submit " value="ADD TO MENU"> </div>
-                                    <div class="ml-auto  "><input type="reset" class="btn Extra-reset " value="RESET FIELDS"></div>
-                                  </div>
-                    
-                                </form>
-                                </div>
-                                
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-            </li>
+          
            <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
               <!-- ////////////////////////////////////////////////////////////////////////////////////// -->
@@ -881,9 +502,7 @@
           <div class="tab-pane p-3" id="Info" role="tabpanel">
             <article class="p-3">
               <h5 style="font-weight: 600;" >Overview Kfc – Kentucky</h5>
-              <p style="color: #515151;" class="mt-4">Base prepared fresh daily. Extra toppings are available in choose extra
-                Choose you sauce: Go for BBQ sauce or piri piri sauce on your pizza base for no extra cost.
-                Choose your cut: Triangular, square, fingers or Un cut on any size pizza</p>
+              <p style="color: #515151;" class="mt-4"><%=rest.info%></p>
 
               <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d440907.121796829!2d31.1893790616218!3d30.30582012946876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1457fc022cc67e9f%3A0x37cd2c63453c420c!2sKFC!5e0!3m2!1sen!2seg!4v1611834877746!5m2!1sen!2seg"
@@ -929,7 +548,160 @@
       <!-- //////////////////////////////////////////////////////////////////////// -->
       <!-- //////////////////////////////////////////////////////////////////////// -->
       <!-- //////////////////////////////////////////////////////////////////////// -->
+      <script>
+        function onloadfunction(){
+          order=document.getElementById("order")
 
+            restid=document.createElement("input")
+            restid.name="restaurant_ID"
+            restid.style.display="none"
+            restid.value="<%=rest.id%>"
+            order.appendChild(restid)
+
+            restname=document.createElement("input")
+            restname.name="restaurant_name"
+            restname.style.display="none"
+            restname.value="<%=rest.restaurantName%>"
+            order.appendChild(restname)
+
+            pickuptime=document.createElement("input")
+            pickuptime.name="finishing_time"
+            pickuptime.style.display="none"
+            pickuptime.value="<%=rest.pickuptime%>"
+            order.appendChild(pickuptime)
+                    }
+
+        function pushmeal(id){
+          str=""
+          mealname=""
+          mealprice=0
+         for(let i=0;i<id.length;i++){
+            if(id[i]=='+'){
+            mealname=str
+            str=""
+                      }
+            else if(i==id.length-1){
+                str+=id[i]
+                mealprice=parseInt(str, 10)
+            }
+            else
+            str+=id[i]
+          }
+        //  <span  class="days" >Special Pizza</span>  
+        //  <span class="space-span" style="width: 35%;"></span> 
+           // <span id class="time">£50.00   <i class="ml-3 fa fa-times-circle"></i>  </span>
+          order=document.getElementById("order")
+
+          
+          mealnamesapn=document.createElement("span")
+          mealnamesapn.className ="days"
+          mealnamesapn.innerText=mealname
+          mealnamesapn.id=mealname+"span"
+          
+          mealnameinput=document.createElement("input")
+          mealnameinput.name="mealname"
+          mealnameinput.id=mealname+"input"
+          mealnameinput.style.display="none"
+          mealnameinput.value=mealname
+
+          order.appendChild(mealnamesapn)
+          order.appendChild(mealnameinput)
+
+          
+          spacesapn=document.createElement("span")
+          spacesapn.className="space-span"
+         // spacesapn.style="width: 60%;"
+          spacesapn.setAttribute("style", "width: 35%;");
+         order.appendChild(spacesapn)
+
+          pricesapn=document.createElement("span")
+          pricesapn.className ="time"
+          pricesapn.id="span"+mealprice
+          pricesapn.innerText=mealprice
+          mealpriceinput=document.createElement("input")
+          mealpriceinput.name="mealprice"
+          mealpriceinput.id="input"+mealprice
+          mealpriceinput.style.display="none"
+          mealpriceinput.value=mealprice
+            
+          order.appendChild(pricesapn)
+          order.appendChild(mealpriceinput)
+        
+          i=document.createElement("i")
+          i.className ="ml-3 fa fa-times-circle"
+          i.setAttribute("type", "button");
+          i.id=mealname+"+"+mealprice+"."
+          i.setAttribute("onclick", " deleteelement(this.id)");
+          order.appendChild(i)
+
+          subtotal(mealprice)
+
+          console.log(mealname,mealprice)
+        }
+       function deleteelement(id){
+          console.log(id)
+          str=""
+          mealname=""
+          mealprice=0
+         for(let i=0;i<id.length;i++){
+            if(id[i]=='+'){
+            mealname=str
+            str=""
+                      }
+            else if(id[i]=='.'){
+                
+                mealprice=parseInt(str, 10)
+            }
+            else
+            str+=id[i]
+          }
+          i=document.getElementById(id)
+          mealnamesapn=document.getElementById(mealname+"span")
+          mealnameinput=document.getElementById(mealname+"input")
+          pricesapn=document.getElementById("span"+mealprice)
+          mealpriceinput=document.getElementById("input"+mealprice)
+          mealnamesapn.remove()
+          mealnameinput.remove()
+          pricesapn.remove()
+          mealpriceinput.remove()
+          
+          subtotal(-mealprice)
+          i.remove()
+        }
+        totalprice=0
+        function subtotal(num){
+          totalprice+=num
+          console.log(totalprice)
+          Subtotalspan=document.getElementById('Subtotal')
+          Subtotalspan.innerText=totalprice+'£'
+          VATspan=document.getElementById('VAT')
+          VATspan.innerText=(totalprice*13/100)+'£'
+
+          pickupfeespan=document.getElementById('pickupfee')
+          pickupfeespan.innerText="<%=rest.pickupfee%>"+'£'
+         pickupfee=parseInt("<%=rest.pickupfee%>", 10)
+
+          Totalspan=document.getElementById("Total")
+          bigtotalprice=(totalprice+(totalprice*13/100)+pickupfee)
+          Totalspan.value=bigtotalprice
+          Totalspan.innerText=bigtotalprice+'£'
+          Totalspan.value=bigtotalprice
+
+         
+          
+
+        }
+        function confirmorderfunction(){
+          Totalspan=document.getElementById("Total")
+          bigtotalpriceinput=document.createElement("input")
+          bigtotalpriceinput.name="total_price"
+          bigtotalpriceinput.style.display="none"
+          bigtotalprice=Totalspan.value
+          bigtotalpriceinput.value=bigtotalprice
+          order=document.getElementById("order")
+          order.appendChild(bigtotalpriceinput)
+        }
+      </script>
 
     <div class="col-lg-4 p-4">
       <article class="bg-white col-lg-10 p-3 reset">
@@ -944,30 +716,34 @@
             at the payments stage.
           </div>
           <hr>
+          <div style="font-size: 13px;" class="p-3 bg-light mb-4">
+           order finishing time : <%=rest.pickuptime%>
+          </div>
+
           <!-- ///////////////////////////////////////////// -->
           <!-- ///////////////////////////////////////////// -->
           <div class="meal-info  p-1 ">
             <div class=" meal mt-1">
-              <div class="d-flex"><span class="days" >Special Pizza</span>  <span class="space-span" style="width: 35%;"></span>   <span class="time">£50.00   <i class="ml-3 fa fa-times-circle"></i>  </span></div>
+              <!-- note:d-flex make it looks bad -->
+            <form method="Post" action="/test">  <div id="order" class=></div>
                
               <div class="">
-                <ul class="mt-2 pl-3">
-                  <li><p>Extra Topping - Jalapenos : £1.00</p></li>
-                  <li><p>Extra Topping - Asparagus : £2.00</p></li>
-                  <li><p>Drink - Mountain Dew : £2.00</p></li>
-
-                </ul>
-                <a style="color: #999BA3;" href="#"> <p>Edit</p></a>
+                
+                <!--a style="color: #999BA3;" href="#"> <p>Edit</p></a-->
               <hr>
+              <div style="font-size: 13px;" class="p-3 bg-light mb-4">
+              <p>notes(optional)</p>
+                <textarea name ="notes"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+               </div>
               <ul class="open-hours mt-1">
-                <li class="d-flex"><span class="days " >Subtotal</span>   <span class="time pl-5">£70.00</span></li>
-                <li class="d-flex"><span class="days " >Pickup fee</span> <span class="time pl-5">£10.00</span></li>
-                <li class="d-flex"><span class="days " >VAT (13%)</span>  <span class="time pl-5">£10.40</span></li>
+                <li class="d-flex"><span class="days " >Subtotal</span>   <span id= "Subtotal"class="time pl-5">0£</span></li>
+                <li class="d-flex"><span class="days " >Pickup fee</span> <span id="pickupfee" class="time pl-5"><%=rest.pickupfee%>£</span></li>
+                <li class="d-flex"><span class="days " >VAT (13%)</span>  <span id="VAT" class="time pl-5">0£</span></li>
               </ul>
 
               <div class=" total-price p-1 mt-3">
 
-                <div class="d-flex"><span class="days" >Total</span>  <span class="space-span" style="width: 70%;"></span>   <span style="font-weight: 900; font-size: 15px;" class="time">£90.40 </span></div>
+                <div class="d-flex"><span class="days" >Total</span>  <span class="space-span" style="width: 70%;"></span>   <span id="Total" style="font-weight: 900; font-size: 15px;" class="time"><%=rest.pickupfee%>£ </span></div>
               
               </div>
               </div>
@@ -992,9 +768,9 @@
               </div>
 
               <div class="text-center mt-3">
-               <button class="btn btn-danger signup-btun  p-1  col-lg-12 col-md-12 col-sm-12 " type="submit">  <a class="text-white" href="payment.ejs">confirm order</a></button>
+               <button id="confirm order" onclick="confirmorderfunction()" class="btn btn-danger signup-btun  p-1  col-lg-12 col-md-12 col-sm-12 " type="submit">  <a class="text-white" >confirm order</a></button>
               </div>
-              
+            </form>
             </form>
           </div>
         </div>

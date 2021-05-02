@@ -11,6 +11,8 @@ dotenv.config({ path: './public/js/backend/config/config.env' });
 
 const app=express()
 //const bodyParser=require('body-parser')
+require("./public/js/backend/config/db")
+require("./public/js/backend/config/passport")
 const userRoute=require('./public/js/backend/routes/userRoutes')
 
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")

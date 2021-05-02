@@ -16,8 +16,8 @@ app.use(express.json())
 
 app.use(session({
   secret: "FUCK HTI ,All my friends FUCK HTI",
-  resave: false,
-  saveUninitialized: false ,
+  resave: true,
+  saveUninitialized: true ,
   cookie: { maxAge: 6000000 }
 
 }))

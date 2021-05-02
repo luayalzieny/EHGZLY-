@@ -4,10 +4,6 @@ mongoose=require("mongoose")
 const express =require('express')
 const app=express();
 const path = require('path');
-require("./../config/db")
-require("./../config/passport")
-const mimeType=['image/jpeg','image/png','images/gif']
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //handel moongose erorrs function
@@ -52,8 +48,11 @@ module.exports.restaurant_post=(req,res)=>{
         manger:req.body.manger,
         mangerPhone:req.body.mangerPhone,
         address:req.body.address,
-        kitchen:req.body.kitchen
-        // img:req.body.img,
+        kitchen:req.body.kitchen,
+        img:"no logo",
+        coverimg:"no cover",
+        pickupfee:0,
+        pickuptime:"none",
         //opentime:{open:req.body.open,close:req.body.close}
         
         
@@ -106,7 +105,7 @@ let location={
 module.exports.categories_post=(req,res)=>{
 
     console.log(req.session)
-   restaurantID =req.session.passport.user
+    restaurantID =req.session.passport.user._id;
   //  restaurantID=5
     console.log(restaurantID)
     let i=0
@@ -119,7 +118,7 @@ module.exports.categories_post=(req,res)=>{
     //if category exists 
      restaurants.findOneAndUpdate({_id:restaurantID,'categories.category':newobj.category},
      
-     {$push:{'categories.$.meal':{name:newobj.name ,price:newobj.price,Description:newobj.Description}
+     {$push:{'categories.$.meal':{name:newobj.name ,price:newobj.price,description:newobj.description}
     }}
      ,(err,rest)=>{
         if(err)

@@ -83,7 +83,9 @@ const restaurantSchema= new Schema({
          coverimg:{type:String},
         categories:[categoriesSchema],
         orders:[{type:Object}],
-
+        pickupfee:{type:Number},
+        pickuptime:{type:String},
+        info:{type:String},
 
         
         kitchen:{

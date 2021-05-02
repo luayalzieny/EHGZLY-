@@ -13,14 +13,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-app.use(session({
-  secret: "FUCK HTI ,All my friends FUCK HTI",
-  resave: false,
-  saveUninitialized: false ,
-  cookie: { maxAge: 60000000}
 
-}))
-app.use(passport.initialize());
+
+
+app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 
@@ -30,24 +26,12 @@ app.post("/restaurant",restaurantController.restaurant_post);
 app.post("/location",restaurantController.restaurantLocation_post)
 app.post("/categories",restaurantController.categories_post)
 app.post('/restLogin',function(req,res,next){
-  
     passport.authenticate("rest",{
       successRedirect:"/restprofile",
       failureRedirect:"/restLogin",
       failureFlash:true
     })(req,res,next);
-  });
-
-// app.post('/restLogin', function(req, res, next) {
-//   passport.authenticate('rest', function(err, user, info) {
-//     if (err) { return next(err); }
-//     if (!user) { return res.redirect('/restLogin'); }
-//     req.logIn(user, function(err) {
-//       if (err) { return next(err); }
-//       return res.redirect('/restprofile');
-//     });
-//   })(req, res, next);
-// });
+});
 
 app.post('/restlogout',(req,res)=>{
   req.logOut();
@@ -58,10 +42,12 @@ app.post("/update",restaurantDashboard.restaurant_updateMenu_post)
 app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post)
 app.post("/deletrest",restaurantDashboard.deletRest_post)
 app.post("/deletcat",restaurantDashboard.deletcategryandmeals)
+//app.post("/test",restaurantDashboard.testpost)
 
 app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
+//app.get("/test",restaurantDashboard.test);
 //app.get("/location",restaurantController.location_get)
 //app.get("/categories",restaurantController.categories_get)
 const cat_data=require("./../../../../dummy data/category.json")

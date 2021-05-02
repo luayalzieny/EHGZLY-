@@ -15,43 +15,7 @@ app.use(express.json())
 
 
 //user passport authorization
-const user={
-    usernameField:"email",
-    passwordField:"password"
-}
-passport.use('user',new LocalStrategy(user,(email,password,done)=>{
-    User.findOne({email},(err,user)=>{
-        if(err){
-            return done(err)
-        };
-        
-        if(!user){
-            return done(null,false,{message:"User Email Doesn't  Exist"})
-        };
-        
-        bcrypt.compare(password,user.password,function(err,result){
-            if(result){
-                return done(null,user)
-            }else{
-                return done(null,false,{message:"Password Incorrect"})
-            }
-        })
-    })
-}))
-//end of user passport authorization
 
-
-//passport serialization && deserialization
-passport.serializeUser((user,done)=>done(null,user.id));
-
-passport.deserializeUser((_id,done)=>{
-    User.findById({_id},function(err,user){
-        if(err){
-            console.log(err.message)
-        }
-    return done(err,user)
-    })
-})
 //end of passport serialization/deserialization
 
 

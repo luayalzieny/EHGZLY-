@@ -40,7 +40,7 @@ module.exports.restaurant_updateMenu_post=(req,res)=>{
         res.redirect("/restLogin")
     }
     console.log(req.body)
-    restaurantID=req.session.passport.user
+    restaurantID=req.session.passport.user._id
    
     
     if(req.body.oldname){
@@ -89,7 +89,7 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
   //  if(!req.session.passport.user){
     //    res.redirect("/restLogin")
    // }
-    restaurantID =req.session.passport.user;
+    restaurantID =req.session.passport.user._id;
     //restaurantID=7
     console.log(req.body)
     restaurants.findOne({_id:restaurantID},(err,rest)=>{
@@ -129,6 +129,9 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
             mangerPhone:req.body.mangerPhone||rest.mangerPhone,
             img:req.body.img||rest.img||"no logo",
             coverimg:req.body.coverimg||rest.coverimg||"no cover",
+            pickupfee:req.body.pickupfee||rest.pickupfee||0,
+            pickuptime:req.body.pickuptime||rest.pickuptime||"none",
+            info:req.body.info||rest.info||"none",
 
         },(err,rest2)=>{
             if(err)
@@ -158,7 +161,7 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
 ////////////////////////////////////////////
 
 module.exports.changeRestPass_post=(req,res)=>{
-        restaurantID =req.session.passport.user;
+        restaurantID =req.session.passport.user._id;
         let password=""
         restaurants.findOne({_id:restaurantID},(err,rest)=>{
             if (err)
@@ -186,7 +189,7 @@ module.exports.changeRestPass_post=(req,res)=>{
         res.redirect("/restprofile")
     }
     module.exports.deletRest_post=(req,res)=>{
-        restaurantID =req.session.passport.user;
+        restaurantID =req.session.passport.user._id;
         
         restaurants.findOneAndRemove({_id:restaurantID},(err,rest)=>{
             if (err)
@@ -199,7 +202,7 @@ module.exports.changeRestPass_post=(req,res)=>{
 
     ////////////////////////////////////////////////////////////////////////////
     module.exports.deletcategryandmeals=(req,res)=>{
-        restaurantID=req.session.passport.user
+        restaurantID=req.session.passport.user._id
         console.log(req.body)
    
     
@@ -239,16 +242,16 @@ module.exports.changeRestPass_post=(req,res)=>{
 
     //get
     module.exports.rest_profile_get=(req,res,next)=>{
-       // console.log(req)
         if(!req.session.passport){
             res.redirect("/restLogin")
         }
-        else if(!req.session.passport.user){
+        else if(!req.session.passport.user.restaurantName){
             res.redirect("/restLogin")
         }
         else{
        // console.log(req.session.passport.user)
-        restaurantID =req.session.passport.user;
+        restaurantID =req.session.passport.user._id;
+        console.log(req.user)
         //restaurantID=7
        //console.log(restaurantID)
         restaurants.findOne({_id:restaurantID},(err,rest)=>{
@@ -265,7 +268,7 @@ module.exports.changeRestPass_post=(req,res)=>{
             console.log(error)
             let errorss=error
             let coverimg=rest.coverimg
-            error=error={ email:"0",password:"0",username:"0"}
+            error={ email:"0",password:"0",username:"0",restaurantPhone:"0"}
             res.render("./resturant-profile",{cat,cats,errorss,coverimg})
             })
     
@@ -273,3 +276,14 @@ module.exports.changeRestPass_post=(req,res)=>{
         }
         console.log(error)
         };
+
+       // module.exports.test=(req,res)=>{
+        //    restaurantID=38
+        //    restaurants.findOne({_id:restaurantID},(err,rest)=>{
+        //        res.render("./Ordering",{rest})
+       //     })
+    //    }
+    //    module.exports.testpost=(req,res)=>{
+   ////         console.log(req.body)
+       //     res.redirect("/test")
+     //   }
