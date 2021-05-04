@@ -1,7 +1,4 @@
-
-  
- 
-    body {
+body {
         margin: 0;
         padding: 0;
       }
@@ -21,7 +18,21 @@
                       }
   
       
-                      .clearfix { display:block; }
+      .clearfix { display:block; }
+      
+
+      #drive-btn:hover{
+        background-color: green;
+        color:white;
+        
+      }
+
+      #drive-btn:active{
+        background-color: green;
+        color:white;
+        
+      }
+
         .clearfix:after {
           content:'.';
           display:block;

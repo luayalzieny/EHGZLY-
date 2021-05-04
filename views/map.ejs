@@ -33,7 +33,7 @@
      <!--style css-->
      <link rel='stylesheet' href="../public/css/mapbox.css">
 
-
+     
 
 
     <!-- main Styles -->
@@ -44,6 +44,10 @@
     <title> TAKE AWAY  </title>
 </head>
 <body>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet" href="../public/css/mapbox-gl-directions.css" type="text/css">
+ 
+  
 
 <section>
   <div class="container-fluid">
@@ -54,14 +58,13 @@
         </h1>
 
         <p class="mt-5 text-white">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid cupiditate, in tempore, 
-          quo totam esse magnam nulla quod perferendis corporis tempora! Aliquam accusamus autem quos!
-          quo totam esse magnam nulla quod perferendis corporis tempora! Aliquam accusamus autem quos!
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid cupiditate, in tempore, 
+          Choose your end point and the restaurants will load to your map.
+          you can also click the drive button below to start you travel, click it again to disapear
         </p>
-        <span class="bac-home-map ">
+        <button id="drive-btn" class="btn btn-light mb-3">drive</button>
+        <p class="bac-home-map ">
            <a class="mt-5" href="index.html"><i class=" fas fas fa-home mr-2"></i> BACK TO HOME</a>
-        </span>
+        </p>
       </div>
 
 
@@ -77,7 +80,32 @@
           ></div>
        
 
-    <script src="../public/js/map.js"></script>
+<script src="../public/js/map.js"></script>
+
+
+<script>
+
+          const driveBtn = document.getElementById('drive-btn');
+          let driveBtnClicked = false;
+
+          driveBtn.addEventListener('click', function(){
+            if(driveBtnClicked){
+            map.removeControl(navigator, 'top-left');  
+            } else {
+            map.addControl(navigator, 'top-left');
+            }
+            driveBtnClicked = !driveBtnClicked;
+          });
+
+          const navigator = new MapboxDirections({
+                      accessToken: mapboxgl.accessToken
+          });
+
+</script>
+
+    
+    
+    
          
       </div>
     </div>

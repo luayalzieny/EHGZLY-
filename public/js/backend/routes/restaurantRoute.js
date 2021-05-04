@@ -47,6 +47,7 @@ app.post("/deletcat",restaurantDashboard.deletcategryandmeals)
 app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
+app.get('/ordering/:id', restaurantController.getOrder)
 //app.get("/test",restaurantDashboard.test);
 //app.get("/location",restaurantController.location_get)
 //app.get("/categories",restaurantController.categories_get)

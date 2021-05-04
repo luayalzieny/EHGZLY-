@@ -145,7 +145,7 @@ mapboxgl.setRTLTextPlugin(
         var popup = new mapboxgl.Popup({closeOnClick: false})
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML('<h3>'+ currentFeature.properties.name+ '</h3>' +
-            '<a href="profile.html" target="_blank"> Menu </a>' +
+          '<a href=/ordering/'+currentFeature.properties._id+' target="_blank"> Menu </a>' +
             '<h4>'+ currentFeature.properties.phone + '</h4>' +
             '<h4>'+ currentFeature.properties.kitchen + '</h4>'
             )
