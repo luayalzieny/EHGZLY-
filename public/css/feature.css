@@ -111,11 +111,18 @@ nav.sticky .navbar-brand img{
  
   
   .single-menu{
-    display:flex;
+    /* display:flex;
     flex-direction:row;
     align-items:center;
     padding-bottom: 10px; 
+    border-bottom: 1px solid #a9a9a9; */
+
+    width: 100%;
+    align-items:center;
+    padding-bottom: 10px; 
     border-bottom: 1px solid #a9a9a9;
+
+
   }
   
   .single-menu img{

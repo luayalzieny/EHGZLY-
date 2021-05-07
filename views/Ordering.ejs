@@ -146,13 +146,13 @@
                 <%meals.forEach(meal => { %>
                   <div class="single-menu">
                       <!--img src="../public/photos/menu/pizza-1.png"  alt=""-->
-                      <div class="menu-content ml-3 ">
+                      <div class="menu-content ml-auto ">
                         <br>
                           <h4> <%=meal.name%><span><%=meal.price%></span></h4>
                           <span><%=meal.description%> </span>  
+                          <button onclick="pushmeal(this.id)" id="<%=meal.name%>+<%=meal.price%>" type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn  float-right"> <i class="fa fa-plus text-danger"></i> </button>
                       </div>
                       <div  class="pl-3">
-                        <button onclick="pushmeal(this.id)" id="<%=meal.name%>+<%=meal.price%>" type="button"  data-toggle="modal" data-target="#orderExtra-modal" class="order-btn "> <i class="fa fa-plus text-danger"></i> </button>
                         
                         <!-- Button trigger modal -->
   
