@@ -21,7 +21,7 @@
 .login-page-banner {
     width: 100%;
     height: 900px;
-    background: linear-gradient(rgba(0,0,0,0.2) , rgba(0,0,0,0.2)),
+    background: linear-gradient(rgba(0,0,0,0.3) , rgba(126, 96, 96, 0.3)),
     url(../photos/new2/1.jpg) no-repeat center ;
    background-size: cover;
    position: relative;
@@ -46,7 +46,7 @@
     height: auto;
     background-color: black!important;
     background: linear-gradient(rgba(0,0,0,0.7) , rgba(0,0,0,0.7))!important;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 
 }
 .login-buttons input{

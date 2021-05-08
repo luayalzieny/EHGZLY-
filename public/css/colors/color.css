@@ -5,7 +5,7 @@ body
 /* /////////////////////////////////////////////// */
 .navbar-brand,
 .nav-link.activelink,
-.nav-link:hover,
+nav .nav-link:hover,
 .nav-btun:hover,
 .welcomeText h1,
 .welcomeText h2 span,
@@ -23,13 +23,14 @@ body
 .fa-arrow-alt-circle-left,
 .about-text-about h2,
 .about-text-about .card-header, 
-.login-header-span a,
+/* .login-header-span a, */
 .signup-header-span a,
 .login-header-span a:hover,
 .signup-header-span a:hover,
 .single-menu h4 span,
 .department .nav-link:focus,
-.extra_order_Price
+.extra_order_Price,
+.login-form h2
 {color: #f30928!important;}
 
 /* ////////////// */
