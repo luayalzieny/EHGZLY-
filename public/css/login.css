@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
 
 *{
     margin: 0;
@@ -59,7 +60,7 @@
 
 }
 .login-buttons input::placeholder{
-    color:white!important;
+    color:rgba(253, 253, 253, 0.74)!important;
     padding: 10px;
 }
 
@@ -112,6 +113,10 @@
     /* border:none ; */
     outline: none;
 
+}
+
+.nav-tabs .nav-link{
+    font-family: 'Trade Winds', cursive;
 }
 
 
