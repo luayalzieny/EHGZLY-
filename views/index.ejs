@@ -47,9 +47,9 @@
 /* //////////////////////Home Section/////////////////////////// */ -->
 <section class="header-banner " id="header">
     <div class="overlay">
-    <nav class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
+    <nav  data-aos="fade-down" data-aos-duration="700"   class=" col-lg-12 navbar navbar-expand-lg navbar-dark ftco_navbar p-2  position-fixed ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="/"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
+	      <a data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" class class="navbar-brand" href="/"><img src="../public/photos/imgs/takeaway-catering-logo-large.png" alt="logo" width="70px" height="70px" ></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class=""> <i class="fa fa-bars"></i> </span> 
 	      </button>
@@ -71,7 +71,7 @@
              
             </li>
 
-            <li class="nav-item"><a href="./resturant-regestration" class="link-btn btn btn-danger p-2">Become a partner</a></li>
+            <li data-aos="fade-left" data-aos-duration="700" data-aos-delay="200" class="nav-item"><a href="./resturant-regestration" class="link-btn btn btn-danger p-2">Become a partner</a></li>
 
 
               
@@ -84,55 +84,16 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-12 col-sm-12 text-center welcomeText">
-                    <h1>WELCOME TO TAKE AWAY</h1>
-                    <h2>We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
+                    <h1 data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">WELCOME TO TAKE AWAY</h1>
+                    <h2 data-aos="fade-left" data-aos-duration="700" data-aos-delay="200">We aim to make a meal <span>easier,</span> <br><span>faster</span>and more <span>comfortable</span> </h2>
                     
                     <%if(user){%>
-                    <h2>Welcome,<%=user.Fname%></h2>
+                    <h2 data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Welcome,<%=user.Fname%></h2>
                     <%}%>
                     
-                    <!-- <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, expedita.</p> -->
-                    <!-- <a class="btn btn-success pl-3 pr-3 mr-3 rounded shadow" href=""> LOG IN </a>
-                    <a class="btn btn-success pl-3 pr-3  rounded shadow" href="">  BOOK A DOCTOR</a> -->
-                    <!-- <form class="text-center">
 
-
-                      <div class="form-row justify-content-center align-items-center">
-                          <div class=" select-bar col-md-3 col-sm-5 col-xs-5 mb-3">
-                            <select>
-                              <option data-display="Select resturant">Nothing</option>
-                              <option value="1">Some option</option>
-                              <option value="2">Another option</option>
-                              <option value="3" disabled>A disabled option</option>
-                              <option value="4">Potato</option>
-                            </select>
-                          </div>
-
-
-                          <div class=" select-bar col-md-3 col-sm-5 col-xs-5 mb-3">
-                            <select>
-                              <option data-display="Select location">Nothing</option>
-                              <option value="1">Some option</option>
-                              <option value="2">Another option</option>
-                              <option value="3" disabled>A disabled option</option>
-                              <option value="4">Potato</option>
-                            </select>
-                          </div>
-
-
-                          <div class="col-md-2 col-sm-2 col-xs-2 mb-3"> 
-
-
-                          <input class="btn text-light submitBtn p-2 col-md-12" type="submit" value="search">               
-                        </div>
-                      </div>
-
-
-                    </form> -->
-
-                    <a class="text-white" href="map"> <button class="btn text-light submitBtn p-2 col-md-2 mt-5"> 
-                       search  
-                    </button></a> 
+                    <a class="text-white" href="map"> <button data-aos="flip-up" data-aos-duration="700" data-aos-delay="400"
+                       class="btn text-light submitBtn p-2 col-md-2 mt-5">  search  </button></a> 
 
 
                 </div>
@@ -148,11 +109,11 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 
-<section class="quickly-services " id="quickly-services">
+<section data-aos="fade-up" data-aos-duration="700" data-aos-delay="50" class="quickly-services " id="quickly-services">
 <div class="container  ">
     <div class="row text-center justify-content-center align-items-center  service-carry rounded ">
 <!-- /////////////////////////////////////////// -->
-<div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
   <a href="#!">
     <i class="flaticon-take-away-1"></i>
     <h5>TAKE AWAY</h5>
@@ -160,7 +121,7 @@
   </div>
 <!-- /////////////////////////////////////////// -->
   <!-- /////////////////////////////////////////// -->
-  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service ">
+  <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service ">
     <a href="#!">
     <i class="flaticon-dinner-table"></i>
     <h5>feasts</h5>
@@ -168,7 +129,7 @@
   </div>
 <!-- /////////////////////////////////////////// -->
  <!-- /////////////////////////////////////////// -->
- <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
+ <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="300" class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
    <a href="#!"> 
   <i class="flaticon-breakfast"></i>
   <h5>BREAKFAST</h5>
@@ -176,7 +137,7 @@
 </div>
 <!-- /////////////////////////////////////////// -->
   <!-- /////////////////////////////////////////// -->
-  <div class="col-lg-2 col-md-6 col-sm-6  quick_service">
+  <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="400" class="col-lg-2 col-md-6 col-sm-6  quick_service">
     <a href="#!">
     <i class="flaticon-food"></i>
     <h5>LUNCH</h5>
@@ -184,7 +145,7 @@
   </div>
 <!-- /////////////////////////////////////////// -->
   <!-- /////////////////////////////////////////// -->
-  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
+  <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="500" class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
     <a href="#!"> 
     <i class="flaticon-dinner"></i>
     <h5>DINNER</h5>
@@ -192,7 +153,7 @@
   </div>
 <!-- /////////////////////////////////////////// -->
   <!-- /////////////////////////////////////////// -->
-  <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
+  <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="600" class="col-lg-2 col-md-6 col-sm-6 col-xs-6 quick_service">
     <a href="#!"> 
     <i class="flaticon-pizza-slice"></i>
     <h5>NIGHTLIFE</h5>
@@ -211,18 +172,18 @@
     <br><br><br><br>
 <div class="container">
     <div class="text-center">
-      <img  src="../public/photos/divider.png" alt="">
-      <h1 class="text-center  text-title">ABOUT US </h1>
+      <img data-aos="fade-down" data-aos-duration="700" data-aos-delay="100" src="../public/photos/divider.png" alt="">
+      <h1 data-aos="fade-down" data-aos-duration="700" data-aos-delay="200" class="text-center  text-title">ABOUT US </h1>
     </div>
     <br>
     <div class="row">
         <!-- //////////////// -->
-        <div class="col-lg-6 p-2 about-img ">
+        <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="100"  class="col-lg-6 p-2 about-img ">
             
         </div>
         <!-- //////////////// -->
         <!-- //////////////// -->
-        <div class="col-lg-6 pl-5  about-text">
+        <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="200" class="col-lg-6 pl-5  about-text">
             <br><br>
             <h2>About take away </h2>
             <h4>our mission :</h4>
@@ -244,15 +205,19 @@
   <br><br>
 <div class="container">
   <div class="text-center">
-    <img  src="../public/photos/divider.png" alt="">
-    <h1 class="text-center  text-title">HOW IT WORKS </h1>
-    <p>Easy 3 Step Orders</p>
+    <img data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" src="../public/photos/divider.png" alt="">
+    <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="150" class="text-center  text-title">HOW IT WORKS </h1>
+    <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Easy 3 Step Orders</p>
   </div>
   <br>
 
 <div class="row p-4 justify-content-center align-items-center">
+
+
+
+
   <!-- ///////////////////////// -->
-  <div class=" col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5">
+  <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" class=" col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5">
     <i class="flaticon-restaurant"></i>
     <h4>Choose A Restaurant</h4>
     <p>We make it simple to find the food you crave. Enter your address and let us do the rest.</p>
@@ -260,10 +225,13 @@
     <span class=" h3 border border-danger  d-inline-block p-1">1</span>
   </div>
     <!-- ///////////////////////// -->
-    <div class="col-lg-1"> 
+
+    <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="200" class="col-lg-1"> 
       <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>  
-    </div>  <!-- ///////////////////////// -->
-  <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
+    </div> 
+    
+    <!-- ///////////////////////// -->
+  <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="250" class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
     <i class="flaticon-choose"></i>
     <h4>Choose A Tasty Dish</h4>
     <p>When you order Eat Street, we'll hook you up with exclusive coupons, specials and rewards.</p>
@@ -271,11 +239,14 @@
     <span class=" h3 border border-danger  d-inline-block p-1">2 </span>
   </div>
     <!-- ///////////////////////// -->
-    <div class="col-lg-1"> 
+    
+    <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="300" class="col-lg-1"> 
       <span class="h2 text-center step-arrow">  <i class="fa fa-arrow-right ml-3 " ></i> </span>  
     </div>
+
+
      <!-- ///////////////////////// -->
-  <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
+  <div data-aos="fade-right" data-aos-duration="700" data-aos-delay="350" class="col-lg-3 col-md-6 col-sm-8 col-xs-12 rounded shadow p-3 text-center order-step mt-5 ">
     <i class="flaticon-take-away"></i>
     <h4>Pick Up your meal</h4>
     <p>We make food ordering fast, reliable , simple and free - no matter if you order online or cash.</p>
@@ -283,6 +254,8 @@
     <span class=" h3 border border-danger  d-inline-block p-1">3</span>
   </div>
     <!-- ///////////////////////// -->
+
+
  
 </div>
 
@@ -319,15 +292,15 @@
   <br><br>
 <div class="container">
     <div class="text-center">
-      <img  src="../public/photos/divider.png" alt="">
-    <h1 class="text-center  text-title">  TOP RESTAURANT </h1>
-      <p>All the top restaurant </p>
+      <img data-aos="fade-down" data-aos-duration="700" data-aos-delay="100"  src="../public/photos/divider.png" alt="">
+    <h1 data-aos="fade-down" data-aos-duration="700" data-aos-delay="200" class="text-center  text-title">  TOP RESTAURANT </h1>
+      <p data-aos="fade-down" data-aos-duration="700" data-aos-delay="300">All the top restaurant </p>
     </div>
 
 <div class="row">
      <!-- ///////////////////////////////////////////////// -->
      <!-- ///////////////////////////////////////////////// -->
-     <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+     <div data-aos="flip-right" data-aos-duration="700" data-aos-delay="100" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
       <div style="background-image: url(../public/photos/imgs/italian-pizza.jpeg);" class="resto-img rounded-0">
         <div class=" open-sight ">
           OPEN 
@@ -373,7 +346,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
-     <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+     <div data-aos="flip-left" data-aos-duration="700" data-aos-delay="200" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
       <div style="background-image: url(../public/photos/imgs/mac.jpg);" class="resto-img rounded-0">
         <div class=" open-sight ">
           OPEN 
@@ -419,7 +392,7 @@
      <!-- ///////////////////////////////////////////////// -->
     <!-- ///////////////////////////////////////////////// -->
      <!-- ///////////////////////////////////////////////// -->
-     <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+     <div data-aos="flip-right" data-aos-duration="700" data-aos-delay="300" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
       <div style="background-image: url(../public/photos/imgs/kfc-fried.jpg);" class="resto-img rounded-0">
         <div class=" open-sight ">
           OPEN 
@@ -476,7 +449,7 @@
     
       <!-- ///////////////////////////////////////////////// -->
       <!-- ///////////////////////////////////////////////// -->
-      <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+      <div data-aos="flip-left" data-aos-duration="700" data-aos-delay="400" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
         <div style="background-image: url(../public/photos/imgs/dominos.jpg);" class="resto-img rounded-0">
           <div class=" open-sight ">
             OPEN 
@@ -522,7 +495,7 @@
       <!-- ///////////////////////////////////////////////// -->
      <!-- ///////////////////////////////////////////////// -->
       <!-- ///////////////////////////////////////////////// -->
-      <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+      <div data-aos="flip-right" data-aos-duration="700" data-aos-delay="500" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
         <div style="background-image: url(../public/photos/imgs/hardes.png);" class="resto-img rounded-0">
           <div class=" open-sight ">
             OPEN 
@@ -569,7 +542,7 @@
       <!-- ///////////////////////////////////////////////// -->
      <!-- ///////////////////////////////////////////////// -->
       <!-- ///////////////////////////////////////////////// -->
-      <div class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
+      <div data-aos="flip-right" data-aos-duration="700" data-aos-delay="600" class="col-lg-4 col-md-6 mt-5 mb-5 blog-card">
         <div style="background-image: url(../public/photos/imgs/dragon.jpg);" class="resto-img rounded-0">
           <div class=" open-sight ">
             OPEN 
@@ -633,15 +606,15 @@
   <br><br>
 <div class="container">
     <div class="text-center">
-      <img  src="../public/photos/divider.png" alt="">
-    <h1 class="text-center  text-title">  OUR BEST RESTAURANTS </h1>
-      <p>choose from most popular</p>
+      <img  data-aos="fade-down" data-aos-duration="700" data-aos-delay="100" src="../public/photos/divider.png" alt="">
+    <h1 data-aos="fade-down" data-aos-duration="700" data-aos-delay="150" class="text-center  text-title">  OUR BEST RESTAURANTS </h1>
+      <p data-aos="fade-down" data-aos-duration="700" data-aos-delay="200">choose from most popular</p>
     </div>
 
   <div class="row">
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" class="col-lg-2 p-2 text-center res-rating">
   <img src="../public/photos/imgs/kfc-1-1.png" alt="">
   <p class="mt-3 h5">Kfc – Kentucky</p>
   <div class=" rating ">
@@ -657,7 +630,7 @@
 <!-- ///////////////////////////////////////////////// -->
 
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center  res-rating ">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="150" class="col-lg-2 p-2 text-center  res-rating ">
   <img src="../public/photos/imgs/mcdonals-1-1.png" alt="">
   <p class="mt-3 h5">McDonalds</p>
   <div class=" rating McDonalds-rating">
@@ -672,7 +645,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="col-lg-2 p-2 text-center res-rating">
   <img src="../public/photos/imgs/domino-1-1.png" alt="">
   <p class="mt-3 h5">Domino’s Pizza</p>
   <div class=" rating ">
@@ -687,7 +660,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center  res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="250" class="col-lg-2 p-2 text-center  res-rating">
   <img src="../public/photos/imgs/noodle-1-1.png" alt="">
   <p class="mt-3 h5">Noodle House</p>
   <div class=" rating ">
@@ -702,7 +675,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="300" class="col-lg-2 p-2 text-center res-rating">
   <img src="../public/photos/imgs/menu-1-1-1.png" alt="">
   <p class="mt-3 h5">Fruit And Drinks</p>
   <div class=" rating ">
@@ -717,7 +690,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="350" class="col-lg-2 p-2 text-center res-rating">
   <img src="../public/photos/imgs/healthy-1-1.png" alt="">
   <p class="mt-3 h5">Natural Food</p>
   <div class=" rating ">
@@ -732,7 +705,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating ">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="400" class="col-lg-2 p-2 text-center mt-3 res-rating ">
   <img src="../public/photos/imgs/hardees-1-1.png" alt="">
   <p class="mt-3 h5">Hardees</p>
   <div class=" rating ">
@@ -747,7 +720,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="450" class="col-lg-2 p-2 text-center mt-3 res-rating">
   <img src="../public/photos/imgs/subway-1-1.png" alt="">
   <p class="mt-3 h5">Subway</p>
   <div class=" rating ">
@@ -762,7 +735,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="500" class="col-lg-2 p-2 text-center mt-3 res-rating">
   <img src="../public/photos/imgs/nando-1-1.png" alt="">
   <p class="mt-3 h5">Nandos</p>
   <div class=" rating ">
@@ -777,7 +750,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="550" class="col-lg-2 p-2 text-center mt-3 res-rating">
   <img src="../public/photos/imgs/misumiu-1-1.png" alt="">
   <p class="mt-3 h5">Misimisu Chineese</p>
   <div class=" rating ">
@@ -792,7 +765,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="600" class="col-lg-2 p-2 text-center mt-3 res-rating">
   <img src="../public/photos/imgs/dragon-1-1.png" alt="">
   <p class="mt-3 h5">Dragon Express</p>
   <div class=" rating ">
@@ -807,7 +780,7 @@
 </div>
 <!-- ///////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////// -->
-<div class="col-lg-2 p-2 text-center mt-3 res-rating">
+<div data-aos="fade-up" data-aos-duration="700" data-aos-delay="650" class="col-lg-2 p-2 text-center mt-3 res-rating">
   <img src="../public/photos/imgs/coffee-1-1.png" alt="">
   <p class="mt-3 h5">Premium Coffee</p>
   <div class=" rating ">
@@ -840,8 +813,8 @@
   <div class="container">
     <!-- <h1 class="text-center ">mostafa</h1> -->
     <div class="text-center doc-photo-marg">
-      <img class=" doctors-img-pre  ml-auto img-fluid img-responsive" src="../public/photos/imgs/takeaway-catering-logo-large.png" width="100px" height="100px" alt="doctors">
-      <p class="p_has_fs">We care about your mental health </p>
+      <img data-aos="fade-down" data-aos-duration="700" data-aos-delay="100" class=" doctors-img-pre  ml-auto img-fluid img-responsive" src="../public/photos/imgs/takeaway-catering-logo-large.png" width="100px" height="100px" alt="doctors">
+      <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="p_has_fs">We care about your mental health </p>
     </div>
   </div>
 </section>
@@ -858,21 +831,21 @@
     
     <div class="container">
       <div class="row row-30">
-        <div class="col-lg-3 col-md-6 col-sm-12 ">    
+        <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="100"  class="col-lg-3 col-md-6 col-sm-12 ">    
 
           <div class="pr-xl-4"><a class="footer-brand" href="index.html"><h1 style="color: #ffffff;">TAKE AWAY</h1></a>
             <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
           <img class="img-fluid img-responsive" src="../public/photos/footer-img-300x134.png" alt="">
           <div class=" mr-3 social">
-            <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-twitter"></i></a>
-            <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-facebook"></i></a>
-            <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-instagram"></i></a>
+            <a data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-twitter"></i></a>
+            <a data-aos="fade-up" data-aos-duration="700" data-aos-delay="400" target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-facebook"></i></a>
+            <a data-aos="fade-up" data-aos-duration="700" data-aos-delay="600" target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-instagram"></i></a>
           </div>
 
           </div>
         </div>
       <!-- /////////////////////////////// -->
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center footer-marg">
+        <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200"  class="col-lg-3 col-md-6 col-sm-12 text-center footer-marg">
           <h5>POPULAR CITIES</h5>
           <ul class="nav-list ">
             <li><a href="#">10th of ramadan</a></li>
@@ -888,7 +861,7 @@
         </div>
           <!-- //////////////////////////// -->
               <!-- /////////////////////////////// -->
-        <div class="col-lg-3 col-md-6 col-sm-12 text-center footer-marg">
+        <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="300"  class="col-lg-3 col-md-6 col-sm-12 text-center footer-marg">
           <h5>MENU</h5>
           <ul class="nav-list ">
             <li><a href="#">HOME</a></li>
@@ -902,7 +875,7 @@
 
         </div>
           <!-- //////////////////////////// -->
-          <div class="col-lg-3 col-md-6 col-sm-12 ">
+          <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="400"  class="col-lg-3 col-md-6 col-sm-12 ">
             <h5>CONTACTS</h5>
             <dl class="contact-list">
               <dt>Address:</dt>
@@ -922,10 +895,10 @@
       </div>
       <!-- ///////////////////////// -->
 
-      <hr style="background-color: rgb(255, 255, 255);">
+      <hr data-aos="fade-right" data-aos-duration="700" data-aos-delay="500"  style="background-color: rgb(255, 255, 255);">
       <div class="row p-3">
-        <h6 class="mt-3 ml-3 ">Copyright ©2020 All rights reserved | This template is  made  by <a href="https://www.facebook.com/mostafa.emadgomaa">HTI STUDENT </a>  </h6>
-        <span class="ml-auto mr-3" class="socials">
+        <h6 data-aos="fade-right" data-aos-duration="700" data-aos-delay="550" class="mt-3 ml-3 ">Copyright ©2020 All rights reserved | This template is  made  by <a href="https://www.facebook.com/mostafa.emadgomaa">HTI STUDENT </a>  </h6>
+        <span data-aos="fade-up" data-aos-duration="700" data-aos-delay="600" class="ml-auto mr-3" class="socials">
           <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-twitter"></i></a>
           <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-facebook"></i></a>
           <a target="_blank" href="#"><i class=" footerSocialIcon mt-3 m-1 fab fa-google-plus"></i></a>
