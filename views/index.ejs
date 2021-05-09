@@ -15,11 +15,9 @@
     <!-- plugins -->
     <link rel="stylesheet" href="../public/css/plugins/vegas.css">
     <link rel="stylesheet" href="../public/css/plugins/nice-select.css">
-    <!-- <link rel="stylesheet" href="../public/css/plugins/animate.css">
-    <link rel="stylesheet" href="../public/css/plugins/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/jquery.timepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/plugins/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Griffy&display=swap" rel="stylesheet">
     <!-- main Styles -->
@@ -955,11 +953,8 @@
 <!-- plugins -->
 <script src="../public/js/plugins/vegas.js"></script>
 <script src="../public/js/Plugins/jquery.nice-select.js"></script>
-<!-- <script src="../public/js/plugins/bootstrap-datepicker.js"></script>
-<script src="../public/js/plugins/jquery.timepicker.min.js"></script>
-<script src="../public/js/plugins/owl.carousel.min.js"></script>
-<script src="../public/js/scrollax.min.js"></script>
-<script src="../public/js/plugins/slick.min.js"></script> -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 
 <!-- main Styles --> 
 <script src="../public/js/custom.js"></script>
@@ -1009,6 +1004,16 @@ $('.same-height .card-body').each(function () {
 
 });
 $('.same-height  .card-body').height(theMaxHeight);
+
+
+
+
+// ////////////////////////////////////////////////////
+
+    AOS.init({
+            duration: 3000,
+            once: true,
+          });
 
 </script>
 </body>
