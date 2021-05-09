@@ -269,7 +269,7 @@ module.exports.changeRestPass_post=(req,res)=>{
             let errorss=error
             let coverimg=rest.coverimg
             error={ email:"0",password:"0",username:"0",restaurantPhone:"0"}
-            res.render("./resturant-profile",{cat,cats,errorss,coverimg})
+            res.render("./resturant-profile",{cat,cats,errorss,coverimg,rest})
             })
     
       
@@ -283,7 +283,7 @@ module.exports.changeRestPass_post=(req,res)=>{
         //        res.render("./Ordering",{rest})
        //     })
     //    }
-    //    module.exports.testpost=(req,res)=>{
-   ////         console.log(req.body)
-       //     res.redirect("/test")
-     //   }
+     //   module.exports.testpost=(req,res)=>{
+           // console.log(req.body)
+        //    res.send("All Good")
+    //    }
