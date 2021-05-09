@@ -50,6 +50,12 @@
     /* margin-top: 50px; */
 
 }
+
+.tab-image{
+    width: 80px;
+    height: 80px;
+}
+
 .login-buttons input{
     background-color: transparent;
     outline: none;

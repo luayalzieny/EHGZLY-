@@ -13,14 +13,8 @@
     <link rel="stylesheet" href="../public/css/fontawsome/solid.min.css">
     <link rel="stylesheet" href="../public/css/fontawsome/brands.min.css">
     <!-- plugins -->
-    <link rel="stylesheet" href="../public/css/plugins/vegas.css">
-    <link rel="stylesheet" href="../public/css/plugins/nice-select.css">
-    <!-- <link rel="stylesheet" href="../public/css/plugins/animate.css">
-    <link rel="stylesheet" href="../public/css/plugins/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/jquery.timepicker.css">
-    <link rel="stylesheet" href="../public/css/plugins/owl.carousel.min.css"> -->
-    <!-- <link rel="stylesheet" href="css/plugins/owl.theme.default.min.css"> -->
-    <!-- google fonts -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- google-maps -->
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Griffy&display=swap" rel="stylesheet">
 
     
@@ -53,17 +47,17 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-4 text-center map-data-bac">
-        <h1 class="display-4 text-center">
+        <h1  data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200" class="display-4 text-center">
           <i class="fas fa-map-marked mr-4"></i>Restaurant Search
         </h1>
 
-        <p class="mt-5 text-white">
+        <p  data-aos="fade-up" data-aos-duration="700" data-aos-delay="350" class="mt-5 text-white">
           Choose your end point and the restaurants will load to your map.
           you can also click the drive button below to start you travel, click it again to disapear
         </p>
-        <button id="drive-btn" class="btn btn-light mb-3">drive</button>
-        <p class="bac-home-map ">
-           <a class="mt-5" href="index.html"><i class=" fas fas fa-home mr-2"></i> BACK TO HOME</a>
+        <button  data-aos="fade-right" data-aos-duration="700" data-aos-delay="500" id="drive-btn" class="btn btn-light mb-3">drive</button>
+        <p  data-aos="fade-left" data-aos-duration="700" data-aos-delay="600" class="bac-home-map ">
+           <a class="mt-5" href="/"><i class=" fas fas fa-home mr-2"></i> BACK TO HOME</a>
         </p>
       </div>
 
@@ -122,6 +116,22 @@
 <script src="../public/js/fontawsome/fontawesome.min.js"></script>
 <script src="../public/js/fontawsome/solid.min.js"></script>
 <script src="../public/js/fontawsome/brands.min.js"></script>
+<!-- plugins -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+
+
+<script>
+
+
+
+
+ AOS.init({
+            duration: 3000,
+            once: true,
+          });
+
+
+</script>
 </body>
 </html>
