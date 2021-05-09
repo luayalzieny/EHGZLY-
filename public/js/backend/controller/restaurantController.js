@@ -156,7 +156,7 @@ module.exports.restaurant_get=(req,res)=>{
     };
 
     module.exports.login_get=(req,res)=>{
-        res.render("./loginrest")
+        res.render("./newlogin")
     }
 
    module.exports.location_get=(req,res)=>{

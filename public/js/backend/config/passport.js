@@ -17,7 +17,7 @@ passport.use('rest',new LocalStrategy(customFields,(email,password,done)=>{
       };
       
       if(!user){
-          return done(null,false,{message:"Email doesn't exist"})
+          return done(null,false,{message:"email doesn't exist"})
       };
       
       bcrypt.compare(password,user.password,function(err,result){
@@ -25,7 +25,7 @@ passport.use('rest',new LocalStrategy(customFields,(email,password,done)=>{
 
               return done(null,user)
           }else{
-              return done(null,false,{message:"Password incorrect"})
+              return done(null,false,{message:"password incorrect"})
           }
       })
   })
