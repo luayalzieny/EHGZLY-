@@ -65,7 +65,6 @@ console.log(err)
 
 // routes functions
 exports.get_home=(req,res)=>{
-    console.log(req)
     res.render("index",{user:req.user})
 };
 

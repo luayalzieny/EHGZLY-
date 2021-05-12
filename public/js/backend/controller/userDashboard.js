@@ -7,25 +7,32 @@ const mimeType=['image/jpeg','image/png','images/gif']
 
 // end of modules used
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({limit: '50mb', extended: true }))
 app.use(express.json())
 
-//checks if a user is logged in
+//basic functions
+//image upload function
+function saveCover(img,imgEncoded){
+    if(imgEncoded==null)return
 
+    const cover=JSON.parse(imgEncoded)
+    if(cover !=null && mimeType.includes(cover.type)){
+        img.image.imageBuffer=new Buffer.from(cover.data,'base64')
+        img.image.imageType=cover.type
+    }
+}
 //route functions
 
 exports.get_dashboard=(req,res)=>{
-
-    if(!req.isAuthenticated()){
-        return res.redirect('/')
-        }
-      
-        res.render('User_Dashboard',{user:req.user,err:"",err_password:""})
-  
+    
+  res.render('User_Dashboard',{user:req.user,err:"",err_password:""})
 }
 
 exports.post_update_dashboard=(req,res)=>{
     const errors={email:"",number:""};
+    const image=JSON.parse(req.body.uploadImage)
+    let imagebuffer= new Buffer.from(image.data,'base64')
+    let imagetype=image.type
 
     User.updateOne({_id:req.user._id},{
         Fname: req.body.Fname || req.user.Fname ,
@@ -35,7 +42,11 @@ exports.post_update_dashboard=(req,res)=>{
         email:req.body.email||req.user.email,
         
         number:req.body.number||req.user.number,
-    
+        
+        image:{
+            imageBuffer:imagebuffer||req.user.image.imageBuffer,
+            imageType:imagetype||req.user.image.imageType
+        }
 },function(err){
         if(err)
         {console.log(err);

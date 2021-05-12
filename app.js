@@ -23,7 +23,7 @@ const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 
 //middle wares used
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({limit: '50mb', extended: true }))
 app.use(express.json())
 
 // Set static folder

@@ -8,8 +8,8 @@ FilePond.registerPlugin(
 const inputElement = document.querySelector('input[type="file"]');
 
 FilePond.setOptions({
-  stylePanelAspectRatio:0/100,
-  imageResizeTargetheight:0,
+  stylePanelAspectRatio:10/100,
+  imageResizeTargetheight:150,
   imageResizeTargetWidth:100
   })
 
