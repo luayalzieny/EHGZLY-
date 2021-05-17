@@ -552,6 +552,12 @@
       <script>
         function onloadfunction(){
           order=document.getElementById("order")
+       
+          orderNuminput=document.createElement("input")
+          orderNuminput.name="orderNumber"
+          orderNuminput.style.display="none"
+          orderNuminput.value=Math.round(Math.random()*1000+1);
+            order.appendChild(orderNuminput)
 
             restid=document.createElement("input")
             restid.name="restaurant_ID"
