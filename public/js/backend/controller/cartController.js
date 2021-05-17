@@ -17,12 +17,7 @@ app.use(express.json());
 // number generated and customer id placed 
 exports.get_menuRest=(req,res)=>{
 
-    let customName=req.params.restName
-    let restID=req.params.restID
-    let custom={
-        customName,restID
-    }
-    res.send(custom)
+console.log(req.body)
     // rest.findOne({restaurantName:customName},function(err,result){
     //     if(err){
     //         return console.log(err)
@@ -45,10 +40,10 @@ exports.get_menuRest=(req,res)=>{
     //     })
 
     //     //res.render('menu')
-    //    res.json(result)
+      
     // })
 
-
+ res.render('test')
 
 }
 

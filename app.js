@@ -3,7 +3,7 @@ const express= require('express')
 const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
-
+const cartRoute=require('./public/js/backend/routes/cartRoute')
 
 // load environment variables
 dotenv.config({ path: './public/js/backend/config/config.env' });
@@ -45,7 +45,7 @@ app.use(cors());
 app.use(userRoute)
 
 app.use(restaurantsRoute)
-//app.use(cartRoute)
+app.use(cartRoute)
 
 app.use('/api/v1/stores', require('./public/js/backend/routes/stores'));
 

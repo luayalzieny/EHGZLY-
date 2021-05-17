@@ -283,7 +283,7 @@ module.exports.changeRestPass_post=(req,res)=>{
         //        res.render("./Ordering",{rest})
        //     })
     //    }
-     //   module.exports.testpost=(req,res)=>{
-           // console.log(req.body)
-        //    res.send("All Good")
-    //    }
+       module.exports.testpost=(req,res)=>{
+          // console.log(req.body)
+           res.render("test")
+       }
