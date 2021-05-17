@@ -51,13 +51,16 @@ console.log(req.body)
 // until the customer chooses a meal to be added to dishes array in cart
 exports.post_menuRest=(req,res)=>{
     
-let meal={meal:req.body.meal}
+// let meal={meal:req.body.mealname}
 
 cart.updateOne({_id:1},
     {
-    $push:{"dishes":meal},
-    finishing_time:req.body.finishing_time+" min",
-    $inc:{total_price:req.body.price}
+    $push:{"dishes":req.body.mealname},
+    finishing_time:req.body.finishing_time+" min",    
+    total_price:req.body.total_price,
+    customer_id:req.user._id,
+    order_number:Math.round(Math.random()*1000+1),
+    restaurant_name:req.body.restaurant_name ,
 },function(err){
         if(err){
         console.log(err)
@@ -71,6 +74,27 @@ cart.updateOne({_id:1},
 }
 })
 
+// const order=new cart({
+//     order_number:Math.round(Math.random()*1000+1),
+//     customer_id:req.user._id,
+//     _id:1,
+//     restaurant_name:req.body.restaurant_name,
+//     // dishes:req.body.mealname,
+//     notes:req.body.notes,
+//     finishing_time:req.body.finishing_time,
+    
+//     total_price:req.body.total_price
+// })
+
+// order.save(err=>{
+//     if(err){
+//     console.log(err)
+//        return res.json(err)
+//     }
+// cart.findOne({_id:1},function(err,result){
+//     return res.json(result)
+// })
+// })
 
 }
 

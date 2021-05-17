@@ -35,10 +35,7 @@ const cartSchema= mongoose.Schema({
         type:String
     }
                     ,
-    dishes:[{_id:false,
-        meal:{type:String},
-        
-    }],
+    dishes:[],
     notes:{
         type:String
     },

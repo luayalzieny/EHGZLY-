@@ -3,7 +3,6 @@ const express= require('express')
 const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require('path');
-const cartRoute=require('./public/js/backend/routes/cartRoute')
 
 // load environment variables
 dotenv.config({ path: './public/js/backend/config/config.env' });
@@ -14,7 +13,7 @@ const app=express()
 require("./public/js/backend/config/db")
 require("./public/js/backend/config/passport")
 const userRoute=require('./public/js/backend/routes/userRoutes')
-
+const cartRoute=require('./public/js/backend/routes/cartRoute')
 const restaurantsRoute=require("./public/js/backend/routes/restaurantRoute")
 //const cartRoute=require('./public/js/backend/routes/cartRoute')
 
@@ -43,7 +42,6 @@ app.use(cors());
 
 // routes callback
 app.use(userRoute)
-
 app.use(restaurantsRoute)
 app.use(cartRoute)
 

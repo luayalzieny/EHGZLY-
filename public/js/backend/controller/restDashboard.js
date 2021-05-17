@@ -284,6 +284,6 @@ module.exports.changeRestPass_post=(req,res)=>{
        //     })
     //    }
        module.exports.testpost=(req,res)=>{
-          // console.log(req.body)
+           console.log(req.body)
            res.render("test")
        }
