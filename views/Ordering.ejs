@@ -621,8 +621,9 @@
          order.appendChild(spacesapn)
 
           pricesapn=document.createElement("span")
-          pricesapn.className ="time"
+          
           pricesapn.id="span"+mealprice
+          pricesapn.className="float-right"
           pricesapn.innerText=mealprice
           mealpriceinput=document.createElement("input")
           mealpriceinput.name="mealprice"
@@ -630,15 +631,19 @@
           mealpriceinput.style.display="none"
           mealpriceinput.value=mealprice
             
-          order.appendChild(pricesapn)
           order.appendChild(mealpriceinput)
-        
+          
           i=document.createElement("i")
-          i.className ="ml-3 fa fa-times-circle"
+          i.className ="ml-3 fa fa-times-circle float-right"
           i.setAttribute("type", "button");
           i.id=mealname+"+"+mealprice+"."
           i.setAttribute("onclick", " deleteelement(this.id)");
+
+          let x = document.createElement("BR");
+          x.id="br"+mealprice
           order.appendChild(i)
+          order.appendChild(pricesapn)
+          order.appendChild(x)
 
           subtotal(mealprice)
 
@@ -666,6 +671,9 @@
           mealnameinput=document.getElementById(mealname+"input")
           pricesapn=document.getElementById("span"+mealprice)
           mealpriceinput=document.getElementById("input"+mealprice)
+          pricesapn=document.getElementById("span"+mealprice)
+          br=document.getElementById('br'+mealprice)
+          br.remove()
           mealnamesapn.remove()
           mealnameinput.remove()
           pricesapn.remove()

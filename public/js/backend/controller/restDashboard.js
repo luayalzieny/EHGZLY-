@@ -287,3 +287,32 @@ module.exports.changeRestPass_post=(req,res)=>{
            console.log(req.body)
            res.render("test")
        }
+       module.exports.addCat=(req,res)=>{
+        if(req.body.cat){
+            let data =new Array();
+          cat=req.body.cat
+          if(typeof cat =="string"){
+              data =new Array(cat)
+            }
+            else{
+            data=cat
+        }
+
+          data.forEach(element => {
+              if(element !='0'){
+              restaurants.findOneAndUpdate({_id:restaurantID},
+      
+                  {$push:{categories:{
+                      category:element,
+                      
+                    }}},(err,rest)=>{
+                         if(err)
+                         console.log(err);
+                  
+                                        })
+                             }
+                        } 
+          )}
+          res.redirect("/restprofile")
+
+    }

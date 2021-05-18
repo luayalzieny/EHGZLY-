@@ -43,6 +43,8 @@ app.post("/updateRest",restaurantDashboard.restaurant_updateMainInformation_post
 app.post("/deletrest",restaurantDashboard.deletRest_post)
 app.post("/deletcat",restaurantDashboard.deletcategryandmeals)
 app.post("/test",restaurantDashboard.testpost)
+app.post("/addCat",restaurantDashboard.addCat)
+
 
 app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)

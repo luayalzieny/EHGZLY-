@@ -616,13 +616,39 @@
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
             <div class="tab-pane fade shadow rounded bg-white show  p-5" id="MENU_BUILDER" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              
+              <form method="POST" action="/addCat">
+                <div class=" col-lg-12 p-0 m-0"> 
+                  <div class=" ">
+                    <h5 class="font-weight-bolder Extra-category-name" style="color: black;" for="">Add Categories  </h5>
+                    <br>
+                    <select id="select-cat" style="width: 50%!important;color: #9097a1;" class="mul-select p-3 mt-1 mb-3" multiple="true" name="cat">
+                      <option value="0" selected="selected" > food</option>
+                      <option value="pizza" > pizza</option>
+                      <option value="Pasta" > Pasta</option>
+                      <option value="stakes" > stakes</option>
+                      <option value="burgger">burgger</option>
+                      <option value="Beef Roast" > Beef Roast</option>
+                      <option value="Cheese Burger" >Cheese Burger</option>
+                      <option value="Chicken">Chicken </option>
+                      <option value="Chicken Roast">Chicken Roast</option>
+                      <option value="Chines Soup">Chines Soup</option>
+                      <option value="apple pie">apple pie  </option>
+                      <option value="apple juice" > apple juice</option>
+                      <option value="Carrot Juice">Carrot Juice</option>
+                      <option value="coffee">coffee</option>
+                      
+                    </select>
+                    <button class="ml-auto btn btn-success p-1 rounded float-right ">submit</button>
+                  </form>
+                </div>
+                <br>
+            
               <div class=" col-lg-12 p-0 m-0"> 
 
                   <div class="tab-pane p-3 active" id="menu_category" role="tabpanel">
                     <div class="d-flex">
-                      <div class="font-weight-bolder Extra-category-name"><span>MENU BUILDER  </span> </div>
-                      <button type="button" class="ml-auto btn btn-success p-1 rounded menu_category_btn Required-text"
+                      <h5 class="font-weight-bolder Extra-category-name" style="color: black;" for="">adding  meals form</h5>
+                      <button type="button" class="ml-auto btn btn-success p-1 rounded menu_category_btn Required-text float-center"
                        data-toggle="modal" data-target="#menu_category_modal"> Add meals </button>
                             <!-- Modal -->
                             <div class="modal fade" id="menu_category_modal" tabindex="-1" role="dialog" aria-labelledby="menu_category_modalLabel" aria-hidden="true">
@@ -641,11 +667,11 @@
                                          
                                       <!-- ////////////////////////// -->
                                     </div>
-                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add all </button>
+                                    <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3"  type="submit"> Add all </button>
                                     
                                     <hr>
                                   </form>
-                                  <button id="button1" class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> Add meal </button>
+                                  <button id="button1" class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3"  onclick="return false" type="submit"> Add meal </button>
                                   </div>
                                  
                                 </div>
@@ -655,6 +681,8 @@
                     </div>  
                     <!-- /////////////////////////// -->
                     <!-- /////////////////////////// -->
+                    <br>
+                    <h5 class="font-weight-bolder Extra-category-name" style="color: black;" for="">Menu Editor  </h5>
                     <ul class="category-crud mt-5">
 
                     <li class="category-row">
@@ -1501,16 +1529,19 @@ const input=document.querySelector('#inpUpload');
       ID=i+"[category]"
       select.name=ID
       let option = document.createElement('option');
-         option.text="select "
-        
-          select.options.add(option,1)
-          
-      cats.forEach(element => {
+         option.text="select"
+         option.value=""
+         option.selected="selected"
+         option.disabled="true"
+         select.options.add(option,1)
+         
+         cats.forEach(element => {
            option = document.createElement('option');
-         option.text=element
-          select.options.add(option,1)
-      });
-      div0.appendChild(div1);
+           option.text=element
+           select.options.add(option,1)
+          });
+          select.required = "required"; 
+          div0.appendChild(div1);
       div1.appendChild(select);
 
      
@@ -1521,6 +1552,7 @@ const input=document.querySelector('#inpUpload');
       input2.name=ID
       input2.className="col-lg-12 p-2 mb-3" 
       input2.placeholder="meal name"
+      input2.required=true
       div0.appendChild(div2);
       div2.appendChild(input2);
 
@@ -1528,6 +1560,7 @@ const input=document.querySelector('#inpUpload');
       div3.className="col-lg-6 col-md-6 col-sm-12 p-1 mt-2 "
       input3 = document.createElement("input");
       input3.type="number"
+      input3.required=true
       ID=i+"[price]"
       input3.name=ID
       input3.className="col-lg-12 p-2 mb-3" 
@@ -1542,6 +1575,7 @@ const input=document.querySelector('#inpUpload');
       input4.name=ID
       input4.className="col-lg-12 p-2 mb-3" 
       input4.placeholder="meal description"
+      input4.required=true
       div0.appendChild(div4);
       div4.appendChild(input4);
       // let p4 =document.createElement("p");
