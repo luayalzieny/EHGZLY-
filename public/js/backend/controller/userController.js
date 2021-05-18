@@ -91,7 +91,7 @@ exports.get_how_it_work=(req,res)=>{
 
 exports.get_login_page=(req,res)=>{
    // checkAuthentication(req,res)
-    res.render("loginpage" )
+   res.render("newlogin");
 };
 
 

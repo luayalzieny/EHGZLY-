@@ -57,7 +57,7 @@ mapboxgl.setRTLTextPlugin(
 
 
    
-  buildLocationList(stores);
+
   addMarkers();
       
 
@@ -105,25 +105,23 @@ mapboxgl.setRTLTextPlugin(
             flyToStore(marker);
             /* Close all other popups and display popup for clicked store */
             createPopUp(marker);
+             /* Highlight listing in sidebar */
+             var activeItem = document.getElementsByClassName('active');
+             e.stopPropagation();
+             if (activeItem[0]) {
+               activeItem[0].classList.remove('active');
+             }
+             var listing = document.getElementById(
+               'listing-' + marker.properties.id
+             );
+             listing.classList.add('active');
            
           });
         });
       }
 
 
-       /**
-       * Add a listing for each store to the sidebar.
-      **/
-      function buildLocationList(data) {
-        data.features.forEach(function(store, i){
-          /**
-           * Create a shortcut for `store.properties`,
-           * which will be used several times below.
-          **/
-          var prop = store.properties;
-
-        });
-      }
+       
 
       /**
        * Use Mapbox GL JS's `flyTo` to move the camera smoothly
@@ -142,12 +140,12 @@ mapboxgl.setRTLTextPlugin(
       function createPopUp(currentFeature) {
         var popUps = document.getElementsByClassName('mapboxgl-popup');
         if (popUps[0]) popUps[0].remove();
-        var popup = new mapboxgl.Popup({closeOnClick: false})
+        var popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML('<h3>'+ currentFeature.properties.name+ '</h3>' +
           '<a href=/ordering/'+currentFeature.properties._id+' target="_blank"> Menu </a>' +
-            '<h4>'+ currentFeature.properties.phone + '</h4>' +
-            '<h4>'+ currentFeature.properties.kitchen + '</h4>'
+            '<p>'+ currentFeature.properties.phone + '</p>' +
+            '<p>'+ currentFeature.properties.kitchen + '<p>'
             )
           .addTo(map);
       }

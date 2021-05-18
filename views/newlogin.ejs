@@ -115,11 +115,11 @@
       <h2> restaurant login </h2>
      
       <%if(messages.error=="email Doesn't Exist"||messages.error=="password Incorrect"){%>
-        <h4 class="mt-3" style="text-align: center;"> <%=messages.error%></h4>
+        <h4 class="mt-2" style="text-align: center;"> <%=messages.error%></h4>
         <%}%>
         <form class="contact-form " action="/restLogin" method="POST">
             <!-- ////////////////////////// -->
-            <div class=" mt-5 ">
+            <div class=" mt-2 ">
               <div class="col-md-12 p-4  ">
                 <input name="email" type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="Restaurant Email ">
               </div>
