@@ -558,6 +558,18 @@
           orderNuminput.value=Math.round(Math.random()*1000+1);
             order.appendChild(orderNuminput)
 
+            userid=document.createElement("input")
+            userid.name="user_ID"
+            userid.style.display="none"
+            userid.value="<%=user.id%>"
+            order.appendChild(userid)
+
+            userFname=document.createElement("input")
+            userFname.name="user_Fname"
+            userFname.style.display="none"
+            userFname.value="<%=user.Fname%>"
+            order.appendChild(userFname)
+
             restid=document.createElement("input")
             restid.name="restaurant_ID"
             restid.style.display="none"

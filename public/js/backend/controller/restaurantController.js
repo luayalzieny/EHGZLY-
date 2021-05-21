@@ -195,8 +195,9 @@ module.exports.restaurant_get=(req,res)=>{
 module.exports.getOrder= (req, res) => {
   
     const id = req.params.id;
+    let user =req.user
     restaurants.findById(id).then((result)=>{
-      res.render('Ordering', {rest:result});
+      res.render('Ordering', {rest:result,user});
     }).catch(err => {console.log(err)});
     
 }
