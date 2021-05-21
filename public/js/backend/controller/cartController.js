@@ -3,6 +3,7 @@ const app=express();
 const bodyParser=require('body-parser');
 const cart=require('./../model/cartModel')
 const rest=require('./../model/restaurantsModel')
+const user=require('./../model/userModel')
 // const dish=require('./../../../../dummy data/category.json')
 // const rest=require('./../../../../dummy data/restaurant.json')
 const Math=require('mathjs')
@@ -50,34 +51,20 @@ console.log(req.body)
 // the dishes,deliverytime ,finishing time and total price are left empty
 // until the customer chooses a meal to be added to dishes array in cart
 exports.post_menuRest=(req,res)=>{
-    
-// let meal={meal:req.body.mealname}
-
-// cart.updateOne({_id:1},
-//     {
-//     $push:{"dishes":req.body.mealname},
-//     finishing_time:req.body.finishing_time+" min",    
-//     total_price:req.body.total_price,
-//     customer_id:req.user._id,
-//     order_number:Math.round(Math.random()*1000+1),
-//     restaurant_name:req.body.restaurant_name ,
-// },function(err){
-//         if(err){
-//         console.log(err)
-//         res.json(err)
-        
-//         }else{
-//         cart.find({_id:1},function(err,rest){
-//         res.json(rest)
-//         })
-
-// }
-// })
-
+    cart.deleteOne({_id:req.user._id},function(err){
+        if(err){
+        console.log(err)
+ 
+        }
+        //res.json(err)
+    })
+if(!req.body.mealname){
+    return res.redirect('back');
+}
 const order=new cart({
     order_number:Math.round(Math.random()*10000+1),
     customer_id:req.user._id,
-    _id:Math.round(Math.random()*10000+1),
+    _id:req.user._id,
     restaurant_name:req.body.restaurant_name,
     dishes:req.body.mealname,
     notes:req.body.notes,
@@ -91,19 +78,73 @@ order.save(err=>{
     console.log(err)
        return res.json(err)
     }
-cart.findOne({_id:1},function(err,result){
-    return res.json(result)
+cart.findOne({_id:req.user._id},function(err,result){
+    if(!result){
+        return res.json("err")
+    }
+   // console.log(result)
+    return res.redirect('/confirm_order')
 })
 })
 
 }
 
+exports.get_confirm_Order=(req,res)=>{
+    cart.findOne({_id:req.user._id},function(err,result){
+        if(err){
+            return res.json(err)
+        }
+      return res.render("confirmation_page",{order:result})
+    })
+}
+
+
+exports.post_confirm_Order=(req,res)=>{
+
+cart.findOne({_id:req.user._id},function(err,result){
+    if(err){
+        console.log(err)
+        return res.json(err)
+    }
+    let entry={
+       dishes:result.dishes,
+       _id:result.order_number,
+       restaurantName:result.restaurant_name,
+       notes: result.notes,
+       Price: result.total_price+"$",
+    }
+
+        user.findOneAndUpdate({_id:req.user._id},{
+        $push:{"history":entry}
+        },function(err,result){
+            if(err){
+            console.log(err)
+            return res.json(err)
+                            }
+    res.json(result)
+})
+
+// rest.updateOne({_id:result.},function(err,result){
+//     if(err){
+//         console.log(err)
+//         return res.json(err)
+//     }
+
+// })
+
+
+})
+
+
+}
+
+
+
+
+
 //after order is sent the cart is emptied(route not yet made)
 exports.delete_order=(req,res)=>{
-cart.deleteOne({},function(err){
-    console.log(err)
-    res.json(err)
-})
+
 
 
 }

@@ -54,11 +54,7 @@ const userSchema=new mongoose.Schema({
         minlength:[3,"Minimum Password Length Is 3 Characters"]
     },
 
-    history:[{
-        index:{unique:false},
-        order:{type:String},
-        content:{type:String}
-    }],
+    history:[],
     image:{
         imageBuffer:{type: Buffer}, 
         imageType:{type:String}    
