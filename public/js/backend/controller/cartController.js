@@ -51,6 +51,7 @@ console.log(req.body)
 // the dishes,deliverytime ,finishing time and total price are left empty
 // until the customer chooses a meal to be added to dishes array in cart
 exports.post_menuRest=(req,res)=>{
+    console.log(req.body)
     cart.deleteOne({_id:req.user._id},function(err){
         if(err){
         console.log(err)

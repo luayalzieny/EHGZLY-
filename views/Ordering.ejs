@@ -413,7 +413,7 @@
           <!-- ////////////////////////////////////////// -->
           <div class="tab-pane p-3" id="Reviews" role="tabpanel">
             <article class="p-3">
-              <h5>Customer Reviews For Kfc – Kentucky</h5>
+              <h5>Customer Reviews <%=rest.restaurantName%></h5>
               <div class="d-flex align-items-center justify-content-center mt-5 ">
                 <div>
                   <i style="font-size: 50px;" class=" fas fa-comment-slash "></i>
@@ -421,9 +421,10 @@
                 <div class="pl-3">
                   <h6 style="font-size:16px; font-weight: 600;">Write your own reviews</h6>
                   <p style="font-size:14px; color: #f30928;">Only customers can write reviews</p>
-                  <form method="POST" action="">
+                  <form  method="POST" action="">
+                    <div id="reviewForm"></div>
                     <textarea name="review"  cols="30" rows="5"></textarea><br>
-                    <button class="mt-3 btn btn-lg btn-danger">Submit Review</button>
+                    <button type ="submit"class="mt-3 btn btn-lg btn-danger">Submit Review</button>
                   </form>
                 </div>
               </div>
@@ -506,7 +507,7 @@
 
           <div class="tab-pane p-3" id="Info" role="tabpanel">
             <article class="p-3">
-              <h5 style="font-weight: 600;" >Overview Kfc – Kentucky</h5>
+              <h5 style="font-weight: 600;" >Overview <%=rest.restaurantName%></h5>
               <p style="color: #515151;" class="mt-4"><%=rest.info%></p>
 
               <div>
@@ -515,7 +516,7 @@
 
               <div class="row mt-5" >
                 <div class="col-lg-6">
-                  <h5 class="mb-3" style="font-weight: 600;" >Overview Kfc – Kentucky</h5>
+                  <h5 class="mb-3" style="font-weight: 600;" >Overview <%=rest.restaurantName%></h5>
                   <p style="color: #515151;" >10th of ramadan egypt</p>
                   <p style="color: #515151;" > <i class="fa fa-phone-volume"></i>  +01064691587</p>
                   <p style="color: #515151;" > <i  class="fa fa-envelope"></i> <a style="color: #f30928;" href="#">Send Enquiry By Email</a></p>
@@ -554,8 +555,10 @@
       <!-- //////////////////////////////////////////////////////////////////////// -->
       <script>
         function onloadfunction(){
+          reviewForm=document.getElementById("reviewForm")
+          
           order=document.getElementById("order")
-       
+          
           orderNuminput=document.createElement("input")
           orderNuminput.name="orderNumber"
           orderNuminput.style.display="none"
@@ -567,24 +570,28 @@
             userid.style.display="none"
             userid.value="<%=user.id%>"
             order.appendChild(userid)
+            reviewForm.appendChild(userid)
 
             userFname=document.createElement("input")
             userFname.name="user_Fname"
             userFname.style.display="none"
             userFname.value="<%=user.Fname%>"
             order.appendChild(userFname)
+            reviewForm.appendChild(userFname)
 
             restid=document.createElement("input")
             restid.name="restaurant_ID"
             restid.style.display="none"
             restid.value="<%=rest.id%>"
             order.appendChild(restid)
+            reviewForm.appendChild(restid)
 
             restname=document.createElement("input")
             restname.name="restaurant_name"
             restname.style.display="none"
             restname.value="<%=rest.restaurantName%>"
             order.appendChild(restname)
+            reviewForm.appendChild(restname)
 
             pickuptime=document.createElement("input")
             pickuptime.name="finishing_time"
