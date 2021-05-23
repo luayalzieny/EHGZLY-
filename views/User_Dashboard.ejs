@@ -386,24 +386,26 @@
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
+          
+          
+            
+          <%user.reviews.forEach(review=>{%>
+
           <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <h5 class="">REVIEW GIVEN <span style="font-size: 10px;"> ({{number of Reviews}}) </span></h5>
+           
+            <h5 class="">REVIEW GIVEN BY <%=user.Fname%> </h5>
+            
             <div class="d-flex">
-              <div class="mt-3"><h6>post dose not exist . </h6></div>
-              <div class="mt-2">
-                <i style=" right:100px; color: rgb(221, 252, 47);  " class="fa fa-star"></i>
-                <i style=" right: 80px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                <i style=" right: 60px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                <i style=" right: 40px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-                <i style=" right: 20px; color: rgb(221, 252, 47);  " class="fa fa-star "></i>
-              </div>
+              <div class="mt-3"><h6><%=review.review%> </h6></div>
+              
             </div>
             <br>
             <div class="">
-              <p class="p-in-review">2 monthes ago</p>
-              <h5 class="h5-in-review"> awesome delicious foody experience!  </h5>
+              <p class="p-in-review"><%=review.time%></p>
+              <h5 class="h5-in-review"> Restaurant:<%=review.restaurant_name%>  </h5>
             </div>
           </div>
+        <%})%>
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->

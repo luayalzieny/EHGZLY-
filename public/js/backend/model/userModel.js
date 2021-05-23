@@ -55,10 +55,13 @@ const userSchema=new mongoose.Schema({
     },
 
     history:[],
+
+    reviews:[],
     image:{
         imageBuffer:{type: Buffer}, 
         imageType:{type:String}    
  },
+
          
 
 },{timestamps:true})

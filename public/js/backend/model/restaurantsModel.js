@@ -82,7 +82,7 @@ const restaurantSchema= new Schema({
          img:{type:String},
          coverimg:{type:String},
         categories:[categoriesSchema],
-        orders:[{type:Object}],
+        orders:[],
         pickupfee:{type:Number},
         pickuptime:{type:String},
         info:{type:String},
@@ -93,6 +93,7 @@ const restaurantSchema= new Schema({
             required:[true,'please enter your phone number']
             },
         
+        reviews:[]
         // createdAt: {
         //     type: Date,
         //     default: Date.now
