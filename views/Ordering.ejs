@@ -563,35 +563,57 @@
           orderNuminput.name="orderNumber"
           orderNuminput.style.display="none"
           orderNuminput.value=Math.round(Math.random()*1000+1);
-            order.appendChild(orderNuminput)
+          order.appendChild(orderNuminput)
 
             userid=document.createElement("input")
             userid.name="user_ID"
             userid.style.display="none"
             userid.value="<%=user.id%>"
             order.appendChild(userid)
-            reviewForm.appendChild(userid)
+
+            useridre=document.createElement("input")
+            useridre.name="user_ID"
+            useridre.style.display="none"
+            useridre.value="<%=user.id%>"
+            reviewForm.appendChild(useridre)
+           
+            
 
             userFname=document.createElement("input")
             userFname.name="user_Fname"
             userFname.style.display="none"
             userFname.value="<%=user.Fname%>"
             order.appendChild(userFname)
-            reviewForm.appendChild(userFname)
+
+            userFnamere=document.createElement("input")
+            userFnamere.name="user_Fname"
+            userFnamere.style.display="none"
+            userFnamere.value="<%=user.Fname%>"
+            reviewForm.appendChild(userFnamere)
 
             restid=document.createElement("input")
             restid.name="restaurant_ID"
             restid.style.display="none"
             restid.value="<%=rest.id%>"
             order.appendChild(restid)
-            reviewForm.appendChild(restid)
+
+            restidre=document.createElement("input")
+            restidre.name="restaurant_ID"
+            restidre.style.display="none"
+            restidre.value="<%=rest.id%>"
+            reviewForm.appendChild(restidre)
 
             restname=document.createElement("input")
             restname.name="restaurant_name"
             restname.style.display="none"
             restname.value="<%=rest.restaurantName%>"
             order.appendChild(restname)
-            reviewForm.appendChild(restname)
+
+            restnamere=document.createElement("input")
+            restnamere.name="restaurant_name"
+            restnamere.style.display="none"
+            restnamere.value="<%=rest.restaurantName%>"
+            reviewForm.appendChild(restnamere)
 
             pickuptime=document.createElement("input")
             pickuptime.name="finishing_time"
