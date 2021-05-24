@@ -123,11 +123,13 @@ cart.findOne({_id:req.user._id},function(err,result){
         return res.json(err)
     }
     let entry={
-       dishes:result.dishes,
-       _id:result.order_number,
-       restaurantName:result.restaurant_name,
-       notes: result.notes,
-       Price: result.total_price+"$",
+        dishes:result.dishes,
+        _id:result.order_number,
+        restaurantName:result.restaurant_name,
+        notes: result.notes,
+        Price: result.total_price+"$",
+        restaurant_ID:result.restaurant_ID,
+        time:Time
     }
 
         user.findOneAndUpdate({_id:req.user._id},{
