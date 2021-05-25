@@ -416,11 +416,14 @@
               <h5>Customer Reviews for <%=rest.restaurantName%></h5>
               <br>
               <%rest.reviews.forEach(function(review){%>
-              <div class="container" style="box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+              <div>
 
-                 <p> <span style="color:#24a0ed;" ><%=review.user_Fname%></span><span class="float-right"><%=review.time%> </span></p>
-                 <span><%=review.review%></span>
+                 <h2 ><%=review.user_Fname%></h2>
+                 
+                 <p><%=review.review%></p>
+                 <span style="color: gray;" class="float-right"><%=review.time%> </span>
                 </div>
+                <br>
                 <br>
                 <%})%>
 
