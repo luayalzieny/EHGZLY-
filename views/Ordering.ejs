@@ -413,7 +413,17 @@
           <!-- ////////////////////////////////////////// -->
           <div class="tab-pane p-3" id="Reviews" role="tabpanel">
             <article class="p-3">
-              <h5>Customer Reviews <%=rest.restaurantName%></h5>
+              <h5>Customer Reviews for <%=rest.restaurantName%></h5>
+              <br>
+              <%rest.reviews.forEach(function(review){%>
+              <div class="container" style="box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+
+                 <p> <span style="color:#24a0ed;" ><%=review.user_Fname%></span><span class="float-right"><%=review.time%> </span></p>
+                 <span><%=review.review%></span>
+                </div>
+                <br>
+                <%})%>
+
               <div class="d-flex align-items-center justify-content-center mt-5 ">
                 <div>
                   <i style="font-size: 50px;" class=" fas fa-comment-slash "></i>

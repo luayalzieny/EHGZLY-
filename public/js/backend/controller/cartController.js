@@ -117,11 +117,13 @@ exports.get_confirm_Order=(req,res)=>{
 
 exports.post_confirm_Order=(req,res)=>{
 
+
 cart.findOne({_id:req.user._id},function(err,result){
     if(err){
         console.log(err)
         return res.json(err)
     }
+    
     let entry={
         dishes:result.dishes,
         _id:result.order_number,
@@ -139,17 +141,23 @@ cart.findOne({_id:req.user._id},function(err,result){
                 console.log(err)
                 return res.json(err)
                             }
+             entry.user={Fname:result.Fname,
+                Lname:result.Lname,
+                email:result.email,
+                number:result.number}
+
+                console.log(entry)
     //res.json(result)
+    rest.findOneAndUpdate({_id:entry.restaurant_ID},{
+        $push:{"orders":entry}
+       },function(err,result){
+           if(err){
+               console.log(err)
+               return res.json(err)
+   }
+res.json(result)
 })
 
-        rest.findOneAndUpdate({_id:result.restaurant_ID},{
-         $push:{"orders":entry}
-        },function(err,result){
-            if(err){
-                console.log(err)
-                return res.json(err)
-    }
- res.json(result)
 })
 
 

@@ -65,7 +65,7 @@
           <li class="nav-item"><a href="how it work.html" class="nav-link  ">How It Works</a></li>
           <li class="nav-item"><a href="faqs.html" class="nav-link ">FAQS</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link  ">Contact us</a></li>
-          <li class="nav-item"><a href="loginpage.html" class="nav-link  ">logIn/signUp</a></li>
+          
 
           <li class="nav-item ml-5 ">
           </li>
@@ -191,23 +191,23 @@
                       <th scope="col"> ORDER ID</th>
                       <th scope="col">DATE</th>
                       <th scope="col">TOTAL PRICE</th>
-                      <th scope="col">CHARGES	</th>
-                      <th scope="col">RECEIVED</th>
-                      <th scope="col">STATUS</th>
+                      
                       <th scope="col">DETAIL</th>
                     </tr>
                   </thead>
+                  <%let k=0%>
+                  <% rest.orders.forEach(function(order) { %>
                   <tbody>
                   <tr>
-                      <td>1</td>
-                      <td>12-3-2020</td>
-                      <td>£77.97</td>
-                      <td>£7.80	</td>
-                      <td>£70.17</td>
-                      <td class="processing"> <span>processing</span> </td>
-                      <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                   
+                    
+                      <td><%=order._id%></td>
+                      <td><%=order.time%></td>
+                      <td><%=order.Price%></td>
+                      
+                      <td><button id="3415"  type="button" data-toggle="modal" data-target="#RECENT_ORDERS<%=k%>"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
                               <!-- Modal -->
-                              <div class="modal fade" id="RECENT_ORDERS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="RECENT_ORDERS<%=k%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                   <div class="modal-content modal-style">
                                     <div class="modal-header">
@@ -217,55 +217,35 @@
                                       </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="d-flex">
+                                        <div class="d-flex" id="RECENT_ORD">
                                             <ul class="Extra-category-name">
-                                                <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                                <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
+                                        
+                                                <li class="mt-2"><span class="restu-detals-span1"  >ORDER ID:</span><span  class="restu-detals-span2">  <%=order._id%>  </span></li>
+                                                <li class="mt-2"><span class="restu-detals-span1"  >Order dishes:</span></li>
+                                                <% order.dishes.forEach(function(dish) { %>
+                                                  <li class="mt-2"><span class="restu-detals-span1"  ></span><span id="orderid" class="restu-detals-span2"> &emsp;  <%=dish%>  </span></li>
+                                                 <%}) %>
+                                                 <li class="mt-2"><span class="restu-detals-span1"  >notes:</span><span  class="restu-detals-span2">  <%=order.notes%>  </span></li>
+                                                
                                             </ul>
                                             <ul class="ml-auto mr-150">
                                                 <h5 class="font-weight-bold">Customer Detail</h5>
-                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                                <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
+                                                <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  <%=order.user.Fname%> <%=order.user.Lname%>  </span>  </li>
+                                                <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> <%=order.user.number%></span>  </li>
+                                                <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2"><%=order.user.email%></span> </li>
+                                                
                                             </ul>
                                           </div> 
                                           <hr>
                                           <!-- //////////////////////////////////////////////////////////// -->
-                                          <div class="d-flex order-state">
-                                           <div class="col-lg-3">
-                                            <h5 class="font-weight-bold">Order Status
-                                            </h5>
-                                           </div>
-                                           <!-- ////////////////////////////// -->
-                                           <div class="col-lg-9 ">
-                                            <form class="col-lg-12" action="" method="">
-                                                <select class="col-lg-12" name="" id="">
-                                                    <option > Processing </option>
-                                                    <option > Cancelled </option>
-                                                    <option > Completed </option>
-                                                    <option > Awaiting Payment </option>
-                                                    <option > Payment Received </option>
-                                                    <option > Expired </option>
-                                                    <option > Awaiting Pickup </option>
-                                                    <option > Dispatched </option>
-                                                    <option > Shipped </option>
-                                                </select>
-                                            </form>
-                                           </div> 
-                                        </div>
+                                          
                                         <!-- //////////////////////////////////////////////////// -->
                                         <hr>
                                   <div class="mt-4 font-weight-bolder">
                                     <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
                                     <ul>
-                                      <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                      <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                      <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                      <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
+                                     
+                                      <li><span> TOTAL: </span>   <span class=" price-span "> <%=order.Price%></span></li> 
                                     </ul>
                                   </div>
 
@@ -275,174 +255,19 @@
                                 </div>
                               </div>
                 </tr>
+                
+               
                 <!-- /////////////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////////////////////////////////////////////////////////// -->
-                <tr>
-                  <td>2</td>
-                  <td>12-3-2020</td>
-                  <td>£77.97</td>
-                  <td>£7.80	</td>
-                  <td>£70.17</td>
-                  <td class="processing"> <span>Awaiting Payment</span> </td>
-                  <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS2"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                          <!-- Modal -->
-                          <div class="modal fade" id="RECENT_ORDERS2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                              <div class="modal-content modal-style">
-                                <div class="modal-header">
-                                  <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="d-flex">
-                                        <ul class="Extra-category-name">
-                                            <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                            <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                            <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                        </ul>
-                                        <ul class="ml-auto mr-150">
-                                            <h5 class="font-weight-bold">Customer Detail</h5>
-                                            <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                        </ul>
-                                      </div> 
-                                      <hr>
-                                      <!-- //////////////////////////////////////////////////////////// -->
-                                      <div class="d-flex order-state">
-                                       <div class="col-lg-3">
-                                        <h5 class="font-weight-bold">Order Status
-                                        </h5>
-                                       </div>
-                                       <!-- ////////////////////////////// -->
-                                       <div class="col-lg-9 ">
-                                        <form class="col-lg-12" action="" method="">
-                                            <select class="col-lg-12" name="" id="">
-                                                <option > Processing </option>
-                                                <option > Cancelled </option>
-                                                <option > Completed </option>
-                                                <option > Awaiting Payment </option>
-                                                <option > Payment Received </option>
-                                                <option > Expired </option>
-                                                <option > Awaiting Pickup </option>
-                                                <option > Dispatched </option>
-                                                <option > Shipped </option>
-                                            </select>
-                                        </form>
-                                       </div> 
-                                    </div>
-                                    <!-- //////////////////////////////////////////////////// -->
-                                    <hr>
-                              <div class="mt-4 font-weight-bolder">
-                                <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                <ul>
-                                  <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                  <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                  <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                  <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
-                                </ul>
-                              </div>
-
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-            </tr>
-
-                            <!-- /////////////////////////////////////////////////////////////////////// -->
-                <!-- /////////////////////////////////////////////////////////////////////// -->
-                <!-- /////////////////////////////////////////////////////////////////////// -->
-                <!-- /////////////////////////////////////////////////////////////////////// -->
-                <!-- /////////////////////////////////////////////////////////////////////// -->
-                <!-- /////////////////////////////////////////////////////////////////////// -->
-                <tr>
-                  <td>3</td>
-                  <td>12-3-2020</td>
-                  <td>£77.97</td>
-                  <td>£7.80	</td>
-                  <td>£70.17</td>
-                  <td class="processing"> <span>Cancelled</span> </td>
-                  <td><button  type="button" data-toggle="modal" data-target="#RECENT_ORDERS3"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                          <!-- Modal -->
-                          <div class="modal fade" id="RECENT_ORDERS3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                              <div class="modal-content modal-style">
-                                <div class="modal-header">
-                                  <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="d-flex">
-                                        <ul class="Extra-category-name">
-                                            <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                            <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                            <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                        </ul>
-                                        <ul class="ml-auto mr-150">
-                                            <h5 class="font-weight-bold">Customer Detail</h5>
-                                            <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                            <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                        </ul>
-                                      </div> 
-                                      <hr>
-                                      <!-- //////////////////////////////////////////////////////////// -->
-                                      <div class="d-flex order-state">
-                                       <div class="col-lg-3">
-                                        <h5 class="font-weight-bold">Order Status
-                                        </h5>
-                                       </div>
-                                       <!-- ////////////////////////////// -->
-                                       <div class="col-lg-9 ">
-                                        <form class="col-lg-12" action="" method="">
-                                            <select class="col-lg-12" name="" id="">
-                                                <option > Processing </option>
-                                                <option > Cancelled </option>
-                                                <option > Completed </option>
-                                                <option > Awaiting Payment </option>
-                                                <option > Payment Received </option>
-                                                <option > Expired </option>
-                                                <option > Awaiting Pickup </option>
-                                                <option > Dispatched </option>
-                                                <option > Shipped </option>
-                                            </select>
-                                        </form>
-                                       </div> 
-                                    </div>
-                                    <!-- //////////////////////////////////////////////////// -->
-                                    <hr>
-                              <div class="mt-4 font-weight-bolder">
-                                <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                                <ul>
-                                  <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                  <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                  <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                  <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
-                                </ul>
-                              </div>
-
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-            </tr>
+               
+            
           </tbody>
+          <%k=k+1%>
+          <%})%>
         </table>
       </div>
     </div>
@@ -853,7 +678,7 @@
                 
               </div>
             </div>
-            
+          </div>
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
@@ -873,253 +698,94 @@
               <div class="row tab-text  cart-list">
 
                 <table class="table table-striped  text-center">
-                  <thead>
-                    <tr>
-                      <th scope="col">ORDER ID</th>
-                      <th scope="col">DATE</th>
-                      <th scope="col">TOTAL PRICE</th>
-                      <th scope="col">CHARGES</th>
-                      <th scope="col">RECEIVED</th>
-                      <th scope="col">STATUS</th>
-                      <th scope="col">DETAIL</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                              
-                    <tr>
-                      <td>Order-25567</td>
-                      <td>	March 27, 2021</td>
-                      <td>£75.71</td>
-                      <td>£7.57</td>
-                      <td>£68.14</td>
-                      <td class="processing" ><span>Processing</span></td>
-                      <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS1"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                      <!-- Modal -->
-                      <div class="modal fade" id="all_ORDERS1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content modal-style">
-                            <div class="modal-header">
-                              <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="d-flex">
-                                    <ul class="Extra-category-name">
-                                        <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                        <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                    </ul>
-                                    <ul class="ml-auto mr-150">
-                                        <h5 class="font-weight-bold">Customer Detail</h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                    </ul>
-                                  </div> 
-                                  <hr>
-                                  <!-- //////////////////////////////////////////////////////////// -->
-                                  <div class="d-flex order-state">
-                                   <div class="col-lg-3">
-                                    <h5 class="font-weight-bold">Order Status
-                                    </h5>
-                                   </div>
-                                   <!-- ////////////////////////////// -->
-                                   <div class="col-lg-9 ">
-                                    <form class="col-lg-12" action="" method="">
-                                        <select class="col-lg-12" name="" id="">
-                                            <option > Processing </option>
-                                            <option > Cancelled </option>
-                                            <option > Completed </option>
-                                            <option > Awaiting Payment </option>
-                                            <option > Payment Received </option>
-                                            <option > Expired </option>
-                                            <option > Awaiting Pickup </option>
-                                            <option > Dispatched </option>
-                                            <option > Shipped </option>
-                                        </select>
-                                    </form>
-                                   </div> 
-                                </div>
-                                <!-- //////////////////////////////////////////////////// -->
-                                <hr>
-                          <div class="mt-4 font-weight-bolder">
-                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                            <ul>
-                              <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                              <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                              <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                              <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
-                            </ul>
-                          </div>
-
-                                </div>
-                              </div>
-                            </div>
-                        </div> 
-                      
-                      </tr>
-                        <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-                        <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-
+                  <div class="row tab-text  cart-list">
+                    <table class="table scroll-x-table text-center">
+                      <thead class="thead-light">
                         <tr>
-                      <td>Order-25567</td>
-                      <td>	March 27, 2021</td>
-                      <td>£75.71</td>
-                      <td>£7.57</td>
-                      <td>£68.14</td>
-                      <td class="processing" ><span>Processing</span></td>
-                      <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS2"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                      <!-- Modal -->
-                      <div class="modal fade" id="all_ORDERS2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content modal-style">
-                            <div class="modal-header">
-                              <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="d-flex">
-                                    <ul class="Extra-category-name">
-                                        <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                        <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                    </ul>
-                                    <ul class="ml-auto mr-150">
-                                        <h5 class="font-weight-bold">Customer Detail</h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                    </ul>
-                                  </div> 
-                                  <hr>
-                                  <!-- //////////////////////////////////////////////////////////// -->
-                                  <div class="d-flex order-state">
-                                   <div class="col-lg-3">
-                                    <h5 class="font-weight-bold">Order Status
-                                    </h5>
-                                   </div>
-                                   <!-- ////////////////////////////// -->
-                                   <div class="col-lg-9 ">
-                                    <form class="col-lg-12" action="" method="">
-                                        <select class="col-lg-12" name="" id="">
-                                            <option > Processing </option>
-                                            <option > Cancelled </option>
-                                            <option > Completed </option>
-                                            <option > Awaiting Payment </option>
-                                            <option > Payment Received </option>
-                                            <option > Expired </option>
-                                            <option > Awaiting Pickup </option>
-                                            <option > Dispatched </option>
-                                            <option > Shipped </option>
-                                        </select>
-                                    </form>
-                                   </div> 
-                                </div>
-                                <!-- //////////////////////////////////////////////////// -->
-                                <hr>
-                          <div class="mt-4 font-weight-bolder">
-                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                            <ul>
-                              <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                              <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                              <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                              <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
-                            </ul>
-                          </div>
-
-                                </div>
-                              </div>
-                            </div>
-                        </div>                     </tr>
-                    <tr>
-                      <td>Order-25567</td>
-                      <td>	March 27, 2021</td>
-                      <td>£75.71</td>
-                      <td>£7.57</td>
-                      <td>£68.14</td>
-                      <td class="processing" ><span>Processing</span></td>
-                      <td><button  type="button" data-toggle="modal" data-target="#all_ORDERS3"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
-                      <!-- Modal -->
-                      <div class="modal fade" id="all_ORDERS3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content modal-style">
-                            <div class="modal-header">
-                              <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="d-flex">
-                                    <ul class="Extra-category-name">
-                                        <h5 class="font-weight-bold">Kfc – Kentucky </h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ORDER ID:</span><span class="restu-detals-span2">  25504  </span></li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PICK UP TIME:</span> <span class="restu-detals-span2"> 40 Minutes</span></li>
-                                        <li class="mt-2"> <span class="restu-detals-span1" >TYPE:</span><span class="restu-detals-span2">order</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PAYMENT STATUS:</span><span class="restu-detals-span2">Pending</span>  </li>
-                                    </ul>
-                                    <ul class="ml-auto mr-150">
-                                        <h5 class="font-weight-bold">Customer Detail</h5>
-                                        <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  mostafa emad  </span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> 01064691587</span>  </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2">mostafa.emad@gmail.com</span> </li>
-                                        <li class="mt-2"><span class="restu-detals-span1" >ADDRESS:</span><span class="restu-detals-span2">benha - egypt</span> </li>
-                                    </ul>
-                                  </div> 
-                                  <hr>
-                                  <!-- //////////////////////////////////////////////////////////// -->
-                                  <div class="d-flex order-state">
-                                   <div class="col-lg-3">
-                                    <h5 class="font-weight-bold">Order Status
-                                    </h5>
-                                   </div>
-                                   <!-- ////////////////////////////// -->
-                                   <div class="col-lg-9 ">
-                                    <form class="col-lg-12" action="" method="">
-                                        <select class="col-lg-12" name="" id="">
-                                            <option > Processing </option>
-                                            <option > Cancelled </option>
-                                            <option > Completed </option>
-                                            <option > Awaiting Payment </option>
-                                            <option > Payment Received </option>
-                                            <option > Expired </option>
-                                            <option > Awaiting Pickup </option>
-                                            <option > Dispatched </option>
-                                            <option > Shipped </option>
-                                        </select>
-                                    </form>
-                                   </div> 
-                                </div>
-                                <!-- //////////////////////////////////////////////////// -->
-                                <hr>
-                          <div class="mt-4 font-weight-bolder">
-                            <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
-                            <ul>
-                              <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                              <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                              <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                              <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
-                            </ul>
-                          </div>
-
-                                </div>
-                              </div>
-                            </div>
-                        </div>
+                          <th scope="col"> ORDER ID</th>
+                          <th scope="col">DATE</th>
+                          <th scope="col">TOTAL PRICE</th>
+                          
+                          <th scope="col">DETAIL</th>
+                        </tr>
+                      </thead>
                       
-                      </tr>
-                  </tbody>
-                </table>
+                      <% rest.orders.forEach(function(order) { %>
+                      <tbody>
+                      <tr>
+                       
+                        
+                          <td><%=order._id%></td>
+                          <td><%=order.time%></td>
+                          <td><%=order.Price%></td>
+                          
+                          <td><button id="3415"  type="button" data-toggle="modal" data-target="#RECENT_ORDERS<%=k%>"  class="order-btn border border-dark"> <i class="fa fa-plus text-dark mt-1"></i> </button></td>
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="RECENT_ORDERS<%=k%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                      <div class="modal-content modal-style">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title text-uppercase " id="exampleModalLabel">Order Detail</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="d-flex" id="RECENT_ORD">
+                                                <ul class="Extra-category-name">
+                                            
+                                                    <li class="mt-2"><span class="restu-detals-span1"  >ORDER ID:</span><span  class="restu-detals-span2">  <%=order._id%>  </span></li>
+                                                    <li class="mt-2"><span class="restu-detals-span1"  >Order dishes:</span></li>
+                                                    <% order.dishes.forEach(function(dish) { %>
+                                                      <li class="mt-2"><span class="restu-detals-span1"  ></span><span id="orderid" class="restu-detals-span2"> &emsp;  <%=dish%>  </span></li>
+                                                     <%}) %>
+                                                     <li class="mt-2"><span class="restu-detals-span1"  >notes:</span><span  class="restu-detals-span2">  <%=order.notes%>  </span></li>
+                                                    
+                                                </ul>
+                                                <ul class="ml-auto mr-150">
+                                                    <h5 class="font-weight-bold">Customer Detail</h5>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >NAME :</span><span class="restu-detals-span2">  <%=order.user.Fname%> <%=order.user.Lname%>  </span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >PHONE NUMBER :</span><span class="restu-detals-span2"> <%=order.user.number%></span>  </li>
+                                                    <li class="mt-2"><span class="restu-detals-span1" >EMAIL:</span> <span class="restu-detals-span2"><%=order.user.email%></span> </li>
+                                                    
+                                                </ul>
+                                              </div> 
+                                              <hr>
+                                              <!-- //////////////////////////////////////////////////////////// -->
+                                              
+                                            <!-- //////////////////////////////////////////////////// -->
+                                            <hr>
+                                      <div class="mt-4 font-weight-bolder">
+                                        <h5 class="text-uppercase font-weight-bolder">Order Total</h5>
+                                        <ul>
+                                         
+                                          <li><span> TOTAL: </span>   <span class=" price-span "> <%=order.Price%></span></li> 
+                                        </ul>
+                                      </div>
+    
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                    </tr>
+                    
+                   
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                    <!-- /////////////////////////////////////////////////////////////////////// -->
+                   
+                
+              </tbody>
+              <%k=k+1%>
+              <%})%>
+            </table>
+          
+        
+        
 
               </div>
             </div>
