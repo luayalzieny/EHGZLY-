@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gorditas&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Gorditas&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Titan+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
     text-decoration: none!important;
     text-transform: capitalize!important;  
     outline: none!important;
-    font-family: 'Gorditas', cursive;
+    font-family: 'Fredericka the Great', cursive;
 }
 .map-data-bac{
     width: 100vw;
@@ -20,18 +21,18 @@
 .map-data-bac h1{
     margin-top: 200px;
     color: #E95884!important;
-    font-family: 'Akronim', cursive;
+    font-family: 'Titan One', cursive;
     font-size: 60px;
 }
 .map-data-bac p{
     color: #ee7196!important;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 25px;
     word-spacing: 3px;
     word-wrap: break-word;
 }
 .bac-home-map a{
-    color: #aa6b7e!important;
+    color: #e62d64!important;
     font-size: 14px;
 }
 .map-container{
