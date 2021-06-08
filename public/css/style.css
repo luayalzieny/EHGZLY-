@@ -286,6 +286,8 @@ bottom: 35px;
     background: linear-gradient(rgba(0,0,0,0.4) , rgba(0,0,0,0.4)) ,
     url(../photos/menu/New/3.jpg) no-repeat  center;
     background-size: cover;
+        transition: all .5s ease-in-out!important;
+
 
 }
 
@@ -305,6 +307,8 @@ bottom: 35px;
 .services-inner{
     margin: 20px auto;
 
+        transition: all .5s ease-in-out!important;
+
 }
 .services-box{
 
@@ -313,8 +317,8 @@ bottom: 35px;
     border: 2px solid rgba(255, 255, 255, 0.705);
     margin: 20px auto;
     height: 200px;
-    transition: all .5s ease-in-out;
     background: linear-gradient(rgba(0,0,0,0.4) , rgba(0,0,0,0.4));
+    transition: all .5s ease-in-out!important;
 }
 
 .services-box:hover{
