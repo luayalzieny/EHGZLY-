@@ -306,8 +306,8 @@ bottom: 35px;
 }
 .services-inner{
     margin: 20px auto;
-
-        transition: all .5s ease-in-out!important;
+    transition: all .5s ease-in-out!important;
+    background: linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)) ,
 
 }
 .services-box{
