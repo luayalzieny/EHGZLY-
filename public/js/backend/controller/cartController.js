@@ -86,7 +86,9 @@ const order=new cart({
     dishes:req.body.mealname,
     notes:req.body.notes,
     finishing_time:req.body.finishing_time,
-    total_price:req.body.total_price
+    total_price:req.body.total_price,
+    meal_price:req.body.mealprice,
+    payment_method:req.body.payment
 })
 
 order.save(err=>{
@@ -131,7 +133,10 @@ cart.findOne({_id:req.user._id},function(err,result){
         notes: result.notes,
         Price: result.total_price+"$",
         restaurant_ID:result.restaurant_ID,
-        time:Time
+        time:Time,
+        meal_price:result.meal_price,
+        payment_method:result.payment_method
+        
     }
 
         user.findOneAndUpdate({_id:req.user._id},{
@@ -155,7 +160,7 @@ cart.findOne({_id:req.user._id},function(err,result){
                console.log(err)
                return res.json(err)
    }
-res.json(result)
+res.json("result")
 })
 
 })

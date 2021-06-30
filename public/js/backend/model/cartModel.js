@@ -43,6 +43,10 @@ const cartSchema= mongoose.Schema({
     finishing_time:{
         type:String
     },
+    payment_method:{
+        type:String
+    },    
+    meal_price:[],
     
     total_price:{
         type:Number
