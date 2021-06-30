@@ -389,13 +389,13 @@
           
           
             
-          <%user.reviews.forEach(review=>{%>
 
-          <div class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
-           
-            <h5 class="">REVIEW GIVEN BY <%=user.Fname%> </h5>
+          <div  class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                     <%user.reviews.forEach(review=>{%>
+
+            <h5  class="">REVIEW GIVEN BY <%=user.Fname%> </h5>
             
-            <div class="d-flex">
+            <div style="border-style:inset ;" class="d-flex">
               <div class="mt-3"><h6><%=review.review%> </h6></div>
               
             </div>
@@ -404,8 +404,9 @@
               <p class="p-in-review"><%=review.time%></p>
               <h5 class="h5-in-review"> Restaurant:<%=review.restaurant_name%>  </h5>
             </div>
+          <%})%>
           </div>
-        <%})%>
+        
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
@@ -417,7 +418,7 @@
                 <div class=" p-3 order-border">
                   <div class="d-flex">
                     <div class=""><img class=" " src="../public/photos/imgs/mcdonals-1-1.png" width="50px" height="50px" alt=""></div>
-                   <div class="ml-3 mt-1"><strong> mcdonalds </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
+                   <div class="ml-3 mt-1"><strong> user. </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
                    <div class=" text-danger"><p class="ml-5"> $80.66 </p></div>
                   </div>
                   
@@ -936,7 +937,7 @@
               </div>
               <div  class="col-lg-6 justify-content-center align-items-center" height="180">  
                  
-                 <img class="img-fluid  ml-5 " src="<%=user.image_path%>"    width="180" height="180"  >
+                 <img class="img-fluid  ml-5 " style="border-radius: 50%;" src="<%=user.image_path%>"    width="150" height="200"  >
                  
 
                 <h4 class="ml-5 ">Upload Your Image </h4>
