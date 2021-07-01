@@ -423,14 +423,17 @@
               <div class="col-lg-6 p-3">
                 <div class=" p-3 order-border">
                   <div class="d-flex">
-                    <div class=""><img class=" " src="../public/photos/imgs/mcdonals-1-1.png" width="50px" height="50px" alt=""></div>
+                    <div class=""><img class=" " src="<%=history.image_path%>" width="50px" height="50px" alt=""></div>
                    <div class="ml-3 mt-1"><strong><%=history.restaurantName%> </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
-                   <div class=" text-danger"><p class="ml-5"> $80.66 </p></div>
+                   <div class=" text-danger"><p class="ml-5"><%=history.Price%></p></div>
                   </div>
                   
                   <hr>
                   <div class="">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repudiandae.</p>
+                    <%for(let i=0;i< history.dishes.length;i++){%>
+                    <h5>  <%=history.dishes[i]%>:<%=history.meal_price[i]%>$  </h5>
+                    <%}%> 
+                    <h6><%=history.notes%></h6>
                     <p class="p-in-review"><%=history.time%></p>
                   </div>
                   <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
@@ -458,15 +461,12 @@
                                     </li >
                                     <li class=" mt-2  modal-order-data">
                                       <span class="first-span">PICK UP TIME :</span>
-                                      <span class="ml-1 second-span">((time of preparing order Ex :40 Minutes   ))</span>
+                                      <span class="ml-1 second-span"><%=history.finishing_time%></span>
                                     </li >
-                                    <li class=" mt-2  modal-order-data">
-                                      <span class="first-span">DELIVERY DATE :</span>
-                                      <span class="ml-1 second-span">((date and time EX Mar 19, 2021 04:15 PM ))</span>
-                                    </li >
+                                    
                                     <li class=" mt-2  modal-order-data">
                                       <span class="first-span">PAYMENT STATUS :</span>
-                                      <span class="ml-1 second-span"><%=history.restaurant_ID%></span>
+                                      <span class="ml-1 second-span"><%=history.payment_method%></span>
                                     </li >
                                   </ul>
 
@@ -487,18 +487,18 @@
                                     <tbody>
                                       <tr>
                                         <td>
-                                          <span class="font-weight-bolder">Pizza</span>
+                                          <!-- <span class="font-weight-bolder">Pizza</span> -->
                                           <ul>
-                                            <li>Foodbakery Special Pizza</li>
-                                            <li> Sausages - Spicy Mayonnaise : <span class="extra_order_Price"> £1.00 </span> </li>
-                                            <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
+                                            <!-- <li>Foodbakery Special Pizza</li> -->
+                                            <li> <%=history.dishes%> <span class="extra_order_Price">  </span> </li>
+                                            <!-- <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
                                             <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
                                             <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
                                             <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                            <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li>
+                                            <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li> -->
                                           </ul>
                                         </td>
-                                        <td class="font-weight-bolder">50$</td>
+                                        <td class="font-weight-bolder"><%=history.meal_price%> $</td>
                                       
                                       </tr>
                                       
@@ -510,10 +510,9 @@
                                   <div class="mt-4">
                                     <h5 class="text-uppercase">Order Total</h5>
                                     <ul>
-                                      <li><span> SUBTOTAL: </span>   <span class=" price-span ">£57.00</span></li>
-                                      <li><span>PICK UP FEE: </span>   <span class=" price-span ">£10.00</span></li>
-                                      <li><span> VAT (13%): </span>   <span class=" price-span ">£8.71</span></li>
-                                      <li><span> TOTAL: </span>   <span class=" price-span ">£75.71</span></li> 
+                                      <li><span> SUBTOTAL: </span>   <span class=" price-span "><%=history.Price%></span></li>
+                                      <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00 $</span></li>
+                                      
                                     </ul>
                                   </div>
                                  </div>
@@ -521,6 +520,7 @@
                               </div>
                             </div>
                           </div>
+                          
                 </div>
               </div>
             <%})%>

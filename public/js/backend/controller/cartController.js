@@ -79,6 +79,7 @@ if(!req.body.mealname){
 }
 const order=new cart({
     order_number:Math.round(Math.random()*10000+1),
+    Fname:req.user.Fname,
     customer_id:req.user._id,
     _id:req.user._id,
     restaurant_name:req.body.restaurant_name,
@@ -88,7 +89,8 @@ const order=new cart({
     finishing_time:req.body.finishing_time,
     total_price:req.body.total_price,
     meal_price:req.body.mealprice,
-    payment_method:req.body.payment
+    payment_method:req.body.payment,
+    img:req.body.img
 })
 
 order.save(err=>{
@@ -135,7 +137,9 @@ cart.findOne({_id:req.user._id},function(err,result){
         restaurant_ID:result.restaurant_ID,
         time:Time,
         meal_price:result.meal_price,
-        payment_method:result.payment_method
+        payment_method:result.payment_method,
+        finishing_time:result.finishing_time,
+        // img:result.img
         
     }
 
@@ -159,11 +163,11 @@ cart.findOne({_id:req.user._id},function(err,result){
            if(err){
                console.log(err)
                return res.json(err)
-   }
-res.json("result")
+              }
 })
 
 })
+        res.redirect("/success")
 
 
 })
@@ -207,6 +211,10 @@ exports.post_review=(req,res)=>{
     return res.redirect('back');
 }
 
+
+exports.get_success=(req,res)=>{
+res.render('succes')
+}
 
 //after order is sent the cart is emptied(route not yet made)
 exports.delete_order=(req,res)=>{

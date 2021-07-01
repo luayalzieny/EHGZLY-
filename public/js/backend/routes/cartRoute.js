@@ -10,6 +10,8 @@ app.get('/confirm_Order',controller.get_confirm_Order)
 
 app.post('/confirm_Order',controller.post_confirm_Order)
 
+app.get('/success',controller.get_success)
+
 app.post('/review',controller.post_review)
 
 module.exports=app

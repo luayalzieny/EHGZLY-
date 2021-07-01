@@ -12,6 +12,7 @@ mongoose.connect("mongodb+srv://ML:manga@cluster0.9qcx5.mongodb.net/ML?retryWrit
 
 //cart schema
 const cartSchema= mongoose.Schema({
+    Fname:{type:String},
     _id:{
         type:String,
         required:[true],
@@ -50,7 +51,8 @@ const cartSchema= mongoose.Schema({
     
     total_price:{
         type:Number
-    }
+    },
+    img:{}
 }
 ,{timestamps:true}
 )
