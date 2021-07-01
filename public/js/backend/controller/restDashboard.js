@@ -5,6 +5,7 @@ const express =require('express')
 const app=express();
 const path = require('path');
 const bcrypt = require('bcrypt');
+const mimeType=['image/jpeg','image/png','images/gif']
 /////////////////////////////////////////////////////////////////////////////
 //error handeling
 let error={ email:"0",password:"0",username:"0",restaurantPhone:"0"}
@@ -91,7 +92,7 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
    // }
     restaurantID =req.session.passport.user._id;
     //restaurantID=7
-    console.log(req.body)
+   
     restaurants.findOne({_id:restaurantID},(err,rest)=>{
         if(err)
         console.log(err)
@@ -120,6 +121,41 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
                              }
                         } 
           )}
+ 
+        console.log(req.body.coverimg)
+          function imgtest(img){
+            if(img){
+              const image=JSON.parse(img)
+              let imgbuffer= new Buffer.from(image.data,'base64')
+              let imgtype=image.type
+              let alo={imgbuffer,imgtype}
+              return alo
+            }
+           
+                return {imgbuffer:null,imgtype:null};
+            
+        }
+       imagesittings=imgtest(req.body.img)
+       imgbuffer=imagesittings.imgbuffer
+       imgtype=imagesittings.imgtype
+       console.log(imgbuffer)
+       console.log(imgtype)
+       console.log(req.body.coverimage)
+       
+       function coverimgtest(img){
+           if(img){
+          const coverimage=JSON.parse(req.body.coverimg)
+          let coverimgbuffer= new Buffer.from(coverimage.data,'base64')
+          let coverimgtype=coverimage.type
+          let coverimgsittings={coverimgbuffer,coverimgtype}
+          return coverimgsittings
+           }
+           return  {coverimgbuffer:null,coverimgtype:null}
+       }
+       coverimgsittings=coverimgtest(req.body.coverimg)
+       coverimgbuffer=coverimgsittings.coverimgbuffer
+       coverimgtype=coverimgsittings.coverimgtype
+
         restaurants.findOneAndUpdate({_id:restaurantID},{
             restaurantName:req.body.restaurantName||rest.restaurantName,
             restaurantPhone:req.body.restaurantPhone||rest.restaurantPhone,
@@ -127,8 +163,14 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
             username:req.body.username||rest.username,
             manger:req.body.manger||rest.manger,
             mangerPhone:req.body.mangerPhone||rest.mangerPhone,
-            img:req.body.img||rest.img||"no logo",
-            coverimg:req.body.coverimg||rest.coverimg||"no cover",
+            img:{
+                imageBuffer:imgbuffer||rest.img.imageBuffer,
+                imageType:imgtype||rest.img.imageType
+            },
+            coverimg:{
+                imageBuffer:coverimgbuffer||rest.coverimg.imageBuffer,
+                imageType:coverimgtype||rest.coverimg.imageType
+            },
             pickupfee:req.body.pickupfee||rest.pickupfee||0,
             pickuptime:req.body.pickuptime||rest.pickuptime||"none",
             info:req.body.info||rest.info||"none",
@@ -251,7 +293,7 @@ module.exports.changeRestPass_post=(req,res)=>{
         else{
        // console.log(req.session.passport.user)
         restaurantID =req.session.passport.user._id;
-        console.log(req.user)
+      
         //restaurantID=7
        //console.log(restaurantID)
         restaurants.findOne({_id:restaurantID},(err,rest)=>{

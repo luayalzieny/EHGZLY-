@@ -79,8 +79,14 @@ const restaurantSchema= new Schema({
         
 
         opentime:{open:{type:String},close:{type:String}},
-         img:{type:String},
-         coverimg:{type:String},
+        img:{
+            imageBuffer:{type: Buffer}, 
+            imageType:{type:String}    
+                     },
+         coverimg:{
+        imageBuffer:{type: Buffer}, 
+        imageType:{type:String}    
+                 },
         categories:[categoriesSchema],
         orders:[],
         pickupfee:{type:Number},
@@ -128,12 +134,18 @@ const restaurantSchema= new Schema({
     next()
     })
 
-    //this function will add a virtual parameter that wont be added to the database but will be used to save the 
+ //this function will add a virtual parameter that wont be added to the database but will be used to save the 
     //image and its path and convert it to base64 file
-restaurantSchema.virtual('image_path').get(function(){
-        if(this.image!=null && this.imageType!=null){
-            return `data:${this.imageType};charset=utf-8;base64,
-            ${this.image.toString('base64')}`
+    restaurantSchema.virtual('image_path').get(function(){
+        if(this.img.imageBuffer!=null && this.img.imageType!=null){
+            return `data:${this.img.imageType};charset=utf-8;base64,
+            ${this.img.imageBuffer.toString('base64')}`
+        }
+    })
+    restaurantSchema.virtual('coverimage_path').get(function(){
+        if(this.coverimg.imageBuffer!=null && this.coverimg.imageType!=null){
+            return `data:${this.coverimg.imageType};charset=utf-8;base64,
+            ${this.coverimg.imageBuffer.toString('base64')}`
         }
     })
 

@@ -49,10 +49,10 @@ module.exports.restaurant_post=(req,res)=>{
         mangerPhone:req.body.mangerPhone,
         address:req.body.address,
         kitchen:req.body.kitchen,
-        img:"no logo",
-        coverimg:"no cover",
+        img:{imageBuffer:undefined,imageType:undefined},
+        coverimg:{imageBuffer:undefined,imageType:undefined},
         pickupfee:0,
-        pickuptime:"none",
+        pickuptime:"enter pickuptime",
         //opentime:{open:req.body.open,close:req.body.close}
         
         

@@ -31,7 +31,14 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+  <!-- filepond image plugins -->
+  <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+  <script defer   src="./../public/js/imageUpload.js"></script>
 
     <title> | Resturant profile | </title>
 
@@ -293,51 +300,51 @@
               <div class=" form-row mt-5 ">
                         <!-- ////////////////////////// -->
                             <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                              <img class="img-fluid" src="../public/photos/imgs/kfc-1-1.png" id="defultImg" alt="" width="180" height="180" >
+                              <img class="img-fluid" src="<%=rest.image_path%>" id="defultImg" alt="" width="180" height="180" >
                               <p>choose logo photo</p>
-                              <input style="width: 100%;" class="   up-file" type="file"  id="inpUpload">
+                              <input style="width: 100%;" name="img" class="   up-file" type="file"  id="inpUpload">
                             </div>
                         <!-- ////////////////////////// -->
 
                             <!-- ////////////////////////// -->
                             <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                              <img class="img-fluid" src="../public/photos/kfc-meal.png" id="defultImg2" alt="" width="180" height="180" >
+                              <img class="img-fluid" src="<%=rest.coverimage_path%>" id="defultImg2" alt="" width="180" height="180" >
                               <p>choose cover photo</p>
-                              <input style="width: 100%;" class="    up-file" type="file" name="coverimg"  id="inpUpload2">
+                              <input style="width: 100%;" name="coverimg" class="   up-file" type="file"  id="inpUpload12323123232">
                             </div>
                         <!-- ////////////////////////// -->
 
                         <!-- ////////////////////////// -->
                             <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                                <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="Restaurant name *" name="restaurantName">
+                                <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="<%=rest.restaurantName%>" name="restaurantName">
                               </div>
                         <!-- ////////////////////////// -->
 
                               <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                <input type="tel" class="col-lg-12 p-2" id="restaurantPhone" value=""  placeholder="Restaurant phone" name="restaurantPhone" pattern="[0-1]{2}[0-9]{9}">
+                                <input type="tel" class="col-lg-12 p-2" id="restaurantPhone" value=""  placeholder="<%=rest.restaurantPhone%>" name="restaurantPhone" pattern="[0-1]{2}[0-9]{9}">
                                 <p>format: 01xxxxxxxxx</p>
                               </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                            <input type="text" class="col-lg-12 p-2" id="manger" value=""  placeholder="Manager Name" name="manger">
+                            <input type="text" class="col-lg-12 p-2" id="manger" value=""  placeholder="<%=rest.manger%>" name="manger">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="tel" class="col-lg-12 p-2 mb-3" id="mangerPhone" value=""  placeholder="Manager Contact phone" name="mangerPhone" pattern="[0-1]{2}[0-9]{9}">
+                            <input type="tel" class="col-lg-12 p-2 mb-3" id="mangerPhone" value=""  placeholder="<%=rest.mangerPhone%>" name="mangerPhone" pattern="[0-1]{2}[0-9]{9}">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="email" class="col-lg-12 p-2 mb-3" id="email" value=""  placeholder="Contact Email" name="email">
+                            <input type="email" class="col-lg-12 p-2 mb-3" id="email" value=""  placeholder="<%=rest.email%>" name="email">
                             <%if(errorss.email != 0){%>
                               <%=errorss.email%>
                               <% } %>
                           </div>
                        <!-- ////////////////////////////////////////// -->
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="text" class="col-lg-12 p-2 mb-3" id="username" value=""  placeholder="username" name="username">
+                            <input type="text" class="col-lg-12 p-2 mb-3" id="username" value=""  placeholder="<%=rest.username%>" name="username">
                             <%if(errorss.username != 0){%>
                               <%=errorss.username%>
                               <% } %>
@@ -353,12 +360,12 @@
                      
                       <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickupfee" placeholder="pickup fee">
+                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickupfee" placeholder="<%=rest.pickupfee%>$">
                     </div>
 
                   <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickuptime" placeholder="pickup time">
+                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickuptime" placeholder="<%=rest.pickuptime%>">
                     </div>
 
                   
@@ -1159,7 +1166,7 @@ const input=document.querySelector('#inpUpload');
           });
           reader.readAsDataURL(uploadFile);
         } else{
-          img.setAttribute('src' , '');
+          img.setAttribute('src' , 'https://www.google.com/url?sa=i&url=https%3A%2F%2Ficon-library.com%2Ficon%2Favatar-icon-images-4.html&psig=AOvVaw1C0lmG1D6JHoKmq9jAuxMd&ust=1614599422091000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCxvdzBjO8CFQAAAAAdAAAAABAD');
 
         }
 
