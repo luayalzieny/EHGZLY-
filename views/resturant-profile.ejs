@@ -199,6 +199,7 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col"> ORDER ID</th>
+                      <th scope="col">custumer name</th>
                       <th scope="col">DATE</th>
                       <th scope="col">TOTAL PRICE</th>
                       
@@ -212,6 +213,7 @@
                    
                     
                       <td><%=order._id%></td>
+                      <td><%=order.user.Fname%> <%=order.user.Lname%></td>
                       <td><%=order.time%></td>
                       <td><%=order.Price%></td>
                       
@@ -741,6 +743,7 @@
                       <thead class="thead-light">
                         <tr>
                           <th scope="col"> ORDER ID</th>
+                          <th scope="col"> cusrtumer name</th>
                           <th scope="col">DATE</th>
                           <th scope="col">TOTAL PRICE</th>
                           
@@ -754,6 +757,7 @@
                        
                         
                           <td><%=order._id%></td>
+                          <td><%=order.user.Fname%> <%=order.user.Lname%></td>
                           <td><%=order.time%></td>
                           <td><%=order.Price%></td>
                           
