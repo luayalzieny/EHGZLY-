@@ -19,7 +19,6 @@
     background-size: cover;
 }
 .navbar{ 
-    background: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9))!important ;
     z-index: 1111;
 }
 nav.sticky {
