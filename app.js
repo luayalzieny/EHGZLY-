@@ -44,6 +44,9 @@ app.use(cors());
 app.use(userRoute)
 app.use(restaurantsRoute)
 app.use(cartRoute)
+app.get('/:custom',function(req,res){
+res.render('erorr404')
+})
 
 app.use('/api/v1/stores', require('./public/js/backend/routes/stores'));
 

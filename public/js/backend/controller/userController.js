@@ -14,10 +14,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-//user passport authorization
-
-//end of passport serialization/deserialization
-
 
 
 //basic functions

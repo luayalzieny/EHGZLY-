@@ -268,9 +268,10 @@
             
 
           <div  class="tab-pane fade shadow rounded bg-white show  p-5" id="Reviews" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                     <%user.reviews.forEach(review=>{%>
+                               <h5  class="review-line">REVIEW GIVEN BY <%=user.Fname%> </h5>
+ 
+            <%user.reviews.forEach(review=>{%>
 
-            <h5  class="review-line">REVIEW GIVEN BY <%=user.Fname%> </h5>
             
             <div  class="d-flex">
               <div class="mt-3"><h6><%=review.review%> </h6></div>
@@ -300,24 +301,27 @@
               <div class="col-lg-6 p-3">
                 <div class=" p-3 order-border">
                   <div class="d-flex">
-                    <div class=""><img class=" " src="<%=history.image_path%>" width="50px" height="50px" alt=""></div>
+                    <div class=""><%=history.restaurant_name%></div>
                    <div class="ml-3 mt-1"><strong><%=history.restaurantName%> </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
                    <div class=" text-danger"><p class="ml-5"><%=history.Price%></p></div>
                   </div>
                   
                   <hr>
                   <div class="">
-                    <h5>  <%=history.dishes%> </h5>
- 
-                    <h6><%=history.notes%></h6>
-                    <p class="p-in-review"><%=history.time%></p>
+                   <% if(history.dishes){%>
+                    <%for(let i=0;i< history.dishes.length;i++){%>
+                    <h6>  <%=history.dishes[i]%>:<%=history.meal_price[i]%> </h6>
+                  <%}  }%>
+                  <p>VAT:13%</p>
+                   <p><%=history.notes%></p>
+                    <p class="p-in-review"><%=history.time%></p> 
                   </div>
                   <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
                   <!-- Button trigger modal -->
 
 
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal fade <%=history%>" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl">
                               <div class="modal-content orderD-modal-content ">
                                 <div class="modal-header">
