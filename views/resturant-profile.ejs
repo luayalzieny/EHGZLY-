@@ -395,21 +395,16 @@
 
                   <!-- ////////////////////////////////////////// -->
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="state city" name="area">
+                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="<%=rest.location.coordinates%>"  placeholder="Long, Lat" name="loc">
                   </div>
 
-                <!-- ////////////////////////////////////////// -->
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Latitude " name="Latitude">
-                  </div>
-
-                <!-- ////////////////////////////////////////// -->
-                <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                  <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value=""  placeholder="Longitude" name=Longitude>
-                </div>
+                    <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="<%=rest.location.formattedAddress%>"  placeholder="Address, City, Street" name="address">
+                  </div> 
+                  <!-- ////////////////////////////////////////// -->
          
                 <!-- ////////////////////////////////////////// -->
-                  <h6 class="p-2"> if you need to find the addres of your resturant with Longitude and   Latitude click here <a class="text-danger" href="https://www.latlong.net/convert-address-to-lat-long.html"> LatLong.net  </a> </h6>
+                <h6 class="p-2"> to find the address with Longitude and Latitude just <strong>RIGHT CLICK</strong> on the location inside <a class="text-danger" href="https://www.google.com/maps/@30.2963555,31.7106506,5150m/data=!3m1!1e3" target="_blank"> Google Map </a> </h6>
                   <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
                     <label for="">Specials</label>
                     <br>  

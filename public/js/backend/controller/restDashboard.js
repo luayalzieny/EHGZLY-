@@ -156,6 +156,16 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
        coverimgbuffer=coverimgsittings.coverimgbuffer
        coverimgtype=coverimgsittings.coverimgtype
 
+        // UPDATE LOCATION
+        restaurants.findOneAndUpdate({_id:restaurantID},{
+            location:{type:"Point", coordinates:req.body.loc.split(', ').reverse(), formattedAddress:req.body.address},
+        },(err,rest2)=>{                                                            
+            if(err)
+          error=handelErrors(err)
+           console.log(error)
+        })
+        
+        // UPDATE RESTAURANT DATA
         restaurants.findOneAndUpdate({_id:restaurantID},{
             restaurantName:req.body.restaurantName||rest.restaurantName,
             restaurantPhone:req.body.restaurantPhone||rest.restaurantPhone,
