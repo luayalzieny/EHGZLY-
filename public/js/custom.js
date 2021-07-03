@@ -1,9 +1,5 @@
 
 // /////////////////////////////////////////
-$(document).ready(function() {
-  $('select').niceSelect();
-});
-// /////////////////////////////////////////
 window.addEventListener("scroll" , function () {
         
   var navbar =  document.querySelector("nav");
@@ -28,27 +24,7 @@ $('.book_time').timepicker();
         });
       });
   
-  /* 2. sticky And Scroll UP */
-    //   $(window).on('scroll', function () {
-    //     var scroll = $(window).scrollTop();
-    //     if (scroll < 100) {
-    //       $("#ftco-navbar").removeClass("sticky-bar");
-    //       $('#back-top').fadeOut(500);
-    //     } else {
-    //       $("#ftco-navbar").addClass("sticky-bar");
-    //       $('#back-top').fadeIn(500);
-    //     }
-    //   });
-  
-    // // Scroll Up
-    //   $('#back-top a').on("click", function () {
-    //     $('body,html').animate({
-    //       scrollTop: 0
-    //     }, 800);
-    //     return false;
-    //   });
-    
-
+ 
      
 
   	

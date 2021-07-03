@@ -4,8 +4,6 @@ const bodyParser=require('body-parser');
 const cart=require('./../model/cartModel')
 const rest=require('./../model/restaurantsModel')
 const user=require('./../model/userModel')
-// const dish=require('./../../../../dummy data/category.json')
-// const rest=require('./../../../../dummy data/restaurant.json')
 const Math=require('mathjs')
 
 
@@ -31,30 +29,6 @@ let Time=year + "-" + month + "-" + date+' '+hour+":"+minute
 exports.get_menuRest=(req,res)=>{
 
 console.log(req.body)
-    // rest.findOne({restaurantName:customName},function(err,result){
-    //     if(err){
-    //         return console.log(err)
-    //     }
-    //     if(!result){
-    //         return res.render('erorr404')
-    //     }
-        
-    //     const order=new cart({
-    //         _id:1,
-            
-    //         customer_id:Math.round(Math.random()*1000+1),
-    //         order_number:Math.round(Math.random()*1000+1),
-    //         restaurant_name:1 ,
-    //         total_price:0
-    //     })
-    //     order.save((err)=>{
-    //         if(err){
-    //        return console.log(err)}
-    //     })
-
-    //     //res.render('menu')
-      
-    // })
 
  res.render('test')
 
