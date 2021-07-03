@@ -89,6 +89,17 @@
         </div>
     </div>
 
+    <div class="animate-divs">
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    
+    </div>
+
+
 </section>
 
       
@@ -97,10 +108,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////// -->
 
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////// -->
+
 <section  class="department" id="department">
 <div class="container">
 <div  class="row">
@@ -155,6 +163,13 @@
               <span class=" text-dark  font-weight-bold small text-uppercase"><i class=" fas fa-sign-out-alt mr-3 "></i></form><button type="submit" class="btn "> Sign-out</button> </span></a></form>
                 
           </div>
+
+          
+          <div class="animate-divs">
+            <div></div>
+          </div>
+
+          
   </div>
 <!-- ////////////////////////////////////// -->
   <div  class="col-lg-9 col-md-8 mt-5">
@@ -258,6 +273,10 @@
                 </tbody>
               </table>
             </div>
+
+
+
+            
             </div>
           
           <!-- /////////////////////////////////////////////////////////////// -->
@@ -296,10 +315,10 @@
             
             <h5 class="">MY ORDERS</h5>
             <hr>
-            <div class="row">
+            <div  class="row ">
               <%user.history.forEach(history=>{%>
-              <div class="col-lg-6 p-3">
-                <div class=" p-3 order-border">
+              <div  class="col-lg-6 p-3 ">
+                <div class=" p-3 order-border user-orders">
                   <div class="d-flex">
                     <div class=""><%=history.restaurant_name%></div>
                    <div class="ml-3 mt-1"><strong><%=history.restaurantName%> </strong>  <br> <p class="p-in-order"> breakfast-takeaway </p></div>
@@ -307,7 +326,7 @@
                   </div>
                   
                   <hr>
-                  <div class="">
+                  <div  class="">
                    <% if(history.dishes){%>
                     <%for(let i=0;i< history.dishes.length;i++){%>
                     <h6>  <%=history.dishes[i]%>:<%=history.meal_price[i]%> </h6>
@@ -316,90 +335,8 @@
                    <p><%=history.notes%></p>
                     <p class="p-in-review"><%=history.time%></p> 
                   </div>
-                  <button  type="button" data-toggle="modal" data-target="#staticBackdrop" class=" order_Details_btn  bg-danger rounded-pill text-white"> ORDER DETAILS  </button>
-                  <!-- Button trigger modal -->
 
-
-                          <!-- Modal -->
-                          <div class="modal fade <%=history%>" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                              <div class="modal-content orderD-modal-content ">
-                                <div class="modal-header">
-                                  <h2 class="modal-title text-uppercase" id="staticBackdropLabel">Order Detail</h2>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <hr>
-                                <!-- /////////////////////////////////////////////////////// -->
-                                <div class="modal-body">
-                                  <h4 class="  model-name text-uppercase mt-2" ><%=history.restaurantName%></h4>
-                                  <ul class="ml-2">
-                                    <li class=" mt-2 modal-order-data">
-                                      <span class="first-span">Booking id :</span>
-                                      <span class="ml-1 second-span"><%=history.restaurant_ID%></span>
-                                    </li >
-                                    <li class=" mt-2  modal-order-data">
-                                      <span class="first-span">PICK UP TIME :</span>
-                                      <span class="ml-1 second-span"><%=history.finishing_time%></span>
-                                    </li >
-                                    
-                                    <li class=" mt-2  modal-order-data">
-                                      <span class="first-span">PAYMENT STATUS :</span>
-                                      <span class="ml-1 second-span"><%=history.payment_method%></span>
-                                    </li >
-                                  </ul>
-
-                                  <div class="text-left mt-5 w-100">
-                                    <button class=" btn btn-primary p-2 "> Your booking is Processing </button>
-                                  </div>
-
-                                <hr>
-
-                                  <h4 class="  model-name text-uppercase mt-2" >Food Menu</h4>
-                                  <table class="table ">
-                                    <thead class="thead-dark">
-                                      <tr>
-                                        <th scope="col">PRODUCTS</th>
-                                        <th scope="col">PRICE PER</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>
-                                          <!-- <span class="font-weight-bolder">Pizza</span> -->
-                                          <ul>
-                                            <!-- <li>Foodbakery Special Pizza</li> -->
-                                            <li> <%=history.dishes%> <span class="extra_order_Price">  </span> </li>
-                                            <!-- <li>Sausages - Tequila Lime Sauce : <span class="extra_order_Price"> £0.00 </span> </li>
-                                            <li>Extra Topping - Pepperoni : <span class="extra_order_Price"> £0.00 </span> </li>
-                                            <li>Extra Topping - Tuna : <span class="extra_order_Price"> £3.00 </span> </li>
-                                            <li>Extra Topping - Sweet Corn : <span class="extra_order_Price"> £1.00 </span> </li>
-                                            <li> Cold Drink - Cocktail : <span class="extra_order_Price"> £2.00 </span> </li> -->
-                                          </ul>
-                                        </td>
-                                        <td class="font-weight-bolder"><%=history.meal_price%> $</td>
-                                      
-                                      </tr>
-                                      
-                                    
-                                    </tbody>
-                                  </table>
-
-                                  <hr>
-                                  <div class="mt-4">
-                                    <h5 class="text-uppercase">Order Total</h5>
-                                    <ul>
-                                      <li><span> SUBTOTAL: </span>   <span class=" price-span "><%=history.Price%></span></li>
-                                      <li><span>PICK UP FEE: </span>   <span class=" price-span ">10.00 $</span></li>
-                                      
-                                    </ul>
-                                  </div>
-                                 </div>
-                                <!-- /////////////////////////////////////////////////////// -->
-                              </div>
-                            </div>
-                          </div>
+                                
                           
                 </div>
               </div>
@@ -517,6 +454,7 @@
 </div>
 
 </div>
+
 </section>
 
 

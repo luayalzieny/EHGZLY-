@@ -284,6 +284,31 @@ color: #313139;
     color: white!important;
 } */
 
+.user-orders{
+    height: 320px;
+    overflow: scroll;
+}
+.user-orders::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+/* Track */
+.user-orders::-webkit-scrollbar-track {
+      background-color: white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+   
+/* Handle */
+.user-orders::-webkit-scrollbar-thumb {
+    background: #7777; 
+    border-radius: 7px;
+  }
+  
+/* Handle on hover */
+.user-orders::-webkit-scrollbar-thumb:hover {
+    background: #777777; 
+  }
 
 
 /* responsive *//* responsive */
