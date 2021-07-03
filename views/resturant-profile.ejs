@@ -67,11 +67,11 @@
       </button>
       <div class="collapse navbar-collapse ml-auto" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link ">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link ">about us</a></li>
-          <li class="nav-item"><a href="how it work.html" class="nav-link  ">How It Works</a></li>
-          <li class="nav-item"><a href="faqs.html" class="nav-link ">FAQS</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link  ">Contact us</a></li>
+          <li class="nav-item active"><a href="/restprofile" class="nav-link ">Home</a></li>
+          <li class="nav-item"><a href="about" class="nav-link ">about us</a></li>
+          <li class="nav-item"><a href="how_it_work" class="nav-link  ">How It Works</a></li>
+          <li class="nav-item"><a href="faqs" class="nav-link ">FAQS</a></li>
+          <li class="nav-item"><a href="contact" class="nav-link  ">Contact us</a></li>
           
 
           <li class="nav-item ml-5 ">
@@ -143,12 +143,8 @@
           <hr class="p-0 m-0">
           <a class="  nav-link py-2 p-2  " id="v-pills-messages-tab" data-toggle="pill" href="#ORDERS" role="tab" aria-controls="v-pills-messages" aria-selected="false">
               <span class=" text-dark font-weight-bold small text-uppercase"><i class="  fa fa-shopping-cart mr-3  "></i>  ORDERS</span></a>
-            <hr class="p-0 m-0">
-          <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#WITHDRAWALS" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-              <span class=" text-dark font-weight-bold small text-uppercase"><i class="fa far fa-frown mr-3 "></i>  WITHDRAWALS</span></a>
-            <hr class="p-0 m-0">
-              <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#EARNINGS" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                <span class=" text-dark font-weight-bold small text-uppercase"><i class=" fas fa-file-invoice-dollar mr-3 "></i>  EARNINGS</span></a>
+         
+      
               <hr class="p-0 m-0">
               <a class="  nav-link py-2 p-2  " id="v-pills-settings-tab" data-toggle="pill" href="#CHANGE_PASSWORD" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                 <span class=" text-dark font-weight-bold small text-uppercase" id ="changePasswordButton"><i class="fa fa-user-cog mr-3 "></i>  CHANGE PASSWORD</span></a>
@@ -329,45 +325,39 @@
                             </div>
                         <!-- ////////////////////////// -->
 
-                            <!-- ////////////////////////// -->
-                            <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                              <img class="img-fluid" src="<%=rest.coverimage_path%>" id="defultImg2" alt="" width="180" height="180" >
-                              <p>choose cover photo</p>
-                              <input style="width: 100%;" name="coverimg" class="   up-file" type="file"  id="inpUpload12323123232">
-                            </div>
-                        <!-- ////////////////////////// -->
+                         
 
                         <!-- ////////////////////////// -->
                             <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                                <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="<%=rest.restaurantName%>" name="restaurantName">
+                                <input type="text" class="col-lg-12 p-2" id="restaurantName" value="<%=rest.restaurantName%>"  placeholder="Restaurant Name" name="restaurantName">
                               </div>
                         <!-- ////////////////////////// -->
 
                               <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                                <input type="tel" class="col-lg-12 p-2" id="restaurantPhone" value=""  placeholder="<%=rest.restaurantPhone%>" name="restaurantPhone" pattern="[0-1]{2}[0-9]{9}">
+                                <input type="tel" class="col-lg-12 p-2" id="restaurantPhone" value="<%=rest.restaurantPhone%>"  placeholder="Restaurant Phone" name="restaurantPhone" pattern="[0-1]{2}[0-9]{9}">
                                 <p>format: 01xxxxxxxxx</p>
                               </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                            <input type="text" class="col-lg-12 p-2" id="manger" value=""  placeholder="<%=rest.manger%>" name="manger">
+                            <input type="text" class="col-lg-12 p-2" id="manger" value="<%=rest.manger%>"  placeholder="manger Name" name="manger">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="tel" class="col-lg-12 p-2 mb-3" id="mangerPhone" value=""  placeholder="<%=rest.mangerPhone%>" name="mangerPhone" pattern="[0-1]{2}[0-9]{9}">
+                            <input type="tel" class="col-lg-12 p-2 mb-3" id="mangerPhone" value="<%=rest.mangerPhone%>"  placeholder=".manger Phone" name="mangerPhone" pattern="[0-1]{2}[0-9]{9}">
                           </div>
                         <!-- ////////////////////////// -->
 
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="email" class="col-lg-12 p-2 mb-3" id="email" value=""  placeholder="<%=rest.email%>" name="email">
+                            <input type="email" class="col-lg-12 p-2 mb-3" id="email" value="<%=rest.email%>"  placeholder="Email" name="email">
                             <%if(errorss.email != 0){%>
                               <%=errorss.email%>
                               <% } %>
                           </div>
                        <!-- ////////////////////////////////////////// -->
                           <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                            <input type="text" class="col-lg-12 p-2 mb-3" id="username" value=""  placeholder="<%=rest.username%>" name="username">
+                            <input type="text" class="col-lg-12 p-2 mb-3" id="username" value="<%=rest.username%>"  placeholder="Username" name="username">
                             <%if(errorss.username != 0){%>
                               <%=errorss.username%>
                               <% } %>
@@ -383,12 +373,12 @@
                      
                       <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickupfee" placeholder="<%=rest.pickupfee%>$">
+                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="<%=rest.pickupfee%>" name="pickupfee" placeholder="pickupfee">
                     </div>
 
                   <!-- ////////////////////////////////////////// -->
                     <div class=" col-lg-6 col-md-6 col-sm-12 p-1 mt-2">                
-                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" name="pickuptime" placeholder="<%=rest.pickuptime%>">
+                      <input type="text" class="col-lg-12 p-2 mb-3" id="validationCustom" value="<%=rest.pickuptime%>" name="pickuptime" placeholder="pickuptime">
                     </div>
 
                   
@@ -403,50 +393,11 @@
                   </div> 
                   <!-- ////////////////////////////////////////// -->
          
-                <!-- ////////////////////////////////////////// -->
-                <h6 class="p-2"> to find the address with Longitude and Latitude just <strong>RIGHT CLICK</strong> on the location inside <a class="text-danger" href="https://www.google.com/maps/@30.2963555,31.7106506,5150m/data=!3m1!1e3" target="_blank"> Google Map </a> </h6>
-                  <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                    <label for="">Specials</label>
-                    <br>  
-                          <select id="select-cat" style="width: 80%!important;color: #9097a1;"
-                           class="mul-select p-3 mt-1 mb-3" multiple="true">
-                            <option value="0" selected="selected " > Specials deals</option>
-                            <option value="1">A meal on you and a meal on us</option>
-                            <option value="2">free pickup</option>
-                            <option value="3">first order is free</option>
-                            <option value="4">order 3 to get 1 free</option>
-                            <option value="5">half price </option>
-                          </select>
-                      </div> 
-
-                  <!-- ////////////////////////////////////////// -->
-                      
-                  <div class="col-lg-6 col-md-6 col-sm-12 p-1 mt-2  ">
-                        <label for="">Categories * </label>
-                        <br>  
-                        <select id="select-cat" style="width: 80%!important;color: #9097a1;" class="mul-select p-3 mt-1 mb-3" multiple="true" name="cat">
-                          <option value="0" selected="selected" > food</option>
-                          <option value="pizza" > pizza</option>
-                          <option value="Pasta" > Pasta</option>
-                          <option value="stakes" > stakes</option>
-                          <option value="burgger">burgger</option>
-                          <option value="Beef Roast" > Beef Roast</option>
-                          <option value="Cheese Burger" >Cheese Burger</option>
-                          <option value="Chicken">Chicken </option>
-                          <option value="Chicken Roast">Chicken Roast</option>
-                          <option value="Chines Soup">Chines Soup</option>
-                          <option value="apple pie">apple pie  </option>
-                          <option value="apple juice" > apple juice</option>
-                          <option value="Carrot Juice">Carrot Juice</option>
-                          <option value="coffee">coffee</option>
-                          
-                        </select>
-                    </div> 
-                   
-                <!-- ////////////////////////////////////////// -->
+             
+               
                 
                 <div class=" col-lg-12 col-md-12 col-sm-12 p-1 mt-2  ">
-                  <textarea placeholder="info" class="col-lg-12 p-2" name="info" id="" cols="30" rows="10"></textarea>
+                  <textarea placeholder="info"  class="col-lg-12 p-2" name="info" id="" cols="30" rows="10"><%=rest.info%></textarea>
                 </div>
               <!-- ////////////////////////// -->
               </div>
@@ -851,144 +802,7 @@
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
           <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-          <!-- /////////////////////////////////////////////////////////////// -->
-            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="WITHDRAWALS" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            
-                <h1>Pending</h1>
-
-            </div>
-           
-           <!-- /////////////////////////////////////////////////////////////// -->
-           <!-- /////////////////////////////////////////////////////////////// -->
-           <!-- /////////////////////////////////////////////////////////////// -->
-              <div class="tab-pane fade shadow rounded bg-white show  p-5" id="EARNINGS" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <main class=" Earnings-div ">
-
-                 <div class="bg-light p-3 earn-price">
-
-                  <div class="d-flex mt-3">
-                    <div class="">Earnings of this month is: </div>
-                    <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                  </div> 
-                  <!-- /////////////// -->
-                  <div class="d-flex mt-3">
-                    <div class="">Total Withdrawal of current month: </div>
-                    <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                  </div> 
-                  <!-- /////////////// -->
-                  <div class="d-flex mt-3">
-                    <div class=""> Remaining balance (After withdrawal of current month): </div>
-                    <div class="ml-auto font-weight-bolder "> £0.00 </div>
-                  </div> 
-                  <!-- /////////////// -->
-                  <div class="d-flex mt-3">
-                    <div class="">Total sale price of this Month:</div>
-                    <div class="ml-auto font-weight-bolder "> £0 </div>
-                  </div> 
-                  <!-- /////////////// -->
-                  
-                  
-                 </div>
-
-
-                 <h3>EARNINGS</h3>
-
-
-                 <table class="table text-center">
-                  <thead class="thead-light">
-                    <tr> 		
-                      <th scope="col">DATE</th>
-                      <th scope="col">TOTAL SALES</th>
-                      <th scope="col">TOTAL EARNINGS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>		
-                      <td>March 3, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 4, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 5, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 6, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 7, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 8, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 9, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 10, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 11, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 12, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 13, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 14, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-                    <tr>		
-                      <td>March 15, 2021</td>
-                      <td>£0.00</td>
-                      <td>£0.00</td>
-                    </tr>
-
-                  </tbody>
-                </table>
-
-
-
-
-
-                </main>
-              </div>
-               <!-- /////////////////////////////////////////////////////////////// -->
+  
            <!-- /////////////////////////////////////////////////////////////// -->
            <!-- /////////////////////////////////////////////////////////////// -->
            <div class="tab-pane fade shadow rounded bg-white show  p-5" id="CHANGE_PASSWORD" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -1095,8 +909,8 @@
         <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="300"  class="col-lg-3 col-md-6 col-sm-12 text-center footer-marg">
           <h5>MENU</h5>
           <ul class="nav-list ">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT US</a></li>
+            <li><a href="/restprofile">HOME</a></li>
+            <li><a href="about">ABOUT US</a></li>
             <li><a href="#">HOW IT WORKS</a></li>
             <li><a href="#">FAQ's</a></li>
             <li><a href="#">CONTACT</a></li>
