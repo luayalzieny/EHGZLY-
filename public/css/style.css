@@ -14,13 +14,13 @@
     outline: none!important;
     font-family: 'Jua', sans-serif!important;
 }
-/* body{
+body{
      background:  url(../photos/background-tree-white\ \(1\).jpg) no-repeat  center;
     background-size: cover;
 }
 .card-body{
     background-color: transparent!important;
-} */
+}
 
 .modal{z-index: 111111111!important;}
 .animate-divs div {
