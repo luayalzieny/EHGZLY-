@@ -140,21 +140,8 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
        imgtype=imagesittings.imgtype
        console.log(imgbuffer)
        console.log(imgtype)
-       console.log(req.body.coverimage)
        
-       function coverimgtest(img){
-           if(img){
-          const coverimage=JSON.parse(req.body.coverimg)
-          let coverimgbuffer= new Buffer.from(coverimage.data,'base64')
-          let coverimgtype=coverimage.type
-          let coverimgsittings={coverimgbuffer,coverimgtype}
-          return coverimgsittings
-           }
-           return  {coverimgbuffer:null,coverimgtype:null}
-       }
-       coverimgsittings=coverimgtest(req.body.coverimg)
-       coverimgbuffer=coverimgsittings.coverimgbuffer
-       coverimgtype=coverimgsittings.coverimgtype
+      
 
         // UPDATE LOCATION
         restaurants.findOneAndUpdate({_id:restaurantID},{
@@ -177,35 +164,18 @@ module.exports.restaurant_updateMainInformation_post=(req,res)=>{
                 imageBuffer:imgbuffer||rest.img.imageBuffer,
                 imageType:imgtype||rest.img.imageType
             },
-            coverimg:{
-                imageBuffer:coverimgbuffer||rest.coverimg.imageBuffer,
-                imageType:coverimgtype||rest.coverimg.imageType
-            },
+           
             pickupfee:req.body.pickupfee||rest.pickupfee||0,
-            pickuptime:req.body.pickuptime||rest.pickuptime||"none",
-            info:req.body.info||rest.info||"none",
+            pickuptime:req.body.pickuptime||rest.pickuptime,
+            info:req.body.info||rest.info,
 
         },(err,rest2)=>{
             if(err)
           error=handelErrors(err)
-           console.log(error)
+          
         })
     })
-    if(req.body.Latitude){
-        let location={
-
-            Coordinates:{Latitude:req.body.Latitude ,Longitude:req.body.Longitude},
-            area:req.body.area
-        }
-            restaurants.findOneAndUpdate({_id:restaurantID},
-                {$push:{
-                    location:location
-                    
-            }},(err,rest)=>{
-                console.log(rest)
-                
-            })
-    }
+    
     res.redirect("/restprofile")  
 }
 

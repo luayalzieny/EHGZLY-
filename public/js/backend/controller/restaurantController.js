@@ -49,10 +49,7 @@ module.exports.restaurant_post=(req,res)=>{
         mangerPhone:req.body.mangerPhone,
         address:req.body.address,
         kitchen:req.body.kitchen,
-        img:{imageBuffer:undefined,imageType:undefined},
-        coverimg:{imageBuffer:undefined,imageType:undefined},
-        pickupfee:0,
-        pickuptime:"enter pickuptime",
+      
         //opentime:{open:req.body.open,close:req.body.close}
         
         
@@ -163,33 +160,7 @@ module.exports.restaurant_get=(req,res)=>{
        res.send("location form")
    }
   
-  // module.exports.categories_get= async (req,res)=>{
-    //restaurantID=5
-    
-   
-    //restaurants.findOne({_id:restaurantID},(err,rest)=>{
-      //  if(err)
-       // console.log(err)
-        
-       // let cats=rest.categories
-       // let cat=new Array();
-       // cats.forEach(element => {
-        //    cat.push(element.category)
-       // });
-       // console.log(cat)
-       // res.render("./restuant-profile.ejs",{cat})
-       // })
-    
- //  try{
-   // cat = await getCat()
-    
-    //}
-    //catch(err){
-     //   console.log(err)
-   // }
-
-//}
-//////////////////////////////////////////////////////////////////////////////////////
+  
 
 // restaurant orders 
 module.exports.getOrder= (req, res) => {

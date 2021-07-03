@@ -83,10 +83,6 @@ const restaurantSchema= new Schema({
             imageBuffer:{type: Buffer}, 
             imageType:{type:String}    
                      },
-         coverimg:{
-        imageBuffer:{type: Buffer}, 
-        imageType:{type:String}    
-                 },
         categories:[categoriesSchema],
         orders:[],
         pickupfee:{type:Number},
@@ -142,13 +138,6 @@ const restaurantSchema= new Schema({
             ${this.img.imageBuffer.toString('base64')}`
         }
     })
-    restaurantSchema.virtual('coverimage_path').get(function(){
-        if(this.coverimg.imageBuffer!=null && this.coverimg.imageType!=null){
-            return `data:${this.coverimg.imageType};charset=utf-8;base64,
-            ${this.coverimg.imageBuffer.toString('base64')}`
-        }
-    })
-
 
     restaurantSchema.plugin(autoIncrement.plugin,'restaurant');
 const restaurant=mongoose.model("restaurant",restaurantSchema) // restaurant model
