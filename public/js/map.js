@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoieW91c2VmMDEiLCJhIjoiY2tpNTE4aXBnMm1icjJ4bXAyd21raWd3ZCJ9.aNNl_fEbFU_NxO3JuHOaAQ'; // set the access token
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFyc2gxMjMiLCJhIjoiY2txbXJ5eG54MDJsdjMwbnhjYWg4bnZ5MyJ9.jCUiY4fiHils9gWwjy69Xg'; // set the access token
 
 // set the arabic language
 mapboxgl.setRTLTextPlugin(
@@ -31,7 +31,6 @@ mapboxgl.setRTLTextPlugin(
        
       
         
-    map.on('load', function() {
   var geocoder = new MapboxGeocoder({ // Initialize the geocoder
     accessToken: mapboxgl.accessToken, // Set the access token
     mapboxgl: mapboxgl, // Set the mapbox-gl instance
@@ -56,20 +55,14 @@ mapboxgl.setRTLTextPlugin(
   });
 
 
-   
-
   addMarkers();
       
 
   });
 
-
-    
-   
   
     
-    
-});
+
 
 
 
