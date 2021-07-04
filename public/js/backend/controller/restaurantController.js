@@ -4,6 +4,9 @@ mongoose=require("mongoose")
 const express =require('express')
 const app=express();
 const path = require('path');
+const Pusher = require("pusher");
+const alert = require('alert');
+const sendSms = require('./twilio');
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //handel moongose erorrs function
@@ -165,10 +168,121 @@ module.exports.restaurant_get=(req,res)=>{
 // restaurant orders 
 module.exports.getOrder= (req, res) => {
   
-    const id = req.params.id;
+    global.id = req.params.id;
     let user =req.user
     restaurants.findById(id).then((result)=>{
       res.render('Ordering', {rest:result,user});
     }).catch(err => {console.log(err)});
     
 }
+//////////////////////////////////////////////////////////////////////////////////////
+// add Tables
+module.exports.table=(req,res)=>{
+
+  console.log(req.session)
+  restaurantID =req.session.passport.user._id;
+ 
+      restaurants.findOneAndUpdate({_id:restaurantID},
+      
+          {$push:{Tables:{
+            tableNumber:req.body.tableNumber,
+            numberOfPerson:req.body.people
+          }}},(err,rest)=>{
+          if(err)
+      console.log(err);
+          
+      })
+  
+   res.redirect("/allTables/" + restaurantID)
+  }
+//////////////////////////////////////////////////////////////////////////////////
+//get all tables
+module.exports.geTables=(req,res)=>{
+
+  const id = req.params.id;
+  restaurants.findById(id).then((result)=>{
+    res.render('allTables', {rest:result});
+  }).catch(err => {console.log(err)});
+
+}
+//////////////////////////////////////////////////////////////////////////////////
+// make reservations
+module.exports.reservation=(req,res)=>{
+
+  // the single tables reservations
+  const tableid = req.body.table;
+  restaurants.findOneAndUpdate({_id:id, 'Tables._id':tableid },
+      {
+          $addToSet:
+          {
+              'Tables.$.booking':
+                  {
+                    starTime:req.body.start,
+                    endTime:req.body.end
+                  }
+          },
+      }
+      ,(err,rest)=>{
+        if(err)
+       console.log(err);       
+  })
+     
+  // all the reservations
+  restaurants.findOneAndUpdate({_id:id},
+  {
+   $addToSet:
+   {
+     reservations:
+     { fname:req.body.fname,
+       lname:req.body.lname,
+       email:req.body.email,
+       phone:req.body.phone,
+       tableId:req.body.table,
+       starTime:req.body.start,
+       endTime:req.body.end,
+       instructions:req.body.instructions
+  
+     } 
+   },
+  
+  }
+  ,(err,rest)=>{
+  
+   const phone = "+2"+req.body.phone;
+   const fname = req.body.fname;
+   const lname = req.body.lname;
+   const startTime = req.body.start;
+   const endTime = req.body.end;
+   const tableId = req.body.table
+
+/*
+   let Pusher = require('pusher');
+                let pusher = new Pusher({
+                    appId: "1218013",
+                    key: "cec6a5d9e1c6f055500d",
+                    secret: "e612687f4e81c52620fc",
+                    cluster: "mt1",
+                    useTLS: true
+                });
+    
+                pusher.trigger('notifications', 'reservation', rest, req.headers['x-socket-id']);*/
+
+  alert('Successfully Submitted ❤, Please check your phone 📱');
+
+  const welcomeMessage = 'Thank you ' + fname +' '+ lname +' for your reservation to '+ rest.restaurantName +' restaurant at ' + startTime;
+   
+  //sendSms(phone, welcomeMessage);
+  
+   
+  
+    if(err)
+   console.log(err);
+   /*console.log(rest)
+   console.log(id)*/
+ 
+  
+   
+  }) 
+    res.redirect('/ordering/'+id);
+ }
+  /////////////////////////////////////////////////////////////////////////////////////////////////////

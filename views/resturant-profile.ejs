@@ -669,26 +669,30 @@
 
 
 
-               <form action="">
+            <div id="error"></div>
+            <form id="form" action="/table" method="POST" >
 
-                <div class="form-row">
-                    <!-- ////////////////////////// -->
-                    <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                      <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="table number" name="table number">
-                    </div>
-              <!-- ////////////////////////// -->
-  
-                  <!-- ////////////////////////// -->
-                  <div class=" col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
-                    <input type="text" class="col-lg-12 p-2" id="restaurantName" value=""  placeholder="number of persons" name="number of persons">
-                  </div>
-            <!-- ////////////////////////// -->
-                </div>
-                
-               <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> add tables </button>
+             <div class="form-row">
+
+                 <!-- ////////////////////////// -->
+                 <div class="form-group col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
+                   <input type="number" class="col-lg-12 p-2 form-control" id="tableNumber" value=""  placeholder="Table Number" name="tableNumber" min="1" max="100" required>
+                 </div>
+                 <!-- ////////////////////////// -->
+
+                 <!-- ////////////////////////// -->
+                 <div class="form-group col-lg-6 col-md-12 col-sm-12 p-1 mt-2  ">
+                   <input type="number" class="col-lg-12 p-2 form-control" id="people" value=""  placeholder="Number Of Persons" min="1" max="12" name="people" required>
+                 </div>
+                 <!-- ////////////////////////// -->
+             </div>
+             
+            <button class="btn btn-success rounded menu_category_btn ml-auto mt-2 p-1  mb-3" type="submit"> add tables </button>
 
 
-               </form>
+            </form>
+            <a href='/allTables/<%=rest._id%>' class="btn btn-success rounded p-1  ml-auto mt-2 p-1  mb-3" >show all tables</a>
+           
 
 
 
@@ -1276,6 +1280,71 @@ str=str+id[j]
   }
 </script>
 
+
+<script>
+
+  const tableNumber = document.getElementById("tableNumber");
+  const numOfPersons = document.getElementById("people");
+  const Form = document.getElementById("form");
+  const errorElement = document.getElementById("error");
+
+  Form.addEventListener("submit", (e)=>{
+
+
+    let messages = [];
+
+    if(numOfPersons.value> 12){
+     messages.push('Notice: maximum number of persons is 12');
+    }else if( numOfPersons.value <= 0 ){
+     messages.push('Notice: can\'t set a table less than or equal to zero guests');
+   }
+
+    if(tableNumber.value > 100){
+      messages.push('Notice: maximum number of tables is 100');
+    
+   }else if( tableNumber.value <= 0 ){
+     messages.push('Notice: can\'t set a table less than or equal to zero');
+   }
+
+   
+   if(messages.length > 0 ){
+     // to cancel our form from submitting and reload the page
+    e.preventDefault();
+    errorElement.innerText = messages.join(', ')
+   }
+    
+
+  });
+</script>
+
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+
+    <script>
+        var pusher = new Pusher('cec6a5d9e1c6f055500d', { cluster: 'mt1' });
+    
+        // retrieve the socket ID once we're connected
+        pusher.connection.bind('connected', function () {
+            // attach the socket ID to all outgoing Axios requests
+            axios.defaults.headers.common['X-Socket-Id'] = pusher.connection.socket_id;
+        });
+    
+        // request permission to display notifications, if we don't alreay have it
+        Notification.requestPermission();
+        pusher.subscribe('notifications')
+                .bind('reservation', function (rest) {
+                    // if we're on the home page, show an "Updated" badge
+                    if (window.location.pathname === "/restprofile") {
+                        var notification = new Notification(rest.reservation + " A new table reservation");
+                        notification.onclick = function (event) {
+                        window.location.href = '/restprofile';
+                        event.preventDefault();
+                        notification.close();
+                    }
+                       
+                    }
+                    
+                });
+    </script>
 
 </body>
   </html>

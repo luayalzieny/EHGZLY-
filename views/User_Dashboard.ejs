@@ -316,6 +316,7 @@
             <h5 class="">MY ORDERS</h5>
             <hr>
             <div  class="row ">
+            <% if(user.history){%>
               <%user.history.forEach(history=>{%>
               <div  class="col-lg-6 p-3 ">
                 <div class=" p-3 order-border user-orders">
@@ -341,6 +342,7 @@
                 </div>
               </div>
             <%})%>
+            <% } %>
 
             </div>
 

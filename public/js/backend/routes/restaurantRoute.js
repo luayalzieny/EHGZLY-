@@ -25,6 +25,8 @@ app.use(flash())
 app.post("/restaurant",restaurantController.restaurant_post);
 app.post("/location",restaurantController.restaurantLocation_post)
 app.post("/categories",restaurantController.categories_post)
+app.post("/table",restaurantController.table)/////////1///////
+app.post("/reservation",restaurantController.reservation)/////////2///////
 app.post('/restLogin',function(req,res,next){
     passport.authenticate("rest",{
       successRedirect:"/restprofile",
@@ -50,6 +52,7 @@ app.get("/restprofile",restaurantDashboard.rest_profile_get)
 app.get("/restLogin",restaurantController.login_get)
 app.get("/restaurant",restaurantController.restaurant_get);
 app.get('/ordering/:id', restaurantController.getOrder)
+app.get('/allTables/:id', restaurantController.geTables)///////////////3//////////
 //app.get("/test",restaurantDashboard.test);
 //app.get("/location",restaurantController.location_get)
 //app.get("/categories",restaurantController.categories_get)

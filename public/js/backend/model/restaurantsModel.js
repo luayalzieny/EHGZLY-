@@ -17,6 +17,36 @@ const categoriesSchema=new Schema({
 autoIncrement.initialize(mongoose.connection)
 
 
+// 1  table schema
+const tableSchema = new Schema({
+    tableNumber: {type: String},
+    numberOfPerson: {type: String},
+    booking:[{
+        starTime:{type:Date},
+        endTime:{type:Date}
+    }]
+});
+const table = mongoose.model('table', tableSchema);
+
+
+
+// 2 reservation schema
+const reservationschema = new Schema({
+    fname:{type:String,required:true},
+    lname:{type:String,required:true},
+    email:{type:String,required:true,unique:true},
+    phone:{type:String,required:true,unique:true},
+    tableId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'table'
+    },
+    starTime:{type:Date},
+    endTime:{type:Date},
+    instructions:{type:String}
+   
+    });
+
+
 
   
 
@@ -94,6 +124,9 @@ const restaurantSchema= new Schema({
             type: String,
             required:[true,'please enter your phone number']
             },
+
+        Tables:[tableSchema],
+        reservations:[reservationschema],
         
         reviews:[]
         // createdAt: {

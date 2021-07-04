@@ -454,51 +454,63 @@
                 Check out the best restaurants and Book Using following Form.</p>
 
 
-                <form class="form mt-5" >
+                <form id="form" class="form mt-5" action="/reservation"  method="POST">
                   <div class=" form-row mt-5 ">
                        <!-- ////////////////////////// -->
                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="first name">
-                        </div>
+                        <input type="text" class="col-lg-12 p-2" id="fname" value="" name="fname" required placeholder="first name">
+                     </div>
                   <!-- ////////////////////////// -->
 
-                       <!-- ////////////////////////// -->
+                  <!-- ////////////////////////// -->
                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="last name">
-                        </div>
+                        <input type="text" class="col-lg-12 p-2" id="lname" value="" name="lname" required placeholder="last name">
+                       </div>
                   <!-- ////////////////////////// -->
 
                   <!-- ////////////////////////// -->
-                      <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="email" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="EMAIL">
-                        </div>
+                  <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                    <input type="email" class="col-lg-12 p-2" id="email" value="" name="email" required placeholder="EMAIL">
+                  </div>
                   <!-- ////////////////////////// -->
+
+                  <!-- ////////////////////////// -->
+                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
+                      <input type="text" class="col-lg-12 p-2" id="phone" value="" required placeholder="phone" minlength="11" maxlength="11" pattern="[0-1]{2}[0-9]{9}" name="phone">
+                    </div>
+                   <!-- ////////////////////////// -->
                   
                   <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                    <select  style="font-size: 14px;" class="form-select col-lg-12 p-2" aria-label="Default select example">
-                      <option selected>Gustes</option>
-                      <option value="1">2 Gustes</option>
-                      <option value="2">4 Gustes</option>
-                      <option value="3">8 Gustes</option>
-                      <option value="3"> + 8 Gustes</option>
-
-                    </select>                    </div>
-                <!-- ////////////////////////// -->
-
-                        <div class=" col-lg-6 col-md-6 col-sm-12 p-4  ">
-                          <input type="text" class="col-lg-12 p-2" id="validationCustom" value="" required placeholder="phone">
-                        </div>
+                    <select  style="font-size: 14px;" id="table" class="form-select col-lg-12 p-2" aria-label="Default select example" name="table" required>
+                      <option value="">Tables</option>
+                      <% if(rest.Tables.length > 0){%>
+                        <% for(var i = 0; i < rest.Tables.length; i++) { %>
+                          <option value="<%=rest.Tables[i]._id%>">Table Number<%= rest.Tables[i].tableNumber%> - Capacity <%= rest.Tables[i].numberOfPerson%> Persons </option>
+                          
+                        <% } %>
+                      <% }else{ %>
+                        <option value="">NO Tables Available At the moment.</option>
+                      <% } %>
+                    </select>                    
+                  </div>
                   <!-- ////////////////////////// -->
+                  
+                
 
-                    <div class=" col-lg-6 col-md-6 col-sm-12 p-4">                
-                      <input type="datetime-local" class="col-lg-12 p-2 mb-3" id="validationCustom" value="" required placeholder="retype password">
-                    </div>
+                <div class=" col-lg-6 col-md-6 col-sm-12 p-4">                
+                  <input type="datetime-local" class="col-lg-12 p-2 mb-3" id="start" name="start" value="" required>
+                </div>
+                
+                <div class=" col-lg-6 col-md-6 col-sm-12 p-4">                
+                  <input type="datetime-local" class="col-lg-12 p-2 mb-3" id="end" name="end" value="" required>
+                </div>
+
 
 
                   <!-- ////////////////////////// -->
 
                     <div class=" col-lg-12 col-md-12 col-sm-12 p-4">  
-                      <textarea name="" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" required placeholder="your instructions"></textarea>              
+                      <textarea name="" id="" class="col-lg-12 p-2 mb-3" cols="20" rows="5" placeholder="your instructions"></textarea>              
                       <!-- <input type="datetime-local"  id="validationCustom" value="" required placeholder="retype password"> -->
                     </div>
 
@@ -1025,5 +1037,52 @@ $(function() {
   });
 }); 
   </script>
+
+
+
+<script>
+
+  const starTime = document.getElementById("start");
+  const endTime = document.getElementById("end");
+  const Form = document.getElementById("form");
+  const phone = document.getElementById('phone');
+  //const dateMessage = document.getElementById("dateMessage");
+  //const errorElement = document.getElementById("error");
+  const today = new Date().toISOString().replace('Z', '+00:00');//.toLocaleString('en-US', { hour12: false}).replace(', ', 'T');
+ 
+
+  Form.addEventListener("submit", (e)=>{
+
+   if(phone.value[0] !== '0' || phone.value[1] !== '1'){
+      alert('Phone Number must be 11 number starting with 01*********');
+      e.preventDefault();
+     }else if(phone.value[2] == '0' ||phone.value[2] == '1' || phone.value[2] == '2' || phone.value[2] == '5'){
+       console.log('All Set');
+     }else{
+         alert('phone Number must start with 010 or 011 or 012 or 015');
+         e.preventDefault();
+     }
+
+    
+   if(starTime.value < today){
+     alert('Please Set A Correct Time To Start Reserving');
+     e.preventDefault();
+    }else if(endTime.value < today){
+     alert('Please Set A Correct Time To End Reserving');
+     e.preventDefault();
+    }else if(starTime.value > endTime.value){
+     alert('Time Settings Is Not Correct');
+     e.preventDefault();
+    }else if(starTime.value === endTime.value){
+     alert('You Can\'t Set reservation and leave at the same');
+     e.preventDefault();
+    }else{
+     console.log('Successfully Submitted ❤');
+    }
+
+
+  });
+
+</script>
   </body>
   </html>
